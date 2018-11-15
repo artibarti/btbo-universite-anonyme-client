@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-header>Course List</mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let course of courses">
+        <img mat-list-avatar src="{{course.giphyUrl}}" alt="{{course.name}}">
+        <h3 mat-line>{{course.name}}</h3>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
