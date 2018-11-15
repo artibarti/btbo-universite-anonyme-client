@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImagePoolService } from '../shared/image-pool/image-pool.service'
 
 @Component({
   selector: 'app-toolbar',
@@ -8,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ToolbarComponent implements OnInit {
 
   title = 'universite anonyme';
-
-  constructor() { }
+  
+  constructor(private imagePoolService: ImagePoolService) { }
 
   ngOnInit() {
   }
