@@ -11,5 +11,11 @@ export class ImagePoolService {
     iconRegistry.addSvgIcon(
         'github',
         sanitizer.bypassSecurityTrustResourceUrl('assets/images/github.svg'));
+    iconRegistry.addSvgIcon(
+        'facebook',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/images/facebook.svg'));  
+    iconRegistry.addSvgIcon(
+      'logo',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/logo.svg'));        
+    }
   }
-}
