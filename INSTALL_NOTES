@@ -21,6 +21,9 @@ Install required packages
   npm install
   npm install @angular/cli
   npm install bootstrap@3
+  npm install rxjs
+  npm i rxjs-compat
+  npm install bootstrap font-awesome 
 
 To list all packages installed with npm type
 
