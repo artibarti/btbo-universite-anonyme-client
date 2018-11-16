@@ -22,8 +22,13 @@ Install required packages
   npm install @angular/cli
   npm install bootstrap@3
   npm install rxjs
-  npm i rxjs-compat
-  npm install bootstrap font-awesome 
+  npm install rxjs-compat
+  npm install popper.js --save
+  npm install jquery --save
+  npm install bootstrap font-awesome
+  npm i angular-bootstrap-md --save 
+  npm install --save-dev @types/chart.js
+  npm install --save chart.js
 
 To list all packages installed with npm type
 
