@@ -1,0 +1,35 @@
+Download the latest binaries from https://nodejs.org/en/download/ for nodeJS
+
+Extract them somewhere (for example /usr/local/lib/nodejs)
+
+Add the following lines to /etc/profile
+
+  # Nodejs
+  export NODEJS_HOME=/usr/local/lib/nodejs/node-$VERSION/bin
+  export PATH=$NODEJS_HOME:$PATH
+
+Refresh profile
+
+  source /etc/profile
+
+Test installation
+
+  node -v
+
+Install required packages
+
+  npm install
+  npm install @angular/cli
+  npm install bootstrap@3
+
+To list all packages installed with npm type
+
+  npm ls -gp --depth=0
+
+To delete all packages installed with npm type
+
+  npm ls -gp --depth=0 | awk -F/ '/node_modules/ && !/\/npm$/ {print $NF}' | xargs npm -g rm
+
+To start the application type 
+ 
+  ng serve
