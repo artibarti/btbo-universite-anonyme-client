@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseService } from '../shared/course/course.service'
+import { CourseService } from '../../services/course/course.service'
 import { CommonModule } from "@angular/common";
 
 @Component({

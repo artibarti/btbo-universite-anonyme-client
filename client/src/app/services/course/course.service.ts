@@ -9,8 +9,6 @@ export class CourseService {
 
   getAll(): Observable<any> 
   {
-    return this.http.get('//localhost:8080/courses');
-    // return this.http.get('https://api.myjson.com/bins/yy8si');
-    
+    return this.http.get('//localhost:8080/courses');    
   }
 }
