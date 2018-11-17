@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../../services/session/session.service'
 
 @Component({
   selector: 'app-toolbar',
@@ -9,7 +10,7 @@ export class ToolbarComponent implements OnInit {
 
   title = 'universite anonyme';
   
-  constructor() { }
+  constructor(private sessionService: SessionService) { }
 
   ngOnInit() {
   }

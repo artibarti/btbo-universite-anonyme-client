@@ -4,9 +4,11 @@ import { User } from '../../models/user'
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class SessionService {
 
-  private currentUser: User;
+  currentUser: User;
+  authenticated = false;
 
-  constructor() { }
+  constructor() {}
+  
 }

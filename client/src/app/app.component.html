@@ -2,7 +2,7 @@
 
 <app-toolbar></app-toolbar>
 
-<div class="container" style="padding: 10px">
+<div *ngIf="sessionService.authenticated == false" class="container" style="padding: 10px">
     <div class="row" style="min-width: 500px;">
       <div class="col-8" [ngStyle]="{'background' : 'url(./assets/images/bg.svg)'}">
         <br><br>
@@ -18,5 +18,4 @@
     </div>
 </div>
 
-<app-course-list></app-course-list>
 <app-footer></app-footer>

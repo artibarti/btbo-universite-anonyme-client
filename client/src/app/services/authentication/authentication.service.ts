@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest, HttpResponse, HttpHeaders } from '@angular/common/http'
-import { Observable } from 'rxjs/Observable'
-import { map } from 'rxjs/operators';
+import { SessionService } from '../session/session.service'
 
 @Injectable({
   providedIn: 'root'
@@ -10,29 +9,32 @@ export class AuthenticationService {
 
   //https://github.com/cornflourblue/angular-7-registration-login-example-cli/blob/master/src/app/login/login.component.ts
 
-  authenticated = false;
-
   hashPasswd(password: String) : String
   {
     return password;
   }
 
-  validateUserLogin(credentials)
-  {
-
+  validateUserLogin(credentials) : boolean
+  {     
+    
     const headers = new HttpHeaders (credentials);
     const requestOptions = {                                                                                                                                                                                 
       headers: headers, 
     };
     
-    this.http.get<any>("//localhost:8080/login", requestOptions).subscribe(response => {
+    this.http.get("//localhost:8080/login", requestOptions).subscribe(response => {
         if (response['name']) {
-            this.authenticated = true;
+            this.sessionService.authenticated = true;
+            this.sessionService.currentUser.username = response['name'];
+            this.sessionService.currentUser.id = response['id'];
+            return true;
         } else {
-            this.authenticated = false;
+            this.sessionService.authenticated = false;
+            return false;
         }
     });
+    return false;
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private sessionService: SessionService) { }
 }

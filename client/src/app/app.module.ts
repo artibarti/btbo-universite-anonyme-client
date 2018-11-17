@@ -13,13 +13,14 @@ import { AppComponent } from './app.component';
 // services
 import { CourseService} from './services/course/course.service'
 import { AuthenticationService } from './services/authentication/authentication.service'
-import { UserService } from './services/user/user.service'
+import { SessionService } from './services/session/session.service'
 
 // components
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component'
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component'
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoginComponent } from './components/login/login.component'
     ToolbarComponent,
     FooterComponent,
     LoginComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import { LoginComponent } from './components/login/login.component'
     MDBBootstrapModule.forRoot()
   ],
 
-  providers: [CourseService, AuthenticationService, UserService],
-  bootstrap: [AppComponent, ToolbarComponent, CourseListComponent, FooterComponent, LoginComponent]
+  providers: [CourseService, SessionService],
+  bootstrap: [AppComponent, ToolbarComponent, FooterComponent]
 })
 export class AppModule {}

@@ -16,6 +16,14 @@
       </div>
     </div>
   
+    <div class="d-flex justify-content-around">
+      <div *ngIf="loginAttemptRefused">
+        <span style="color: red">
+          email or password is incorrect
+        </span>
+      </div>
+    </div>
+
     <button mdbBtn (clicked)="onLoginClicked()" [disabled]="loading" color="info" block="true" class="my-4" type="submit">Sign in</button>
   
     <p>Not a member?

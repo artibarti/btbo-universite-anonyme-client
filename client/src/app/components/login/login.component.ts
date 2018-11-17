@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   credentials = {username: '', password: ''};
   loading = false;
+  loginAttemptRefused = false;
 
   constructor(
     private authenticationService: AuthenticationService, 
@@ -19,11 +20,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
  
-  onLoginClicked() {
-    this.authenticationService.validateUserLogin(this.credentials);
-    this.router.navigateByUrl('/');
-    return false;
-}
+  onLoginClicked() 
+  {
+    if (!this.authenticationService.validateUserLogin(this.credentials))
+    {
+      this.loginAttemptRefused = true;
+    }
+  }
 
 }
 
