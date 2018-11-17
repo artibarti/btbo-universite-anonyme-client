@@ -17,19 +17,20 @@ export class AuthenticationService {
     return password;
   }
 
-  validateUserLogin(credentials, callback)
+  validateUserLogin(credentials)
   {
 
-    const headers = new HttpHeaders (credentials ? { authorization : 'Basic ' 
-        + btoa(credentials.name + ':' + credentials.password) } : {});
-
-    this.http.get("//localhost:8080/login", {headers: headers}).subscribe(response => {
+    const headers = new HttpHeaders (credentials);
+    const requestOptions = {                                                                                                                                                                                 
+      headers: headers, 
+    };
+    
+    this.http.get<any>("//localhost:8080/login", requestOptions).subscribe(response => {
         if (response['name']) {
             this.authenticated = true;
         } else {
             this.authenticated = false;
         }
-        return callback && callback();
     });
   }
 

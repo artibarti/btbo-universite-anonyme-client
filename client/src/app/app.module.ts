@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 // services
 import { CourseService} from './services/course/course.service'
 import { AuthenticationService } from './services/authentication/authentication.service'
+import { UserService } from './services/user/user.service'
 
 // components
 import { CourseListComponent } from './components/course-list/course-list.component';
@@ -36,7 +37,7 @@ import { LoginComponent } from './components/login/login.component'
     MDBBootstrapModule.forRoot()
   ],
 
-  providers: [CourseService, AuthenticationService],
-  bootstrap: [AppComponent, ToolbarComponent, FooterComponent, LoginComponent]
+  providers: [CourseService, AuthenticationService, UserService],
+  bootstrap: [AppComponent, ToolbarComponent, CourseListComponent, FooterComponent, LoginComponent]
 })
 export class AppModule {}

@@ -20,9 +20,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
  
   onLoginClicked() {
-    this.authenticationService.validateUserLogin(this.credentials, () => {
-        this.router.navigateByUrl('/');
-    });
+    this.authenticationService.validateUserLogin(this.credentials);
+    this.router.navigateByUrl('/');
     return false;
 }
 

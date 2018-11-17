@@ -1,3 +1,5 @@
 <h2>Course List</h2>
 
-<h1 ng-repeat="course in courses">{{course.name}}</h1>
+<div *ngFor="let course of courses">
+  {{course.name}}
+</div>
