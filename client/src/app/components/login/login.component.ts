@@ -9,45 +9,22 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
-  private _name = '';
-  private _password = '';
+
+  credentials = {username: '', password: ''};
   loading = false;
-
-  @Input()
-  set name(name: string) {
-    this._name = (name && name.trim()) || '';
-  }
-
-  @Input()
-  set password(password: string) {
-    this._password = (password && password.trim()) || '';
-  }
-
-  onLoginClicked()
-  {
-    this._name = document.getElementById("emailInput").toString();
-    this._password = document.getElementById("passwordInput").toString();
-
-    this.authenticationService.validateUserLogin(this._name, this._password)
-    .pipe(first())
-            .subscribe(
-                data => {
-                    this.router.navigate(['/home']);
-                },
-                error => {
-                    this.router.navigate(['/']);
-                });
-  }
 
   constructor(
     private authenticationService: AuthenticationService, 
-    private router: Router)
-    { 
-      
-    }
+    private router: Router) {}
 
   ngOnInit() {}
+ 
+  onLoginClicked() {
+    this.authenticationService.validateUserLogin(this.credentials, () => {
+        this.router.navigateByUrl('/');
+    });
+    return false;
+}
 
 }
 
