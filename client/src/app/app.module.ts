@@ -37,6 +37,6 @@ import { LoginComponent } from './components/login/login.component'
   ],
 
   providers: [CourseService, AuthenticationService],
-  bootstrap: [AppComponent, CourseListComponent, ToolbarComponent, FooterComponent, LoginComponent]
+  bootstrap: [AppComponent, ToolbarComponent, FooterComponent, LoginComponent]
 })
 export class AppModule {}

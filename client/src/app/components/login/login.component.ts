@@ -26,12 +26,10 @@ export class LoginComponent implements OnInit {
 
   onLoginClicked()
   {
-    console.log("OnCLicked Called");
-    console.log("name: " + "asd" + "passwd: " + this._password);    
+    this._name = document.getElementById("emailInput").toString();
+    this._password = document.getElementById("passwordInput").toString();
 
-    this.router.navigate(['google.com']);
-
-    /*this.authenticationService.validateUserLogin(this._name, this._password)
+    this.authenticationService.validateUserLogin(this._name, this._password)
     .pipe(first())
             .subscribe(
                 data => {
@@ -39,7 +37,7 @@ export class LoginComponent implements OnInit {
                 },
                 error => {
                     this.router.navigate(['/']);
-                });              */
+                });
   }
 
   constructor(
