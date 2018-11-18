@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication/authentication.service'
-import { Router, ActivatedRoute } from '@angular/router';
-import { first } from 'rxjs/operators';
+import { SessionService } from '../../services/session/session.service';
 
 @Component({
   selector: 'app-login',
@@ -15,10 +14,18 @@ export class LoginComponent implements OnInit {
 
   error_msg = "email or password is incorrect"
 
-  constructor(private authenticationService: AuthenticationService) {}
+  constructor(
+    private authenticationService: AuthenticationService, 
+    private sessionService: SessionService) {}
 
   ngOnInit() {}
  
+  onRegisterClicked()
+  {
+    this.sessionService.showLoginForm = false;
+    this.sessionService.showRegistrationForm = true;    
+  }
+
   onLoginClicked() 
   {
     this.loginAttemptRefused = false;

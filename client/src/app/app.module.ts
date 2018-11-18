@@ -20,7 +20,7 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
-import { RegistrationComponent } from './components/registration/registration.component'
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { RegistrationComponent } from './components/registration/registration.co
     ToolbarComponent,
     FooterComponent,
     LoginComponent,
-    RegistrationComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +39,7 @@ import { RegistrationComponent } from './components/registration/registration.co
     MDBBootstrapModule.forRoot()
   ],
 
-  providers: [],
-  bootstrap: [AppComponent, ToolbarComponent, FooterComponent]
+  providers: [CourseService],
+  bootstrap: [AppComponent, FooterComponent]
 })
 export class AppModule {}
