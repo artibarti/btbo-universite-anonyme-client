@@ -1,7 +1,7 @@
 <!-- Default form login -->
 <form class="text-center border border-light p-5" (ngSubmit)="onLoginClicked()">
 
-    <p class="h4 mb-4">Sign in</p>
+    <p class="h4 mb-4">Login</p>
   
     <input type="email" id="usernameInput" name="username" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="credentials.username">
   
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <button mdbBtn (clicked)="onLoginClicked()" [disabled]="loading" color="info" block="true" class="my-4" type="submit">Sign in</button>
+    <button mdbBtn (clicked)="onLoginClicked()" color="info" block="true" class="my-4" type="submit">Sign in</button>
   
     <p>Not a member?
       <a href="">Register</a>

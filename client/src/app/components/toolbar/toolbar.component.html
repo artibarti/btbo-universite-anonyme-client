@@ -1,17 +1,19 @@
 <nav class="navbar navbar-dark" style="background-color: #070719; color: #fff;">
-  <a class="navbar-brand" href="/">{{title}}</a>
+  <a class="navbar-brand" href="" style="font: 2em  Lucida Console;">{{title}}</a>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/">Home</a>
-      <a class="nav-item nav-link" href="#">About</a>
-      <a class="nav-item nav-link" href="#">Contact</a>
     </div>
   </div>
   <div class="navbar-expand ml-auto navbar-nav">
     <div class="navbar-nav">
-      <a *ngIf="sessionService.authenticated == false" class="nav-item nav-link active" href="#">Login</a>
-      <a *ngIf="sessionService.authenticated == false" class="nav-item nav-link active" href="#">Sign Up</a>
-      <a ng-click="onLogoutClicked()" *ngIf="sessionService.authenticated == true" class="nav-item nav-link active" href="">Logout</a>
+      <!-- <a (clicked)="onLoginClicked()" *ngIf="sessionService.authenticated == false" class="nav-item nav-link active" href="#">Login</a>
+      <a ng-click="onSignUpClicked()" *ngIf="sessionService.authenticated == false" class="nav-item nav-link active" href="#">SignUp</a>
+      <a ng-click="onLogoutClicked()" *ngIf="sessionService.authenticated == true" class="nav-item nav-link active" href="#">Logout</a> -->
+      <button style="margin: 5px" mdbBtn (click)="onLoginClicked()" *ngIf="sessionService.authenticated == false" type="button" class="btn btn-primary navbar-btn">Login</button>
+      <button style="margin: 5px" mdbBtn (click)="onSignUpClicked()" *ngIf="sessionService.authenticated == false" type="button" class="btn btn-primary navbar-btn">SignUp</button>
+      <button style="margin: 5px" mdbBtn (click)="onLogoutClicked()" *ngIf="sessionService.authenticated == true" type="button" class="btn btn-primary navbar-btn">Logout</button>
+
       <a class="nav-item nav-link" href="https://github.com/artibarti/btbo-universite-anonyme-client" target="_blank">
         <i class="fa fa-github"></i>
       </a>

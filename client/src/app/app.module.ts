@@ -39,7 +39,7 @@ import { RegistrationComponent } from './components/registration/registration.co
     MDBBootstrapModule.forRoot()
   ],
 
-  providers: [CourseService, SessionService],
+  providers: [],
   bootstrap: [AppComponent, ToolbarComponent, FooterComponent]
 })
 export class AppModule {}

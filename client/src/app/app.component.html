@@ -4,7 +4,7 @@
 
 <div *ngIf="sessionService.authenticated == false" class="container" style="padding: 10px">
     <div class="row" style="min-width: 500px;">
-      <div class="col-8" [ngStyle]="{'background' : 'url(./assets/images/bg.svg)'}">
+      <div class="col-8" [ngStyle]="{'background' : 'url(./assets/images/bg.svg) no-repeat'}">
         <br><br>
         <h1 style="color: black; background: whitesmoke;">> sign up today</h1>           
         <br><br>
@@ -12,8 +12,11 @@
         <br><br>
         <h1 style="color: black; background: whitesmoke;">> > > share knowledge</h1>           
       </div>
-      <div class="col">
+      <div *ngIf="sessionService.showLoginForm == true" class="col">
         <app-login></app-login>            
+      </div>
+      <div *ngIf="sessionService.showRegistrationForm == true" class="col">
+        <app-registration></app-registration>            
       </div>
     </div>
 </div>

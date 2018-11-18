@@ -11,7 +11,6 @@ import { first } from 'rxjs/operators';
 export class LoginComponent implements OnInit {
 
   credentials = {username: '', password: ''};
-  loading = false;
   loginAttemptRefused = false;
 
   constructor(

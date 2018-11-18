@@ -19,11 +19,11 @@ export class AuthenticationService {
     var loginSuccess = false;
 
     const headers = new HttpHeaders (credentials);
-    const requestOptions = {                                                                                                                                                                                 
+    const requestHeader = {                                                                                                                                                                                 
       headers: headers, 
     };
     
-    this.http.get("//localhost:8080/login", requestOptions).subscribe(response => {
+    this.http.get("//localhost:8080/login", requestHeader).subscribe(response => {
         if (response['name']) {
             this.sessionService.authenticated = true;
             this.sessionService.currentUser.username = response['name'];

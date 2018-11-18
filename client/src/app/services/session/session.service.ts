@@ -9,6 +9,9 @@ export class SessionService {
   currentUser: User;
   authenticated = false;
 
+  showLoginForm = true;
+  showRegistrationForm = false;
+
   constructor() {}
   
 }

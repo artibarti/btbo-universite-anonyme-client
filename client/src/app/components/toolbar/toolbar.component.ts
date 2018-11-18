@@ -8,11 +8,25 @@ import { SessionService } from '../../services/session/session.service'
 })
 export class ToolbarComponent implements OnInit {
 
-  title = 'universite anonyme';
+  title = 'ua >';
   
+  onLoginClicked()
+  {
+    this.sessionService.showLoginForm = true;
+    this.sessionService.showRegistrationForm = false;
+  }
+
+  onSignUpClicked()
+  {
+    this.sessionService.showLoginForm = false;
+    this.sessionService.showRegistrationForm = true;    
+  }
+
   onLogoutClicked()
   {
     this.sessionService.authenticated = false;
+    this.sessionService.showLoginForm = true;
+    this.sessionService.showRegistrationForm = false;    
   }
 
   constructor(private sessionService: SessionService) 
