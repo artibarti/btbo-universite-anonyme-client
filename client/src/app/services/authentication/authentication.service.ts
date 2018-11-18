@@ -16,7 +16,8 @@ export class AuthenticationService {
 
   validateUserLogin(credentials) : boolean
   {     
-    
+    var loginSuccess = false;
+
     const headers = new HttpHeaders (credentials);
     const requestOptions = {                                                                                                                                                                                 
       headers: headers, 
@@ -27,13 +28,13 @@ export class AuthenticationService {
             this.sessionService.authenticated = true;
             this.sessionService.currentUser.username = response['name'];
             this.sessionService.currentUser.id = response['id'];
-            return true;
+            loginSuccess = true;
         } else {
             this.sessionService.authenticated = false;
-            return false;
+            loginSuccess = false;
         }
     });
-    return false;
+    return loginSuccess;
   }
 
   constructor(private http: HttpClient, private sessionService: SessionService) { }

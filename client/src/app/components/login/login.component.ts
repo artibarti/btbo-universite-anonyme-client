@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
  
   onLoginClicked() 
   {
+    this.loginAttemptRefused = false;
+
     if (!this.authenticationService.validateUserLogin(this.credentials))
     {
       this.loginAttemptRefused = true;

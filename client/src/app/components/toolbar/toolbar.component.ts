@@ -10,9 +10,19 @@ export class ToolbarComponent implements OnInit {
 
   title = 'universite anonyme';
   
-  constructor(private sessionService: SessionService) { }
+  onLogoutClicked()
+  {
+    this.sessionService.authenticated = false;
+  }
 
-  ngOnInit() {
+  constructor(private sessionService: SessionService) 
+  {
+    
+  }
+
+  ngOnInit() 
+  {
+  
   }
 
 }
