@@ -14,9 +14,27 @@ export class AuthenticationService {
     return password;
   }
 
-  validateUserLogin(credentials) : boolean
+  validateRegistration(credentials) : boolean
+  {
+    var registrationSuccess = false;
+
+    const headers = new HttpHeaders (credentials);
+    const requestHeader = {                                                                                                                                                                                 
+      headers: headers, 
+    };
+    
+    this.http.get("//localhost:8080/register", requestHeader).subscribe(response => {
+        if (response['email']) {
+            registrationSuccess = true;
+        } else {
+            registrationSuccess = false;
+        }
+    });
+    return registrationSuccess;
+  }
+
+  validateLogin(credentials) : boolean
   {     
-    var loginSuccess = false;
 
     const headers = new HttpHeaders (credentials);
     const requestHeader = {                                                                                                                                                                                 
@@ -24,17 +42,17 @@ export class AuthenticationService {
     };
     
     this.http.get("//localhost:8080/login", requestHeader).subscribe(response => {
-        if (response['name']) {
+        if (response['email']) {
             this.sessionService.authenticated = true;
-            this.sessionService.currentUser.username = response['name'];
+            this.sessionService.currentUser.email = response['email'];
             this.sessionService.currentUser.id = response['id'];
-            loginSuccess = true;
+            return true;
         } else {
             this.sessionService.authenticated = false;
-            loginSuccess = false;
+            return false;
         }
     });
-    return loginSuccess;
+    return false;
   }
 
   constructor(private http: HttpClient, private sessionService: SessionService) { }

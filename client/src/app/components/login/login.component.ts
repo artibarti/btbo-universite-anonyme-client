@@ -10,12 +10,12 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
 
-  credentials = {username: '', password: ''};
+  credentials = {email: '', password: ''};
   loginAttemptRefused = false;
 
-  constructor(
-    private authenticationService: AuthenticationService, 
-    private router: Router) {}
+  error_msg = "email or password is incorrect"
+
+  constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit() {}
  
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   {
     this.loginAttemptRefused = false;
 
-    if (!this.authenticationService.validateUserLogin(this.credentials))
+    if (!this.authenticationService.validateLogin(this.credentials))
     {
       this.loginAttemptRefused = true;
     }

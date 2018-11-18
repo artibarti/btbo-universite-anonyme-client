@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../../services/authentication/authentication.service'
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  credentials = {email: '', password: ''};
+  registrationAttemptRefused = false;
 
-  ngOnInit() {
+  error_msg = "email address is already in use"
+
+  constructor(private authenticationService: AuthenticationService) {}
+
+  onRegistrationClicked() 
+  {
+    this.registrationAttemptRefused = false;
+
+    if (!this.authenticationService.validateRegistration(this.credentials))
+    {
+      this.registrationAttemptRefused = true;
+    }
   }
+
+  ngOnInit() {}
 
 }

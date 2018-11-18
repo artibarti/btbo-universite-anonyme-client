@@ -1,9 +1,9 @@
 <!-- Default form login -->
-<form class="text-center border border-light p-5" (ngSubmit)="onLoginClicked()">
+<form class="text-center border border-light p-5">
 
     <p class="h4 mb-4">Login</p>
   
-    <input type="email" id="usernameInput" name="username" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="credentials.username">
+    <input type="email" id="emailInput" name="email" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="credentials.email">
   
     <input type="password" id="passwordInput" name="password" class="form-control mb-4" placeholder="Password" [(ngModel)]="credentials.password">
   
@@ -17,14 +17,14 @@
     </div>
   
     <div class="d-flex justify-content-around">
-      <div *ngIf="loginAttemptRefused">
+      <div *ngIf="loginAttemptRefused == true">
         <span style="color: red">
-          email or password is incorrect
+            {{error_msg}}
         </span>
       </div>
     </div>
 
-    <button mdbBtn (clicked)="onLoginClicked()" color="info" block="true" class="my-4" type="submit">Sign in</button>
+    <button mdbBtn (click)="onLoginClicked()" color="info" block="true" class="my-4" type="submit">Sign in</button>
   
     <p>Not a member?
       <a href="">Register</a>
