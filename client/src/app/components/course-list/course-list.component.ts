@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../services/course/course.service'
 import { CommonModule } from "@angular/common";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-course-list',

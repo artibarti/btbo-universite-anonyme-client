@@ -1,26 +1,33 @@
 <div class="container">
   
-  <div class="header">
-    My subscribtions
-  </div>
+  <ul class="list-group">
+    <li class="list-group-item" style="padding: 3px; background-color: #084B8A">
+      <div class="row-2">
+        <div class="col" style="color: whitesmoke">
+            My subscribtions
+        </div>
+      </div>      
+    </li>
+  </ul>
   
   <div>
     <form role="search">
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="Find a course" name="q">
+        <input type="text" class="form-control" [(ngModel)]="courseFilter" placeholder="Find a course" name="courseFilter">
     </div>
     </form>
   </div>
 
-  <ul class="list-group">
+  <ul class="list-group" style="padding: 3px">
     <li *ngFor="let course of courses" class="list-group-item">
       <div class="container">
         <div class="row" style="font-size: 15px">
             <div class="col" style="color: cornflowerblue">
               {{course.name}}
             </div>
-            <div class="col">
-                <mdb-icon icon="heart"></mdb-icon>
+            <div class="col" style="border: 1px solid lightgray">
+                <mdb-icon icon="heart"style="color: #AA2222"></mdb-icon>
+                {{likes}} 5.4
             </div>  
         </div>
         <div class="row" style="font-size: 12px">
@@ -28,7 +35,7 @@
               Owner:
             </div>
             <div class="col">
-                {{owner}}
+                {{owner}} Kylian Parker
             </div>  
         </div>
       </div>
