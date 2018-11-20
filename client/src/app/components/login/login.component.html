@@ -13,8 +13,8 @@
       </div>
     </div>
   
-    <div class="d-flex justify-content-around">
-      <div *ngIf="loginAttemptRefused == true">
+    <div class="d-flex justify-content-around" *ngIf="this.loginAttemptRefused == true">
+      <div>
         <span style="color: red">
             {{error_msg}}
         </span>

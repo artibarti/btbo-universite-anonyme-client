@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../services/course/course.service'
-import { CommonModule } from "@angular/common";
-import { Pipe, PipeTransform } from '@angular/core';
+import { SessionService } from '../../services/session/session.service'
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-course-list',
@@ -12,9 +12,16 @@ export class CourseListComponent implements OnInit {
 
   courses: Array<any>
 
-  constructor(private courseService: CourseService) { }
+  constructor(private sessionService: SessionService, private courseService : CourseService) 
+  {
+
+  }
 
   ngOnInit() {
+    /*this.courseService.getAllCoursesForUser(this.sessionService.currentUser.id)
+      .subscribe(data => {
+        this.courses = data;});*/
+
     this.courseService.getAll()
       .subscribe(data => {
         this.courses = data;});

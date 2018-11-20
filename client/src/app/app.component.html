@@ -21,10 +21,19 @@
     </div>
 </div>
 
-<div *ngIf="sessionService.authenticated == true" class="container" style="padding: 10px">
-  <div class="row" style="min-width: 500px;">
-    <app-course-list></app-course-list>
-  </div>
+<div *ngIf="sessionService.authenticated == true" class="container" style="padding: 5px">
+  <div class="row">
+    <div class="col">  
+      <app-profile></app-profile>
+      <app-course-list></app-course-list>
+    </div>
+    <div class="col">  
+      
+    </div>
+    <div class="col">  
+      
+    </div>  
+  </div>      
 </div>
 
 <app-footer></app-footer>

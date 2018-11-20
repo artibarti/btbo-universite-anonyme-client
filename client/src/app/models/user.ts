@@ -1,5 +1,12 @@
 export class User {
-    id: number;
-    username: string;
+    id: string;
+    name: string;
     email: string;
+
+    constructor() 
+    { 
+        this.id = ""; 
+        this.name = ""; 
+        this.email = "";
+    }
 }

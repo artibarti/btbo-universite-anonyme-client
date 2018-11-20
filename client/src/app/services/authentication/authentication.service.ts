@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest, HttpResponse, HttpHeaders } from '@angular/common/http'
 import { SessionService } from '../session/session.service'
+import { stringify } from '@angular/core/src/render3/util';
 
 @Injectable({
   providedIn: 'root'
@@ -16,21 +17,27 @@ export class AuthenticationService {
 
   validateRegistration(credentials) : boolean
   {
-    var registrationSuccess = false;
-
     const headers = new HttpHeaders (credentials);
     const requestHeader = {                                                                                                                                                                                 
       headers: headers, 
     };
-    
-    this.http.get("//localhost:8080/register", requestHeader).subscribe(response => {
-        if (response['email']) {
-            registrationSuccess = true;
-        } else {
-            registrationSuccess = false;
+
+    var url = "//" + this.sessionService.serverName + ":" + this.sessionService.portNumber + "/register";
+
+    this.http.get(url, requestHeader).subscribe(response => {
+        if (response['email']) 
+        {
+            this.sessionService.currentUser.email = response['email'];
+            this.sessionService.currentUser.name = response['name'];
+            this.sessionService.currentUser.id = response['id'];          
+        } 
+        else 
+        {
+        
         }
     });
-    return registrationSuccess;
+
+    return false;
   }
 
   validateLogin(credentials) : boolean
@@ -41,17 +48,19 @@ export class AuthenticationService {
       headers: headers, 
     };
     
-    this.http.get("//localhost:8080/login", requestHeader).subscribe(response => {
+    var url = "//" + this.sessionService.serverName + ":" + this.sessionService.portNumber + "/login";
+
+    this.http.get(url, requestHeader).subscribe(response => {
         if (response['email']) {
             this.sessionService.authenticated = true;
             this.sessionService.currentUser.email = response['email'];
+            this.sessionService.currentUser.name = response['name'];
             this.sessionService.currentUser.id = response['id'];
-            return true;
         } else {
             this.sessionService.authenticated = false;
-            return false;
         }
     });
+    
     return false;
   }
 

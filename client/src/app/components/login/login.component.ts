@@ -11,7 +11,6 @@ export class LoginComponent implements OnInit {
 
   credentials = {email: '', password: ''};
   loginAttemptRefused = false;
-
   error_msg = "email or password is incorrect"
 
   constructor(
@@ -29,7 +28,6 @@ export class LoginComponent implements OnInit {
   onLoginClicked() 
   {
     this.loginAttemptRefused = false;
-
     if (!this.authenticationService.validateLogin(this.credentials))
     {
       this.loginAttemptRefused = true;

@@ -6,12 +6,18 @@ import { User } from '../../models/user'
 })
 export class SessionService {
 
-  currentUser: User;
+  public currentUser: User;
   authenticated = false;
+  
+  serverName = "localhost";
+  portNumber = "8081";
 
   showLoginForm = true;
   showRegistrationForm = false;
 
-  constructor() {}
+  constructor() 
+  {    
+    this.currentUser = new User();
+  }
   
 }
