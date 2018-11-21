@@ -3,12 +3,16 @@
     <div class="card-header">
       <div class="row" style="padding: 5px">
         <div class="col" style="color: black; font-weight: bold">
-          <span style="color: #070719">{{this.sessionService.currentUser.name}}</span>
+          <span style="color: #070719">
+             > {{this.sessionService.currentUser.name}}
+          </span>
         </div>
         <div class="col" style="float: right">
           <button (click)="onEditProfileClicked()" block="true" class="btn btn-success btn-sm" type="button">Edit Profile</button>            
         </div>      
       </div>
+    </div>
+    <div class="card-body">
       <div class="row">
         <div class="col" style="color: black;">
           {{this.sessionService.currentUser.email}}

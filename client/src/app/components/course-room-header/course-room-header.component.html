@@ -3,32 +3,43 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-body-tabs">
         <li>
-          <a class="nav-link" data-toggle="tab" href="#about">About</a>
+          <a class="nav-link" data-toggle="tab" href="#about" style="color: black">About</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#stats">Statistics</a>
+          <a class="nav-link" data-toggle="tab" href="#stats" style="color: black">Statistics</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#settings">Settings</a>
+          <a class="nav-link" data-toggle="tab" href="#settings" style="color: black">Settings</a>
         </li>
       </ul>
-      <div class="tab-content">
+      <div class="tab-content" style="padding: 5px">
         <div id="about" class="tab-pane fade in active">
-          <h3>About Course</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3> > about this course</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
         </div>
         <div id="stats" class="tab-pane fade">
-          <h3>Statistics</h3>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h3> > statistics</h3>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
         </div>
         <div id="settings" class="tab-pane fade">
-          <h3>Settings</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+          <h3> > settings</h3>
+          <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+          </p>
+          <div class="row">
+            <div class="col">
+              <button (click)="onLeaveCourseClicked()" block="true" class="btn btn-danger btn-sm" type="button">Leave Course</button>            
+            </div>
+          </div>
       </div>
     </div>  
   </div>
     <div class="card-body">
-      Course room comes here
+      course room goes below
     </div>
   </div>
 </div>

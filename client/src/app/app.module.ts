@@ -23,6 +23,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CourseRoomHeaderComponent } from './components/course-room-header/course-room-header.component';
+import { TermsOfServiceComponent } from './components/terms-of-service/terms-of-service.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CourseRoomHeaderComponent } from './components/course-room-header/cours
     LoginComponent,
     RegistrationComponent,
     ProfileComponent,
-    CourseRoomHeaderComponent
+    CourseRoomHeaderComponent,
+    TermsOfServiceComponent
   ],
   imports: [
     BrowserModule,
