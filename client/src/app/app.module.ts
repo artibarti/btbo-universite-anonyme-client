@@ -24,6 +24,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ProfileComponent } from './components/profile/profile.component';
 import { CourseRoomHeaderComponent } from './components/course-room-header/course-room-header.component';
 import { TermsOfServiceComponent } from './components/terms-of-service/terms-of-service.component';
+import { AboutPopupComponent } from './components/about-popup/about-popup.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TermsOfServiceComponent } from './components/terms-of-service/terms-of-
     RegistrationComponent,
     ProfileComponent,
     CourseRoomHeaderComponent,
-    TermsOfServiceComponent
+    TermsOfServiceComponent,
+    AboutPopupComponent
   ],
   imports: [
     BrowserModule,
