@@ -22,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CourseRoomHeaderComponent } from './components/course-room-header/course-room-header.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     FooterComponent,
     LoginComponent,
     RegistrationComponent,
-    ProfileComponent
+    ProfileComponent,
+    CourseRoomHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,6 @@ import { ProfileComponent } from './components/profile/profile.component';
   ],
 
   providers: [CourseService],
-  bootstrap: [AppComponent, FooterComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
