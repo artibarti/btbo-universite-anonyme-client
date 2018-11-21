@@ -1,16 +1,24 @@
-<div class="container" style="border: 1px solid #EFF5FB; border-bottom: 2px solid #CEE3F6; font-size: 12px; background-color: #EFF8FB">  
-  <div class="row">
-    <div class="col" style="color: black; font-weight: bold">
-        <a href="">{{this.sessionService.currentUser.name}}</a>
-        {{this.sessionService.currentUser.email}}
-    </div>
-    <div class="col" style="float: right">
-        <button mdbBtn (click)="onEditClicked()" color="primary" block="true" class="my-3" type="button">Edit Profile</button>
+<div class="container">  
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      <div class="row" style="padding: 5px">
+        <div class="col" style="color: black; font-weight: bold">
+          <a href="">{{this.sessionService.currentUser.name}}</a>
+        </div>
+        <div class="col" style="float: right">
+          <button (click)="onEditProfileClicked()" block="true" class="btn btn-success btn-sm" type="button">Edit Profile</button>            
+        </div>      
+      </div>
+      <div class="row">
+        <div class="col" style="color: black;">
+          {{this.sessionService.currentUser.email}}
+        </div>
+      </div>      
+      <div class="row">
+        <div class="col" style="color: black;">
+          Points: 2466.3
+        </div>
+      </div>
     </div>    
-  </div>      
-  <div class="row">
-    <div class="col" style="color: black; font-weight: bolder">
-        Points: 2466.3
-    </div>
   </div>
 </div>

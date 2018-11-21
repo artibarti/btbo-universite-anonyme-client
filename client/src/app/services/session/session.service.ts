@@ -10,7 +10,7 @@ export class SessionService {
   authenticated = false;
   
   serverName = "localhost";
-  portNumber = "8081";
+  portNumber = "8080";
 
   showLoginForm = true;
   showRegistrationForm = false;

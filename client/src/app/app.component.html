@@ -23,8 +23,9 @@
 
 <div *ngIf="sessionService.authenticated == true" class="container" style="padding: 5px">
   <div class="row">
-    <div class="col">  
+    <div class="col" style="padding: 5px">  
       <app-profile></app-profile>
+      <br>
       <app-course-list></app-course-list>
     </div>
     <div class="col">  

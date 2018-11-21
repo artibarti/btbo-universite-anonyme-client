@@ -1,53 +1,55 @@
-<div class="container" style="border:1px solid #EFF5FB; background-color: #EFF8FB">
+<div class="container">
   
-  <div class="row" style="padding: 3px">
-    <div class="col" style="color: black; font-weight: bold">
-        <span class="align-middle">My subscribtions</span>
-    </div>
-    <div class="col" style="color: black; font-weight: bold">
-        <button mdbBtn (click)="onEditClicked()" color="success" block="true" class="my-1" type="button">New</button>            
-    </div>
-  </div>      
-  
-  <div class="row">
-    <div class="col">
-      <form role="search">
-        <div class="input-group">
-          <input type="text" class="form-control" [(ngModel)]="courseFilter" placeholder="Find course..." name="courseFilter">
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      <div class="row" style="padding: 5px">
+        <div class="col" style="color: black; font-weight: bold">
+          <span class="align-middle">Subscribtions</span>
         </div>
-      </form>
+          <div class="col" style="color: black; font-weight: bold">
+            <button (click)="onNewCourseClicked()" block="true" class="btn btn-success btn-sm" type="button">New Course</button>            
+          </div>
+        </div>            
+        <div class="row">
+          <div class="col">
+            <form role="search">
+              <div class="input-group">
+              <input type="text" class="form-control" [(ngModel)]="courseFilter" placeholder="Find course..." name="courseFilter">
+            </div>
+          </form>
+        </div>
+      </div>        
     </div>
+      <ul class="list-group">
+        <li *ngFor="let course of courses" class="list-group-item">
+          <div class="container">
+            <div class="row" style="font-size: 15px">
+              <div class="col" style="color: #070719">
+                {{course.name}}
+              </div>
+              <div class="col" style="border: 1px solid lightgray;">
+                <mdb-icon icon="heart"style="color: #AA2222"></mdb-icon>
+                {{likes}} 5.4
+              </div>  
+            </div>
+            <div class="row" style="font-size: 12px">
+              <div class="col">
+                Owner:
+              </div>
+              <div class="col">
+                {{owner}} <a href="">Kylian Parker</a>
+              </div>  
+            </div>
+            <div class="row" style="font-size: 12px">
+              <div class="col">
+                Subs:
+              </div>
+              <div class="col">
+                {{subs}} 31
+              </div>  
+            </div>
+          </div>
+        </li>
+      </ul>    
   </div>
-
-  <ul class="list-group">
-    <li *ngFor="let course of courses" class="list-group-item">
-      <div class="container">
-        <div class="row" style="font-size: 15px">
-          <div class="col" style="color: #070719">
-            {{course.name}}
-          </div>
-          <div class="col" style="border: 1px solid lightgray;">
-              <mdb-icon icon="heart"style="color: #AA2222"></mdb-icon>
-              {{likes}} 5.4
-          </div>  
-        </div>
-        <div class="row" style="font-size: 12px">
-          <div class="col">
-            Owner:
-          </div>
-          <div class="col">
-              {{owner}} <a href="">Kylian Parker</a>
-          </div>  
-        </div>
-        <div class="row" style="font-size: 12px">
-          <div class="col">
-            Subs:
-          </div>
-          <div class="col">
-              {{subs}} 31
-          </div>  
-        </div>
-      </div>
-    </li>
-  </ul>
 </div>
