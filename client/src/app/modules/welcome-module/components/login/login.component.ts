@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication/authentication.service'
 import { SessionService } from '../../../../shared/services/session/session.service';
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService, 
-    private sessionService: SessionService) {}
+    private sessionService: SessionService,
+    private router: Router) {}
 
   ngOnInit() {}
  
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
     if (!this.authenticationService.validateLogin(this.credentials))
     {
       this.loginAttemptRefused = true;
+      this.router.navigate(['/home'])
     }
   }
 

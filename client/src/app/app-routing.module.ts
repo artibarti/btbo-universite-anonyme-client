@@ -10,6 +10,10 @@ const routes: Routes =
   {
     path: 'home',
     loadChildren: './modules/home-module/home.module#HomeModule',
+  },
+  {
+    path: '**',
+    redirectTo: '/login'
   }
 ];
 
