@@ -1,0 +1,39 @@
+<!-- Default form login -->
+<div class=container>
+  <div class="row justify-content-center">
+    <form class="text-center border border-light p-5">
+      <p class="h4 mb-4">Login</p>
+      <input type="email" id="emailInput" name="email" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="credentials.email">  
+      <input type="password" id="passwordInput" name="password" class="form-control mb-4" placeholder="Password" [(ngModel)]="credentials.password">  
+      <div class="d-flex justify-content-around">
+        <div>
+          <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+        </div>
+      </div>  
+      <div class="d-flex justify-content-around" *ngIf="this.loginAttemptRefused == true">
+        <div>
+          <span style="color: red">
+              {{error_msg}}
+          </span>
+        </div>
+      </div>
+      <button mdbBtn (click)="onLoginClicked()" color="info" block="true" class="my-4" type="button">Sign in</button>
+      <p>Not a member?
+          <button mdbBtn routerLink="/register" routerLinkActive="active" color="info" block="true" class="my-3" type="button">Register</button>
+      </p>
+      <p>or sign in with:</p>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon icon="facebook"></mdb-icon>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon icon="twitter"></mdb-icon>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon icon="linkedin"></mdb-icon>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon icon="github"></mdb-icon>
+      </a>
+    </form>
+  </div>
+</div>

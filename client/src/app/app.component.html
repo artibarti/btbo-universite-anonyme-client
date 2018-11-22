@@ -2,37 +2,6 @@
 
 <app-toolbar></app-toolbar>
 
-<div *ngIf="sessionService.authenticated == false" class="container" style="padding: 10px">
-    <div class="row" style="min-width: 500px;">
-      <div class="col-8" [ngStyle]="{'background' : 'url(./assets/images/bg.svg) no-repeat'}">
-        <br><br>
-        <h1 style="color: black; background: whitesmoke;">> sign up today</h1>           
-        <br><br>
-        <h1 style="color: black; background: whitesmoke;">> > bring your courses online</h1>           
-        <br><br>
-        <h1 style="color: black; background: whitesmoke;">> > > share knowledge</h1>           
-      </div>
-      <div *ngIf="sessionService.showLoginForm == true" class="col">
-        <app-login></app-login>            
-      </div>
-      <div *ngIf="sessionService.showRegistrationForm == true" class="col">
-        <app-registration></app-registration>            
-      </div>
-    </div>
-</div>
-
-<div *ngIf="sessionService.authenticated == true" class="container" style="padding: 5px;">
-  <div class="row">
-    <div class="col-xs-2">  
-      <app-profile></app-profile>
-      <br>
-      <app-course-list></app-course-list>
-    </div>
-    <div class="d-flex flex-column col" style="background-color: #FeFeFe">
-      <hr>
-      <app-course-room-header></app-course-room-header>
-    </div>
-  </div>      
-</div>
+<router-outlet></router-outlet>
 
 <app-footer></app-footer>

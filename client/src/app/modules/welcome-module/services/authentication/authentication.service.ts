@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest, HttpResponse, HttpHeaders } from '@angular/common/http'
-import { SessionService } from '../session/session.service'
-import { stringify } from '@angular/core/src/render3/util';
+import { SessionService } from '../../../../shared/services/session/session.service'
+import { Observable } from 'rxjs/Observable'
 
 @Injectable({
   providedIn: 'root'
@@ -60,7 +60,7 @@ export class AuthenticationService {
             this.sessionService.authenticated = false;
         }
     });
-    
+
     return false;
   }
 

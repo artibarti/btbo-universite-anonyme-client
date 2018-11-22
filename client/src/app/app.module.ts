@@ -2,29 +2,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
-// bootstrap
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-// app component
+// app
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// my modules
+import { WelcomeModule } from './modules/welcome-module/welcome.module'
+
 // services
-import { CourseService} from './services/course/course.service'
-import { AuthenticationService } from './services/authentication/authentication.service'
-import { SessionService } from './services/session/session.service'
+import { CourseService} from './shared/services/course/course.service'
+import { SessionService } from './shared/services/session/session.service'
 
 // components
-import { CourseListComponent } from './components/course-list/course-list.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegistrationComponent } from './components/registration/registration.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { CourseRoomHeaderComponent } from './components/course-room-header/course-room-header.component';
-import { TermsOfServiceComponent } from './components/terms-of-service/terms-of-service.component';
-import { AboutPopupComponent } from './components/about-popup/about-popup.component';
+import { CourseListComponent } from './shared/components/course-list/course-list.component';
+import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { ProfileComponent } from './shared/components/profile/profile.component';
+import { CourseRoomHeaderComponent } from './shared/components/course-room-header/course-room-header.component';
+import { AboutPopupComponent } from './shared/components/about-popup/about-popup.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +29,12 @@ import { AboutPopupComponent } from './components/about-popup/about-popup.compon
     CourseListComponent,
     ToolbarComponent,
     FooterComponent,
-    LoginComponent,
-    RegistrationComponent,
     ProfileComponent,
     CourseRoomHeaderComponent,
-    TermsOfServiceComponent,
     AboutPopupComponent
   ],
   imports: [
+    WelcomeModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

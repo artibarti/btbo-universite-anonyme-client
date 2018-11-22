@@ -1,0 +1,49 @@
+<div class=container>
+  <div class="row justify-content-center">
+    <form class="text-center border border-light p-5">
+      <p class="h4 mb-4">Sign up</p>
+      <div class="form-row mb-4">
+        <div class="col">
+          <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+          <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+        </div>
+      </div>
+      <input type="email" id="emailInput" name="email" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="credentials.email">
+      <input type="password" id="passwordInput" name="password" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)]="credentials.password">
+      <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        At least 8 characters and 1 digit
+      </small>
+      <div class="d-flex justify-content-around">
+          <div *ngIf="registrationAttemptRefused == true">
+            <span style="color: red">
+              {{error_msg}}
+            </span>
+          </div>
+      </div>
+      <button mdbBtn (click)="onRegistrationClicked()" color="info" block="true" class="my-4" type="submit">Sign up</button>
+      <p>or sign up with:</p>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon icon="facebook"></mdb-icon>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon icon="twitter"></mdb-icon>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon icon="linkedin"></mdb-icon>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon icon="github"></mdb-icon>
+      </a>
+      <hr>
+      <p>By clicking
+        <em>Sign up</em> you agree to our 
+        <a href="#termsofservice" class="" data-toggle="modal" data-target="#termsofservice">
+            terms of service. 
+        </a>        
+      </p>
+      <app-terms-of-service></app-terms-of-service>
+    </form>
+  </div>
+</div>
