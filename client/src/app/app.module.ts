@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 
 // my modules
 import { WelcomeModule } from './modules/welcome-module/welcome.module'
+import { HomeModule } from './modules/home-module/home.module'
 
 // services
 import { CourseService} from './shared/services/course/course.service'
@@ -35,6 +36,7 @@ import { AboutPopupComponent } from './shared/components/about-popup/about-popup
   ],
   imports: [
     WelcomeModule,
+    HomeModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
