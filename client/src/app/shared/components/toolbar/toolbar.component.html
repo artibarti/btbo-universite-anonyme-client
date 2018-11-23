@@ -22,8 +22,8 @@
           <a class="dropdown-item" (click)="onLogoutClicked()">Logout</a>
         </div>
       </div>
-      <button routerLink="/login" routerLinkActive="active" style="margin: 5px" mdbBtn (click)="onLoginClicked()" *ngIf="sessionService.authenticated == false" type="button" class="btn btn-primary navbar-btn">Login</button>
-      <button routerLink="/register" routerLinkActive="active" style="margin: 5px" mdbBtn (click)="onSignUpClicked()" *ngIf="sessionService.authenticated == false" type="button" class="btn btn-primary navbar-btn">SignUp</button>
+      <button routerLink="/login" routerLinkActive="active" style="margin: 5px" mdbBtn *ngIf="sessionService.authenticated == false" type="button" class="btn btn-primary navbar-btn">Login</button>
+      <button routerLink="/register" routerLinkActive="active" style="margin: 5px" mdbBtn *ngIf="sessionService.authenticated == false" type="button" class="btn btn-primary navbar-btn">SignUp</button>
       <a class="nav-item nav-link" href="https://github.com/artibarti/btbo-universite-anonyme-client" target="_blank">
         <i class="fa fa-github"></i>
       </a>

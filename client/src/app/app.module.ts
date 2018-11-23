@@ -13,25 +13,19 @@ import { WelcomeModule } from './modules/welcome-module/welcome.module'
 import { HomeModule } from './modules/home-module/home.module'
 
 // services
-import { CourseService} from './shared/services/course/course.service'
 import { SessionService } from './shared/services/session/session.service'
 
 // components
-import { CourseListComponent } from './shared/components/course-list/course-list.component';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { ProfileComponent } from './shared/components/profile/profile.component';
-import { CourseRoomHeaderComponent } from './shared/components/course-room-header/course-room-header.component';
 import { AboutPopupComponent } from './shared/components/about-popup/about-popup.component';
+import { AuthGuard } from './shared/guards/auth.guard'
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseListComponent,
     ToolbarComponent,
     FooterComponent,
-    ProfileComponent,
-    CourseRoomHeaderComponent,
     AboutPopupComponent
   ],
   imports: [
@@ -44,7 +38,7 @@ import { AboutPopupComponent } from './shared/components/about-popup/about-popup
     MDBBootstrapModule.forRoot()
   ],
 
-  providers: [CourseService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

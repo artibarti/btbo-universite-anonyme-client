@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs/Observable'
-import { SessionService } from '../../services/session/session.service'
+import { SessionService } from '../../../../shared/services/session/session.service'
 
 @Injectable()
 export class CourseService {
