@@ -4,13 +4,13 @@
       <p class="h4 mb-4">Sign up</p>
       <div class="form-row mb-4">
         <div class="col">
-          <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
+          <input type="text" id="firstNameInput" name="firstname" class="form-control" placeholder="First name" [(ngModel)]="credentials.firstname">
         </div>
         <div class="col">
-          <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+          <input type="text" id="lastNameInput" name="lastname" class="form-control" placeholder="Last name" [(ngModel)]="credentials.lastname">
         </div>
       </div>
-      <input type="email" id="usernameInput" name="username" class="form-control mb-4" placeholder="Username" [(ngModel)]="credentials.username">
+      <input type="text" id="usernameInput" name="username" class="form-control mb-4" placeholder="Username" [(ngModel)]="credentials.username">
       <input type="email" id="emailInput" name="email" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="credentials.email">
       <input type="password" id="passwordInput" name="password" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)]="credentials.password">
       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">

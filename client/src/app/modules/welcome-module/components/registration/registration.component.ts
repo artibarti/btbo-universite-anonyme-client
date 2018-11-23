@@ -8,7 +8,15 @@ import { AuthenticationService } from '../../services/authentication/authenticat
 })
 export class RegistrationComponent implements OnInit {
 
-  credentials = {email: '', password: '', username: ''};
+  credentials = 
+  {
+    email: '', 
+    password: '', 
+    username: '',
+    firstname: '',
+    lastname: ''
+  };
+  
   registrationAttemptRefused = false;
 
   error_msg = "email address is already in use"
