@@ -14,39 +14,40 @@ export class AuthenticationService {
     return password;
   }
 
-  validateRegistration(credentials): boolean {
+  validateRegistration(credentials) {
     const headers = new HttpHeaders(credentials);
     const requestHeader = {
       headers: headers,
     };
 
-    var url = "//" + this.sessionService.serverName + ":" + this.sessionService.portNumber + "/register";
+    var url = this.sessionService.serverName + ":" + this.sessionService.portNumber + "/register";
 
     this.http.get(url, requestHeader).subscribe(response => {
-      if (response['email']) {
-        this.sessionService.currentUser.email = response['email'];
-        this.sessionService.currentUser.name = response['name'];
-        this.sessionService.currentUser.id = response['id'];
+      if (response['email']) 
+      {
+        console.log("registration success");        
+      } else 
+      {
+        console.log("registration failed");
       }
-      else {
-
-      }
-    });
-
-    return false;
+    },
+      error => {
+        console.log(error)
+      },
+      () => {
+        this.router.navigate(['login'])
+      });
   }
 
 
-  validateLogin(credentials): boolean {
+  validateLogin(credentials) {
 
     const headers = new HttpHeaders(credentials);
     const requestHeader = {
       headers: headers,
     };
 
-    var url = "//" + this.sessionService.serverName + ":" + this.sessionService.portNumber + "/login";
-
-
+    var url = this.sessionService.serverName + ":" + this.sessionService.portNumber + "/login";
 
     this.http.get(url, requestHeader).subscribe(response => {
       if (response['email']) {
@@ -65,8 +66,6 @@ export class AuthenticationService {
         this.router.navigate(['home'])
       });
 
-    //return this.sessionService.authenticated;
-    return true;
   }
 
   constructor(private http: HttpClient, private sessionService: SessionService, private router:Router) {

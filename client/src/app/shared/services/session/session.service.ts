@@ -9,8 +9,8 @@ export class SessionService {
   public currentUser: User;
   authenticated = false;
   
-  serverName = "localhost";
-  portNumber = "8080";
+  serverName = "http://192.168.1.2";
+  portNumber = "8081";
 
   showLoginForm = true;
   showRegistrationForm = false;

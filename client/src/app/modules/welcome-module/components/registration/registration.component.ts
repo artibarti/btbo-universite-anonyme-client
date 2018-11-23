@@ -17,12 +17,7 @@ export class RegistrationComponent implements OnInit {
 
   onRegistrationClicked() 
   {
-    this.registrationAttemptRefused = false;
-
-    if (!this.authenticationService.validateRegistration(this.credentials))
-    {
-      this.registrationAttemptRefused = true;
-    }
+    this.authenticationService.validateRegistration(this.credentials);
   }
 
   ngOnInit() {}

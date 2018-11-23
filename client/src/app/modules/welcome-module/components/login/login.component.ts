@@ -20,21 +20,10 @@ export class LoginComponent implements OnInit {
     private router: Router) {}
 
   ngOnInit() {}
- 
-  onRegisterClicked()
-  {
-    this.sessionService.showLoginForm = false;
-    this.sessionService.showRegistrationForm = true;    
-  }
 
   onLoginClicked() 
   {
-    this.loginAttemptRefused = false;
-    if (!this.authenticationService.validateLogin(this.credentials))
-    {
-      this.loginAttemptRefused = false;
-      this.router.navigate(['home'])
-    }
+    this.authenticationService.validateLogin(this.credentials)
   }
 
 }
