@@ -8,7 +8,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// my modules
+// my modulesproviders: [AuthGuardService]
 import { WelcomeModule } from './modules/welcome-module/welcome.module'
 import { HomeModule } from './modules/home-module/home.module'
 
@@ -19,6 +19,7 @@ import { SessionService } from './shared/services/session/session.service'
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { AboutPopupComponent } from './shared/components/about-popup/about-popup.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 @NgModule({
   declarations: [

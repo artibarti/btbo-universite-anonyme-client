@@ -11,9 +11,7 @@ const routes: Routes =
   {
     path: 'home',
     loadChildren: './modules/home-module/home.module#HomeModule',
-    canLoad: [AuthGuard],
     canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard]
   },
   {
     path: '**',
@@ -23,6 +21,7 @@ const routes: Routes =
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }
