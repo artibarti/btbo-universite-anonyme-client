@@ -10,7 +10,7 @@ import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanAc
 })
 export class LoginComponent implements OnInit {
 
-  credentials = {email: '', password: ''};
+  credentials = {username: '', password: ''};
   loginAttemptRefused = false;
   error_msg = "email or password is incorrect"
 
