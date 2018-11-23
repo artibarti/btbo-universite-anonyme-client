@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SessionService } from './shared/services/session/session.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,5 @@ import { SessionService } from './shared/services/session/session.service'
 })
 export class AppComponent 
 {
-  constructor(private sessionService: SessionService) {}
+  constructor(private sessionService: SessionService, router: Router) {}
 }

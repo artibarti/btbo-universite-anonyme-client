@@ -30,10 +30,10 @@ export class LoginComponent implements OnInit {
   onLoginClicked() 
   {
     this.loginAttemptRefused = false;
-    if (this.authenticationService.validateLogin(this.credentials))
+    if (!this.authenticationService.validateLogin(this.credentials))
     {
-      this.loginAttemptRefused = true;
-      this.router.navigate(['/home'])
+      this.loginAttemptRefused = false;
+      this.router.navigate(['home'])
     }
   }
 

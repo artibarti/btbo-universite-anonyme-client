@@ -10,8 +10,8 @@ const routes: Routes =
   },
   {
     path: 'home',
+    canLoad: [AuthGuard],
     loadChildren: './modules/home-module/home.module#HomeModule',
-    canActivate: [AuthGuard],
   },
   {
     path: '**',
@@ -24,4 +24,7 @@ const routes: Routes =
   exports: [RouterModule],
   providers: [AuthGuard]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule 
+{
+
+}
