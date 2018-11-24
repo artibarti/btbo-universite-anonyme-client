@@ -10,13 +10,13 @@
       <div class="row">
         <form role="search" style="float: none; margin: 0 auto;">
           <div class="input-group">
-            <input type="text" class="form-control" [(ngModel)]="courseFilter" placeholder="Find course..." name="courseFilter">
+            <input type="text" class="form-control" [(ngModel)]="myCoursesFilter" placeholder="Find course..." name="myCoursesFilter">
           </div>
         </form>
       </div>
     </div>
     <div class="card-body">
-      <div *ngFor="let course of courses">
+      <div *ngFor="let course of courses | filter: myCoursesFilter">
         <a href="#" style="font-weight: bold; font-size: 12px">
           <i class="fa fa-bookmark"></i> {{course.name}}
         </a>
@@ -35,13 +35,13 @@
       <div class="row">
         <form role="search" style="float: none; margin: 0 auto;">
           <div class="input-group">
-            <input type="text" class="form-control" [(ngModel)]="courseFilter" placeholder="Find course..." name="courseFilter">
+            <input type="text" class="form-control" [(ngModel)]="subsFilter" placeholder="Find course..." name="subsFilter">
           </div>
         </form>
       </div>
     </div>
     <div class="card-body">
-      <a *ngFor="let course of courses" href="#" style="font-weight: bold; font-size: 12px">
+      <a *ngFor="let course of courses | filter: subsFilter" href="#" style="font-weight: bold; font-size: 12px">
         <i class="fa fa-bookmark"></i> {{course.name}}
         <br>
       </a>
