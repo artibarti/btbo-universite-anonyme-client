@@ -7,11 +7,15 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CourseRoomHeaderComponent } from './components/course-room-header/course-room-header.component'
 import { CourseService } from './services/course/course.service';
 import { CourseComponent } from './course.component';
+import { SessionListComponent } from './components/session-list/session-list.component'
+import { FilterPipe } from './components/session-list/session-list.component'
 
 @NgModule({
   declarations: [
     CourseComponent,
     CourseRoomHeaderComponent,
+    SessionListComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,

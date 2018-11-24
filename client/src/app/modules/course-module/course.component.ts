@@ -9,8 +9,6 @@ import { Router } from '@angular/router';
 })
 export class CourseComponent 
 {
-  id: number;
-
   constructor(private sessionService: SessionService, private router: Router) 
   {
     this.router.navigate(['course/:id/room'])
