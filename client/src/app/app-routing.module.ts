@@ -5,6 +5,10 @@ import { AuthGuard } from './shared/guards/auth.guard';
 const routes: Routes = 
 [
   {
+    path: 'register',
+    loadChildren: './modules/welcome-module/welcome.module#WelcomeModule',
+  },
+  {
     path: 'login',
     loadChildren: './modules/welcome-module/welcome.module#WelcomeModule',
   },
@@ -12,6 +16,11 @@ const routes: Routes =
     path: 'home',
     canLoad: [AuthGuard],
     loadChildren: './modules/home-module/home.module#HomeModule',
+  },
+  {
+    path: 'course',
+    canLoad: [AuthGuard],
+    loadChildren: './modules/course-module/course.module#CourseModule',
   },
   {
     path: '**',

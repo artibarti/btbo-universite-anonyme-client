@@ -29,7 +29,7 @@
       <div class="row" style="padding: 5px; color: black; font-weight: bold">
         <div class=" col">
           <span class="float-left">My Courses</span>
-          <button (click)="onNewCourseClicked()" block="true" class="btn float-right btn-success btn-sm" type="button">New Course</button>
+          <button routerLink="/home" routerLinkActive="active" block="true" class="btn float-right btn-success btn-sm" type="button">New Course</button>
         </div>
       </div>
       <div class="row">
@@ -41,42 +41,10 @@
       </div>
     </div>
     <div class="card-body">
-      <a *ngFor="let course of courses | filter: subsFilter" href="#" style="font-weight: bold; font-size: 12px">
+      <a *ngFor="let course of courses | filter: subsFilter" [routerLink]="['/course', course.id]" routerLinkActive="active" style="font-weight: bold; font-size: 12px">
         <i class="fa fa-bookmark"></i> {{course.name}}
         <br>
       </a>
     </div>
   </div>  
 </div>
-
-<!--
-    <div class="card-body">
-      <ul class="list-group">
-        <li *ngFor="let course of courses" class="list-group-item">
-          <div class="container">
-            <div class="row" style="font-size: 15px">
-              <div class="col" style="color: #070719">
-                {{course.name}}
-              </div>
-              <div class="col" style="border: 1px solid lightgray;">
-                <mdb-icon icon="heart" style="color: #AA2222"></mdb-icon>
-                {{likes}} 5.4
-              </div>
-            </div>
-            <div class="row" style="font-size: 12px">
-              <div class="col">
-                Owner:
-              </div>
-              <div class="col">
-                {{owner}} <a href="">Kylian Parker</a>
-              </div>
-            </div>
-            <div class="row" style="font-size: 12px">
-              <div class="col">
-                {{subs}} 31 subs
-              </div>
-            </div>
-          </li>
-        </ul>        
-      </div>
--->

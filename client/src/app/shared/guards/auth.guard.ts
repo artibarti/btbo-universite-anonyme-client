@@ -14,11 +14,13 @@ export class AuthGuard implements CanActivate, CanLoad {
   {
     if (!this.sessionService.authenticated)
     {
+      console.log("canActivate called -> access denied")
       this.router.navigate(['login'])
       return false;
     }
     else
     {
+      console.log("canActivate called -> access granted")
       return true;
     }
   }
@@ -27,11 +29,13 @@ export class AuthGuard implements CanActivate, CanLoad {
   {
     if (!this.sessionService.authenticated)
     {
+      console.log("canLoad called -> access denied")
       this.router.navigate(['login'])
       return false;
     }
     else
     {
+      console.log("canLoad called -> access granted")
       return true;
     }
   }
