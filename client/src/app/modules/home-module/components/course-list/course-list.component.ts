@@ -18,10 +18,12 @@ export class CourseListComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     /*this.courseService.getAllCoursesForUser(this.sessionService.currentUser.id)
       .subscribe(data => {
         this.courses = data;});*/
-    this.courseService.getAll()
+    
+        this.courseService.getAll()
       .subscribe(data => {
         this.courses = data;});
   }

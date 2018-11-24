@@ -2,16 +2,17 @@
   <a class="navbar-brand" href="" style="font: 2em  Lucida Console;">{{title}}</a>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/">Home</a>
+      <a *ngIf="sessionService.authenticated == true" routerLink="/home/news" routerLinkActive="active" class="nav-item nav-link active">Home</a>
       <a href="#about" class="nav-item nav-link active" data-toggle="modal" data-target="#about">About</a>
-      <a class="nav-item nav-link active" href="/">Explore</a>
+      <a *ngIf="sessionService.authenticated == true" routerLink="home/discover" routerLinkActive="active" class="nav-item nav-link active" href="/">Explore</a>
+      <a *ngIf="sessionService.authenticated == true" routerLink="home/news" routerLinkActive="active" class="nav-item nav-link active" href="/">Activity</a>
     </div>
   </div>
   <div class="navbar-expand ml-auto navbar-nav">
     <div class="navbar-nav">
       <div class="dropdown" *ngIf="sessionService.authenticated == true">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-bell"></i>
+        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-bell" style="color: white"></i>
         </a>      
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="#">Notifications</a>
@@ -19,11 +20,24 @@
           <a class="dropdown-item" href="#">Profile</a>
           <div class="dropdown-divider"></div>          
           <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" (click)="onLogoutClicked()">Logout</a>
+          <a class="dropdown-item" role="link" (click)="onLogoutClicked()">Logout</a>
+        </div>
+      </div>
+      <div class="dropdown" *ngIf="sessionService.authenticated == true">
+        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-plus" style="color: white"></i>
+        </a>      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">Create Course</a>
+          <a class="dropdown-item" href="#">Manage Courses</a>
         </div>
       </div>
       <button routerLink="/login" routerLinkActive="active" style="margin: 5px" mdbBtn *ngIf="sessionService.authenticated == false" type="button" class="btn btn-primary navbar-btn">Login</button>
       <button routerLink="/register" routerLinkActive="active" style="margin: 5px" mdbBtn *ngIf="sessionService.authenticated == false" type="button" class="btn btn-primary navbar-btn">SignUp</button>
+      <form *ngIf="sessionService.authenticated == true" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
       <a class="nav-item nav-link" href="https://github.com/artibarti/btbo-universite-anonyme-client" target="_blank">
         <i class="fa fa-github"></i>
       </a>

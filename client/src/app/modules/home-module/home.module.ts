@@ -10,14 +10,17 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { CourseRoomHeaderComponent } from './components/course-room-header/course-room-header.component'
 import { ProfileComponent } from './components/profile/profile.component'
 import { CourseService } from './services/course/course.service';
-
+import { NewsFeedComponent } from './components/news-feed/news-feed.component';
+import { DiscoverCoursesComponent } from './components/discover-courses/discover-courses.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CourseListComponent,
     CourseRoomHeaderComponent,
-    ProfileComponent
+    ProfileComponent,
+    NewsFeedComponent,
+    DiscoverCoursesComponent
   ],
   imports: [
     CommonModule,

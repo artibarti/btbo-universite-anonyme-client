@@ -1,25 +1,56 @@
 <div class="container">
-  
   <div class="card" style="width: 18rem;">
     <div class="card-header">
-      <div class="row" style="padding: 5px">
-        <div class="col" style="color: black; font-weight: bold">
-          <span class="align-middle">Subscribtions</span>
+      <div class="row" style="padding: 5px; color: black; font-weight: bold">
+        <div class=" col">
+          <span class="float-left">Subscribtions</span>
+          <button routerLink="discover" routerLinkActive="active" block="true" class="btn float-right btn-success btn-sm" type="button">Discover</button>
         </div>
-          <div class="col" style="color: black; font-weight: bold">
-            <button (click)="onNewCourseClicked()" block="true" class="btn btn-success btn-sm" type="button">New Course</button>            
+      </div>
+      <div class="row">
+        <form role="search" style="float: none; margin: 0 auto;">
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="courseFilter" placeholder="Find course..." name="courseFilter">
           </div>
-        </div>            
-        <div class="row">
-          <div class="col">
-            <form role="search">
-              <div class="input-group">
-              <input type="text" class="form-control" [(ngModel)]="courseFilter" placeholder="Find course..." name="courseFilter">
-            </div>
-          </form>
-        </div>
-      </div>        
+        </form>
+      </div>
     </div>
+    <div class="card-body">
+      <div *ngFor="let course of courses">
+        <a href="#" style="font-weight: bold; font-size: 12px">
+          <i class="fa fa-bookmark"></i> {{course.name}}
+        </a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      <div class="row" style="padding: 5px; color: black; font-weight: bold">
+        <div class=" col">
+          <span class="float-left">My Courses</span>
+          <button (click)="onNewCourseClicked()" block="true" class="btn float-right btn-success btn-sm" type="button">New Course</button>
+        </div>
+      </div>
+      <div class="row">
+        <form role="search" style="float: none; margin: 0 auto;">
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="courseFilter" placeholder="Find course..." name="courseFilter">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card-body">
+      <a *ngFor="let course of courses" href="#" style="font-weight: bold; font-size: 12px">
+        <i class="fa fa-bookmark"></i> {{course.name}}
+        <br>
+      </a>
+    </div>
+  </div>  
+</div>
+
+<!--
+    <div class="card-body">
       <ul class="list-group">
         <li *ngFor="let course of courses" class="list-group-item">
           <div class="container">
@@ -28,9 +59,9 @@
                 {{course.name}}
               </div>
               <div class="col" style="border: 1px solid lightgray;">
-                <mdb-icon icon="heart"style="color: #AA2222"></mdb-icon>
+                <mdb-icon icon="heart" style="color: #AA2222"></mdb-icon>
                 {{likes}} 5.4
-              </div>  
+              </div>
             </div>
             <div class="row" style="font-size: 12px">
               <div class="col">
@@ -38,18 +69,14 @@
               </div>
               <div class="col">
                 {{owner}} <a href="">Kylian Parker</a>
-              </div>  
+              </div>
             </div>
             <div class="row" style="font-size: 12px">
               <div class="col">
-                Subs:
+                {{subs}} 31 subs
               </div>
-              <div class="col">
-                {{subs}} 31
-              </div>  
             </div>
-          </div>
-        </li>
-      </ul>    
-  </div>
-</div>
+          </li>
+        </ul>        
+      </div>
+-->

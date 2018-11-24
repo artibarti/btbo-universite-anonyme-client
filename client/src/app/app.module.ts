@@ -27,7 +27,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
     AppComponent,
     ToolbarComponent,
     FooterComponent,
-    AboutPopupComponent,
+    AboutPopupComponent
   ],
   imports: [
     WelcomeModule,

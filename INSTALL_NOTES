@@ -29,6 +29,7 @@ Install required packages
   npm i angular-bootstrap-md --save 
   npm install --save-dev @types/chart.js
   npm install --save chart.js
+  npm install --save sha256
 
 To list all packages installed with npm type
 

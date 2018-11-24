@@ -1,0 +1,25 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <span class="float-left" style="font-weight: bold">Activity</span>
+    </div>
+    <div class="col">
+      <a routerLink="/home/discover" routerLinkActive="active" class="float-right">Discover Courses</a>
+    </div>
+  </div>  
+  <hr>
+  <div class="row" *ngFor="let course of courses">
+
+  </div>
+  <hr>
+  <div class="row">
+    <span class="float-left" style="color: grey; font-size: 12px">
+      <p>
+        ProTip! The content in your news feed depends on the activity in your courses and subs!
+        <br>
+        <a routerLink="/home/discover" routerLinkActive="active">Discover</a> courses to keep your news feed fresh af!
+      </p>  
+    </span>
+  </div> 
+</div>
