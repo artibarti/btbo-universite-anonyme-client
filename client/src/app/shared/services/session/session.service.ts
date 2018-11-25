@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { User } from '../../models/user'
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-// import { sha256 } from 'js-sha256';
-// import { log } from 'util';
 import * as CryptoJS from 'crypto-js'
 
 @Injectable({
@@ -18,9 +16,10 @@ export class SessionService {
 
   hashPasswd(password: string): string 
   {
-    var hash = CryptoJS.SHA256(password + "d84b7eb1");
+    var salt = "d84b7eb1";
+    var hash = CryptoJS.SHA256(password + salt);
     var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
-    return hashInBase64;
+    return hashInBase64 + '#' + salt;
   }
 
   validateRegistration(credentials) {
