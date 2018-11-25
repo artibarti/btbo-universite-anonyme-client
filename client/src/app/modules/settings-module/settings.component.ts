@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SessionService } from '../../shared/services/session/session.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'settings-root',
@@ -8,5 +9,8 @@ import { SessionService } from '../../shared/services/session/session.service'
 })
 export class SettingsComponent 
 {
-  constructor(private sessionService: SessionService) {}
+  constructor(private sessionService: SessionService, private router: Router) 
+  {
+    this.router.navigate(['/settings/profile']);
+  }
 }

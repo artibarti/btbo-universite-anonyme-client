@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { User } from '../../models/user'
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+// import { sha256 } from 'js-sha256';
+// import { log } from 'util';
+import * as CryptoJS from 'crypto-js'
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +15,12 @@ export class SessionService {
   authenticated = false;  
   serverName = "//localhost";
   portNumber = "8080";
-  
-  hashPasswd(password: String): String {
-    return password;
+
+  hashPasswd(password: string): string 
+  {
+    var hash = CryptoJS.SHA256(password + "d84b7eb1");
+    var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
+    return hashInBase64;
   }
 
   validateRegistration(credentials) {
@@ -71,6 +77,7 @@ export class SessionService {
       });
     */
 
+    console.log(this.hashPasswd("alma1234"));
     this.authenticated = true;
     this.router.navigate(['home']);
   }

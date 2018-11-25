@@ -25,7 +25,7 @@ const routes: Routes =
   {
     path: 'settings',
     canLoad: [AuthGuard],
-    loadChildren: './modules/profile-edit-module/profile-edit.module#ProfileEditModule',
+    loadChildren: './modules/settings-module/settings.module#SettingsModule',
   },
   {
     path: '**',

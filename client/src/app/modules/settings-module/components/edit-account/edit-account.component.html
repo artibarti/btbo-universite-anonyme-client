@@ -1,17 +1,59 @@
-
-<div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <span class="float-left" style="font-weight: bold">Account Settings</span>
-      </div>
-    </div>  
-    <hr>
-    <div class="row">
-      <span class="float-left" style="color: grey; font-size: 12px">
-        <p>
-          ProTip! Security is important!
-        </p>  
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <span class="float-left" style="font-weight: bold">Account Settings</span>
+    </div>
+  </div>  
+  <hr>
+  <div class="row">
+    <div class="col">
+      <span class="float-left">
+        Old Password
       </span>
-    </div> 
+      <br>
+      <form style="float: left;">
+        <div class="input-group">
+          <input type="password" class="form-control" [(ngModel)]="asd" placeholder="" name="firstname">
+        </div>
+      </form>    
+    </div>
   </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <span class="float-left">
+        New Password
+      </span>                  
+      <br>
+      <form style="float: left;">
+        <div class="input-group">
+          <input type="password" class="form-control" [(ngModel)]="asd" placeholder="" name="lastname">
+        </div>
+      </form>      
+    </div>  
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <span class="float-left">
+        Repeat New Password
+      </span>                  
+      <br>
+      <form style="float: left;">
+        <div class="input-group">
+          <input type="password" class="form-control" [(ngModel)]="asd" placeholder="" name="lastname">
+        </div>
+      </form>      
+    </div>  
+  </div>
+  <button routerLink="discover" routerLinkActive="active" block="true" class="btn float-right btn-success btn-sm float-right" type="button">Update</button>
+  <hr>
+  <div class="row">
+    <span class="float-left" style="color: grey; font-size: 12px">
+      <p>
+        ProTip! Complete your profile! Keep it updated!
+      </p>  
+    </span>
+  </div> 
+</div>
   

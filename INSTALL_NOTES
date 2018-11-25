@@ -30,6 +30,14 @@ Install required packages
   npm install --save-dev @types/chart.js
   npm install --save chart.js
   npm install --save sha256
+  npm install uuid
+  npm install --save angular-uuid
+  npm install ts-md5
+  npm install @types/angular-uuid
+  npm install --save angular-sha
+  npm i sha.js
+  npm i angular-crypto-js
+  npm install js-sha256 
 
 To list all packages installed with npm type
 

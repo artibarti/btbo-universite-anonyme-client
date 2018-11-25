@@ -1,26 +1,28 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col">
       <span class="float-left" style="font-weight: bold">Profile Settings</span>
     </div>
   </div>  
   <hr>
-  <div class="row">
-    <div class="col">
+  <div class="row justify-content-start">
+    <div class="col-4">
       <span class="float-left">
         First Name
       </span>
-      <form role="search" style="float: none; margin: 0 auto;">
+      <br>
+      <form style="float: left;">
         <div class="input-group">
           <input type="text" class="form-control" [(ngModel)]="asd" placeholder="" name="firstname">
         </div>
       </form>    
     </div>
-    <div class="col">
+    <div class="col-4">
       <span class="float-left">
         Last Name
       </span>                  
-      <form role="search" style="float: none; margin: 0 auto;">
+      <br>
+      <form style="float: left;">
         <div class="input-group">
           <input type="text" class="form-control" [(ngModel)]="asd" placeholder="" name="lastname">
         </div>
@@ -29,15 +31,16 @@
   </div>
   <br>
   <div class="row">
-    <div class="col">
+    <div class="col-md-auto">
       <span class="float-left">
         Email address
-      </span>                  
-      <form role="search" style="float: none; margin: 0 auto;">
+      </span>                 
+      <br> 
+      <form>
         <div class="input-group">
           <input type="text" class="form-control" [(ngModel)]="asd" placeholder="" name="email">
         </div>
-      </form> 
+      </form>
       <span style="font-size: 10px; color: grey">
         Please choose a valid e-mail address to make your experience better!
       </span>     
