@@ -16,9 +16,9 @@
         </div>
       </div>
       <div class="card-body">
-        <div *ngFor="let sessions of sessions | filter: mySessionFilter">
+        <div *ngFor="let session of sessions | filter: mySessionFilter">
           <a href="#" style="font-weight: bold; font-size: 12px">
-            <i class="fa fa-bookmark"></i> {{session.name}}
+            <i class="fa fa-bookmark"></i> {{session.id}}
           </a>
         </div>
       </div>

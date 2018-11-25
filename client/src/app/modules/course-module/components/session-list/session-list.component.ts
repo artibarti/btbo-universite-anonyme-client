@@ -1,4 +1,5 @@
 import { Component, OnInit, PipeTransform, Pipe } from '@angular/core';
+import { CourseSessionService } from '../../services/session/session.service';
 
 @Pipe({
   name: 'filter',
@@ -27,10 +28,15 @@ export class FilterPipe implements PipeTransform
 export class SessionListComponent implements OnInit {
 
   mySessionFilter: string;
+  sessions: Array<any>
 
-  constructor() { }
+  constructor(private courseSessionService: CourseSessionService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    this.courseSessionService.getAllSessionsForCourse("101")
+    .subscribe(data => {
+      this.sessions = data;});
   }
 
 }

@@ -9,6 +9,8 @@ import { CourseService } from './services/course/course.service';
 import { CourseComponent } from './course.component';
 import { SessionListComponent } from './components/session-list/session-list.component'
 import { FilterPipe } from './components/session-list/session-list.component'
+import { CourseSessionService } from './services/session/session.service';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,6 @@ import { FilterPipe } from './components/session-list/session-list.component'
     FormsModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [CourseService]
+  providers: [CourseService, CourseSessionService]
 })
 export class CourseModule {}
