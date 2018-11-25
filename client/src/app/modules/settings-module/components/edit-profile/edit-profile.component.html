@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <span class="float-left" style="font-weight: bold">Profile Settings</span>
+    </div>
+  </div>  
+  <hr>
+  <div class="row">
+    <div class="col">
+      <span class="float-left">
+        First Name
+      </span>
+      <form role="search" style="float: none; margin: 0 auto;">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="asd" placeholder="" name="firstname">
+        </div>
+      </form>    
+    </div>
+    <div class="col">
+      <span class="float-left">
+        Last Name
+      </span>                  
+      <form role="search" style="float: none; margin: 0 auto;">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="asd" placeholder="" name="lastname">
+        </div>
+      </form>      
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <span class="float-left">
+        Email address
+      </span>                  
+      <form role="search" style="float: none; margin: 0 auto;">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="asd" placeholder="" name="email">
+        </div>
+      </form> 
+      <span style="font-size: 10px; color: grey">
+        Please choose a valid e-mail address to make your experience better!
+      </span>     
+    </div>  
+  </div>  
+  <button routerLink="discover" routerLinkActive="active" block="true" class="btn float-right btn-success btn-sm float-right" type="button">Update</button>
+  <hr>
+  <div class="row">
+    <span class="float-left" style="color: grey; font-size: 12px">
+      <p>
+        ProTip! Complete your profile! Keep it updated!
+      </p>  
+    </span>
+  </div> 
+</div>
+  

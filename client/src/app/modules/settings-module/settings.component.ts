@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { SessionService } from '../../shared/services/session/session.service'
 
 @Component({
-  selector: 'profile-edit-root',
-  templateUrl: './profile-edit.component.html',
-  styleUrls: ['./profile-edit.component.scss']
+  selector: 'settings-root',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.scss']
 })
-export class ProfileEditComponent 
+export class SettingsComponent 
 {
   constructor(private sessionService: SessionService) {}
 }

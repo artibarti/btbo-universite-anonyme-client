@@ -1,21 +1,21 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ProfileEditComponent } from './profile-edit.component';
+import { SettingsComponent } from './settings.component';
 
-describe('ProfileEditComponent', () => {
+describe('SettingsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
       ],
       declarations: [
-        ProfileEditComponent
+        SettingsComponent
       ],
     }).compileComponents();
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(ProfileEditComponent);
+    const fixture = TestBed.createComponent(SettingsComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });

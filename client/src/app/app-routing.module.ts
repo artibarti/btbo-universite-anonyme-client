@@ -23,7 +23,7 @@ const routes: Routes =
     loadChildren: './modules/course-module/course.module#CourseModule',
   },
   {
-    path: 'profile',
+    path: 'settings',
     canLoad: [AuthGuard],
     loadChildren: './modules/profile-edit-module/profile-edit.module#ProfileEditModule',
   },
