@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { WelcomeModule } from './modules/welcome-module/welcome.module'
 import { HomeModule } from './modules/home-module/home.module'
 import { CourseModule } from './modules/course-module/course.module'
+import { ProfileEditModule } from './modules/profile-edit-module/profile-edit.module'
 
 // services
 import { SessionService } from './shared/services/session/session.service'
@@ -34,6 +35,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
     WelcomeModule,
     HomeModule,
     CourseModule,
+    ProfileEditModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

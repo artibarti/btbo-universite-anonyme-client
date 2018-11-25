@@ -23,6 +23,11 @@ const routes: Routes =
     loadChildren: './modules/course-module/course.module#CourseModule',
   },
   {
+    path: 'profile',
+    canLoad: [AuthGuard],
+    loadChildren: './modules/profile-edit-module/profile-edit.module#ProfileEditModule',
+  },
+  {
     path: '**',
     redirectTo: '/login'
   }
