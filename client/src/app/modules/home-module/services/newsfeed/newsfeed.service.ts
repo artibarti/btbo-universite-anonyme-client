@@ -4,15 +4,15 @@ import { Observable } from 'rxjs/Observable'
 import { SessionService } from '../../../../shared/services/session/session.service'
 
 @Injectable()
-export class CourseService {
+export class NewsFeedService {
 
   constructor(private http: HttpClient, private sessionService : SessionService) {}
 
-  getAllCoursesForCurrentUser() : Observable<any> 
+  getNewsFeedForUser(id : string) : Observable<any> 
   {
     var url = "//" + this.sessionService.serverName
       + ":" + this.sessionService.portNumber
-      + "/users/" + this.sessionService.currentUser.id + "/courses";
+      + "/users/" + id + "/newsfeed";
     
       return this.http.get(url);    
   }

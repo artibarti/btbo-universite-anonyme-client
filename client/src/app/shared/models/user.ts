@@ -1,12 +1,17 @@
 export class User {
+    
     id: string;
-    name: string;
+    firstName: string;
+    lastName: string;
+    userName: string;
     email: string;
 
     constructor() 
     { 
         this.id = ""; 
-        this.name = ""; 
+        this.firstName = ""; 
+        this.lastName = "";
+        this.userName = "";
         this.email = "";
     }
 }

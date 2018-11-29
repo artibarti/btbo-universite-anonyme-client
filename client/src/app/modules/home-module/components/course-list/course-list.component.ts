@@ -52,7 +52,7 @@ export class CourseListComponent implements OnInit {
         this.courses = data;});
     */
     
-    this.courseService.getAll()
+    this.courseService.getAllCoursesForCurrentUser()
       .subscribe(data => {
         this.courses = data;});
   }

@@ -9,8 +9,24 @@
     </div>
   </div>  
   <hr>
-  <div class="row" *ngFor="let course of courses">
-
+  <div class="container" *ngFor="let new of news">
+    <div class="row">
+      <div class="col">
+        <span class="float-right">
+          <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
+          commented in <a style="font-weight: bold"> {{new.refID}} {{new.refName}} </a>  
+        </span>
+      </div>
+      <div class="col">
+        <span class="float-right" style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>
+      </div>        
+    </div>
+    <div class="row news-content" style="padding: 10px;">
+      {{new.content}}
+    </div>
+    <hr>
   </div>
   <hr>
   <div class="row">

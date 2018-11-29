@@ -11,7 +11,7 @@ export class SessionService {
 
   public currentUser: User;
   authenticated = false;  
-  serverName = "//localhost";
+  serverName = "localhost";
   portNumber = "8080";
 
   hashPasswd(password: string): string 
@@ -76,15 +76,17 @@ export class SessionService {
       });
     */
 
-    console.log(this.hashPasswd("alma1234"));
     this.authenticated = true;
+    this.currentUser.email = "testemail@test.com";
+    this.currentUser.firstName = "testfirstname";
+    this.currentUser.lastName = "testlastname";
+    this.currentUser.id = "101";
     this.router.navigate(['home']);
   }
 
-  constructor(private http: HttpClient, private sessionService: SessionService, private router: Router) 
+  constructor(private http: HttpClient, private router: Router) 
   {
     this.currentUser = new User();
   }
-
 
 }

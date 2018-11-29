@@ -13,7 +13,7 @@
       <br>
       <form style="float: left;">
         <div class="input-group">
-          <input type="text" class="form-control" [(ngModel)]="asd" placeholder="" name="firstname">
+          <input type="text" class="form-control" [(ngModel)]="this.user.firstName" placeholder="Firstname" name="firstName">
         </div>
       </form>    
     </div>
@@ -24,7 +24,7 @@
       <br>
       <form style="float: left;">
         <div class="input-group">
-          <input type="text" class="form-control" [(ngModel)]="asd" placeholder="" name="lastname">
+          <input type="text" class="form-control" [(ngModel)]="this.user.lastName" placeholder="Lastname" name="lastName">
         </div>
       </form>      
     </div>
@@ -38,7 +38,7 @@
       <br> 
       <form>
         <div class="input-group">
-          <input type="text" class="form-control" [(ngModel)]="asd" placeholder="" name="email">
+          <input type="text" class="form-control" [(ngModel)]="this.user.email" placeholder="E-mail" name="email">
         </div>
       </form>
       <span style="font-size: 10px; color: grey">
@@ -46,7 +46,7 @@
       </span>     
     </div>  
   </div>  
-  <button routerLink="discover" routerLinkActive="active" block="true" class="btn float-right btn-success btn-sm float-right" type="button">Update</button>
+  <button (click)="onUpdateClicked()" block="true" class="btn float-right btn-success btn-sm float-right" type="button">Update</button>
   <hr>
   <div class="row">
     <span class="float-left" style="color: grey; font-size: 12px">
