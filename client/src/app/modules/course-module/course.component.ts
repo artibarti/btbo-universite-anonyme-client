@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SessionService } from '../../shared/services/session/session.service'
 import { Router, ActivatedRoute } from '@angular/router';
 import { Course } from '../../shared/models/course';
@@ -21,7 +21,7 @@ export class CourseComponent
   {
     this.course = new Course;
 
-    let tmp = this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       this.course.id = params['id'];
     });
   }

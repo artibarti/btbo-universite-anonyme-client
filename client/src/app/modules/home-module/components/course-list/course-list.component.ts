@@ -36,14 +36,11 @@ export class CourseListComponent implements OnInit {
   subsFilter: string;
   myCoursesFilter: string;
 
-  constructor(private sessionService: SessionService, private courseService : CourseService) 
-  {
+  constructor(private sessionService: SessionService, private courseService : CourseService) {}
 
-  }
-
-  inFilter(name: string) : boolean
+  stringifyCourse(course: Course)
   {
-    return false;
+    return JSON.stringify(course);
   }
 
   ngOnInit() 
