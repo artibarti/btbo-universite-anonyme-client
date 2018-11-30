@@ -11,6 +11,7 @@ import { CourseListComponent, FilterPipe } from './components/course-list/course
 import { ProfileComponent } from './components/profile/profile.component'
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 import { DiscoverCoursesComponent } from './components/discover-courses/discover-courses.component';
+import { OneNewComponent } from './components/one-new/one-new.component'
 
 // services
 import { NewsFeedService } from './services/newsfeed/newsfeed.service';
@@ -23,6 +24,7 @@ import { NewsFeedService } from './services/newsfeed/newsfeed.service';
     ProfileComponent,
     NewsFeedComponent,
     DiscoverCoursesComponent,
+    OneNewComponent,
     FilterPipe
   ],
   imports: [

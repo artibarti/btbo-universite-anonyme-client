@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col" style="font-size: 14px">
+      <span *ngIf="new.type===&quot;QuestionComment&quot;">
+        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
+        commented on your <a style="font-weight: bold">question</a> in<a style="font-weight: bold"> {{new.refName}}</a>  
+        <span style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>  
+      </span>
+      <span *ngIf="new.type===&quot;CourseRoomComment&quot;">
+        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
+        commented in one of your <a style="font-weight: bold"> courses {{new.refName}}</a>  
+        <span style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>            
+      </span>
+      <span *ngIf="new.type===&quot;Question&quot;">
+        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
+        asked a question in <a style="font-weight: bold"> {{new.refName}}</a>  
+        <span style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>                      
+      </span>
+      <span *ngIf="new.type===&quot;CommentRating&quot;">
+        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
+        left a rating for your <a style="font-weight: bold">comment</a>
+        <span style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>                      
+      </span>
+      <span *ngIf="new.type===&quot;QuestionRating&quot;">
+        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
+        left a rating for your <a style="font-weight: bold">question</a>
+        <span style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>                                
+      </span>
+      <span *ngIf="new.type===&quot;CourseRating&quot;">
+        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
+        left a rating for your <a style="font-weight: bold">course</a>
+        <span style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>                                          
+      </span>
+      <span *ngIf="new.type===&quot;SessionRating&quot;">
+        
+      </span>
+    </div>
+  </div>
+  <div *ngIf="new.type!=&quot;SessionRating&quot; && new.type!=&quot;CommentRating&quot; && new.type!=&quot;CourseRating&quot;" class="container news-content">
+    <div class="row" style="padding: 7px; font-size: 14px">
+      “{{new.content}}”
+    </div>
+    <div class="row" style="padding: 7px; font-size: 14px; color: lightgray;">
+      &nbsp;
+      <a (click)="onCommentClicked()"> 
+        <i class="fa fa-comment news-icon-comment"></i>
+      </a>
+      &nbsp;
+      <span style="color: gray">30E</span>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <a (click)="onThumbsDownClicked()"> 
+        <i class="fa fa-thumbs-down"></i>
+      </a>
+      &nbsp;
+      <a (click)="onThumbsUpClicked()"> 
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+      &nbsp;
+      <span style="color: gray">126</span>
+    </div>
+  </div>

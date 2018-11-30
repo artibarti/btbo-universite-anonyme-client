@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsFeedService } from '../../services/newsfeed/newsfeed.service';
 import { SessionService } from '../../../../shared/services/session/session.service';
+import { New } from '../../../../shared/models/new';
+import { OneNewComponent } from '../one-new/one-new.component';
 
 @Component({
   selector: 'app-news-feed',
@@ -9,11 +11,16 @@ import { SessionService } from '../../../../shared/services/session/session.serv
 })
 export class NewsFeedComponent implements OnInit {
 
-  news: Array<any>
+  news: Array<New>
 
   constructor(
       private newsFeedService: NewsFeedService, 
       private sessionService: SessionService) {}
+
+  stringifyNew(n: New)
+  {
+    return JSON.stringify(n);
+  }
 
   ngOnInit() 
   {
