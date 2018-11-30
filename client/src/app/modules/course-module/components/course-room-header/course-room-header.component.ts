@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseModuleService } from '../../services/course-module.service';
 
 @Component({
   selector: 'app-course-room-header',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseRoomHeaderComponent implements OnInit {
 
-  constructor() {}
+  constructor(private courseModuleService: CourseModuleService) {}
 
   ngOnInit() {}
 

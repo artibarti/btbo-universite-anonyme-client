@@ -33,6 +33,7 @@ export class FilterPipe implements PipeTransform
 export class CourseListComponent implements OnInit {
 
   private courses : Course[] = [];
+  private adminedCourses : Course[] = [];
   subsFilter: string;
   myCoursesFilter: string;
 
@@ -49,6 +50,11 @@ export class CourseListComponent implements OnInit {
       res => {        
           res.forEach(p => this.courses.push(p));
       });
+    this.courseService.getAdminedCoursesForCurrentUser().then(
+      res => {        
+          res.forEach(p => this.adminedCourses.push(p));
+      });
+  
   }
 
 }

@@ -8,13 +8,14 @@ import { CourseRoomHeaderComponent } from './components/course-room-header/cours
 import { CourseComponent } from './course.component';
 import { SessionListComponent } from './components/session-list/session-list.component'
 import { FilterPipe } from './components/session-list/session-list.component'
+import { CourseModuleService } from './services/course-module.service';
 
 @NgModule({
   declarations: [
     CourseComponent,
     CourseRoomHeaderComponent,
     SessionListComponent,
-    FilterPipe
+    FilterPipe,
   ],
   imports: [
     CommonModule,
@@ -23,6 +24,6 @@ import { FilterPipe } from './components/session-list/session-list.component'
     FormsModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: []
+  providers: [],
 })
 export class CourseModule {}

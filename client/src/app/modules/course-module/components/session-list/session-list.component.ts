@@ -1,5 +1,7 @@
 import { Component, OnInit, PipeTransform, Pipe } from '@angular/core';
 import { CourseSessionService } from '../../../../shared/services/course-session/course-session.service';
+import { CourseModuleService } from '../../services/course-module.service';
+import { CourseSession } from '../../../../shared/models/session';
 
 @Pipe({
   name: 'filter',
@@ -28,9 +30,10 @@ export class FilterPipe implements PipeTransform
 export class SessionListComponent implements OnInit {
 
   mySessionFilter: string;
-  sessions: Array<any>
+  // sessions: Array<CourseSession>;
 
-  constructor(private courseSessionService: CourseSessionService) { }
+  constructor(private courseSessionService: CourseSessionService, 
+    private courseModuleService: CourseModuleService) { }
 
   ngOnInit() 
   {
@@ -38,7 +41,7 @@ export class SessionListComponent implements OnInit {
     this.courseSessionService.getAllSessionsForCourse("101")
     .subscribe(data => {
       this.sessions = data;});
-      */
+    */
   }
 
 }

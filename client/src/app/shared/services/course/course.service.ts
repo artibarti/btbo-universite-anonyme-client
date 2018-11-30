@@ -17,11 +17,27 @@ export class CourseService {
     return this.http.get<any>(url).toPromise();
   }
 
-  getCourseDetails(id: string) : Observable<any> 
+  getAdminedCoursesForCurrentUser() : Promise<Observable<Course>>
+  {
+    var url = this.sessionService.apiURL 
+      + "/users/" + this.sessionService.currentUser.id + "/admin";
+    
+    return this.http.get<any>(url).toPromise();
+  }
+
+  getCourseDetails(id: string) : Promise<Observable<Course>> 
   {
     var url = this.sessionService.apiURL 
       + "/courses/" + id;
-    return this.http.get(url);    
+    
+    return this.http.get<any>(url).toPromise();    
+  }
+
+  getCoursePulse(id: string) : Promise<Observable<string>>
+  {
+    var url = this.sessionService.apiURL 
+      + "/courses/" + id + "/pulse";
+    return this.http.get<any>(url).toPromise();    
   }
 
 }
