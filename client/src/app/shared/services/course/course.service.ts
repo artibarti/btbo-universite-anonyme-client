@@ -9,11 +9,18 @@ export class CourseService {
 
   constructor(private http: HttpClient, private sessionService : SessionService) {}
 
-  getAllSubscribtionForCurrentUser() : Observable<any> 
+  getAllSubscribtionForCurrentUser() : Promise<Observable<Course>>
   {
     var url = this.sessionService.apiURL 
       + "/users/" + this.sessionService.currentUser.id + "/subs";
     
+    return this.http.get<any>(url).toPromise();
+  }
+
+  getCourseDetails(id: string) : Observable<any> 
+  {
+    var url = this.sessionService.apiURL 
+      + "/courses/" + id;
     return this.http.get(url);    
   }
 

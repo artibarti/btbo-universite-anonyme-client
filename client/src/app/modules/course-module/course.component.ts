@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SessionService } from '../../shared/services/session/session.service'
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Course } from '../../shared/models/course';
 
 @Component({
   selector: 'course-root',
@@ -9,8 +10,18 @@ import { Router } from '@angular/router';
 })
 export class CourseComponent 
 {
-  constructor(private sessionService: SessionService, private router: Router) 
+  private course: Course;
+
+  constructor(private sessionService: SessionService, private router: Router, private route: ActivatedRoute) 
   {
-    this.router.navigate(['course/:id/room'])
+    // this.router.navigate(['course/:id/room'])
   }
+
+  ngOnInit()
+  {
+    let tmp = this.route.params.subscribe(params => {
+      this.course = params['course'];
+    });
+  }
+
 }

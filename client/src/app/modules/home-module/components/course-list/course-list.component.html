@@ -17,7 +17,7 @@
     </div>
     <div class="card-body">
       <div *ngFor="let course of courses | filter: myCoursesFilter">
-        <a [routerLink]="['/course', course.id]" routerLinkActive="active" style="font-weight: bold; font-size: 12px">
+        <a [routerLink]="['/course', course]" routerLinkActive="active" style="font-weight: bold; font-size: 12px">
           <i class="fa fa-bookmark"></i> {{course.name}}
         </a>
       </div>

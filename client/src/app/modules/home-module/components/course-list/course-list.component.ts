@@ -3,6 +3,8 @@ import { SessionService } from '../../../../shared/services/session/session.serv
 import { HttpClient } from '@angular/common/http';
 import { Pipe, PipeTransform } from '@angular/core'; 
 import { CourseService } from '../../../../shared/services/course/course.service';
+import { Course } from '../../../../shared/models/course';
+import { log } from 'util';
 
 @Pipe({
   name: 'filter',
@@ -30,7 +32,7 @@ export class FilterPipe implements PipeTransform
 })
 export class CourseListComponent implements OnInit {
 
-  courses: Array<any>
+  private courses : Course[] = [];
   subsFilter: string;
   myCoursesFilter: string;
 
@@ -46,9 +48,10 @@ export class CourseListComponent implements OnInit {
 
   ngOnInit() 
   {      
-    this.courseService.getAllSubscribtionForCurrentUser()
-      .subscribe(data => {
-        this.courses = data;});
+    this.courseService.getAllSubscribtionForCurrentUser().then(
+      res => {        
+          res.forEach(p => this.courses.push(p));
+      });
   }
 
 }

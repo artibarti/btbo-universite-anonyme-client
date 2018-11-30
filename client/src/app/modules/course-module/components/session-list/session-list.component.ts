@@ -34,9 +34,11 @@ export class SessionListComponent implements OnInit {
 
   ngOnInit() 
   {
+    /*
     this.courseSessionService.getAllSessionsForCourse("101")
     .subscribe(data => {
       this.sessions = data;});
+      */
   }
 
 }
