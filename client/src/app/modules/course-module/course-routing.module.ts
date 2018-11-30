@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../../shared/guards/auth.guard';
 import { CourseComponent } from './course.component'
-import { CourseRoomHeaderComponent } from './components/course-room-header/course-room-header.component';
 
 const routes: Routes = 
 [
@@ -11,13 +10,7 @@ const routes: Routes =
     canActivate: [AuthGuard],
     component: CourseComponent,
     children:
-    [
-      {
-        path: 'room',
-        canActivate: [AuthGuard],
-        component: CourseRoomHeaderComponent
-      },
-    ]
+    []
   },
 ];
 

@@ -38,6 +38,7 @@ Install required packages
   npm i sha.js
   npm i angular-crypto-js
   npm install js-sha256 
+  npm install chart.js
 
 To list all packages installed with npm type
 

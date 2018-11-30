@@ -8,11 +8,7 @@
         </div>
       </div>
       <div class="row">
-        <form role="search" style="float: none; margin: 0 auto;">
-          <div class="input-group">
-            <input type="text" class="form-control" [(ngModel)]="myCoursesFilter" placeholder="Find course..." name="myCoursesFilter">
-          </div>
-        </form>
+        <input type="text" class="form-control" [(ngModel)]="myCoursesFilter" placeholder="Find course..." name="myCoursesFilter">
       </div>
     </div>
     <div class="card-body">
@@ -27,17 +23,13 @@
   <div class="card" style="width: 18rem;">
     <div class="card-header">
       <div class="row" style="padding: 5px; color: black; font-weight: bold">
-        <div class=" col">
+        <div class="col">
           <span class="float-left">My Courses</span>
           <button routerLink="/home/createcourse" routerLinkActive="active" block="true" class="btn float-right btn-success btn-sm" type="button">New Course</button>
         </div>
       </div>
       <div class="row">
-        <form role="search" style="float: none; margin: 0 auto;">
-          <div class="input-group">
-            <input type="text" class="form-control" [(ngModel)]="subsFilter" placeholder="Find course..." name="subsFilter">
-          </div>
-        </form>
+        <input type="text" class="form-control" [(ngModel)]="subsFilter" placeholder="Find course..." name="subsFilter">
       </div>
     </div>
     <div class="card-body">

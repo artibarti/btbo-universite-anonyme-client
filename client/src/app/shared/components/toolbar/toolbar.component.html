@@ -4,8 +4,8 @@
     <div class="navbar-nav">
       <a *ngIf="sessionService.authenticated == true" routerLink="/home/news" routerLinkActive="active" class="nav-item nav-link active">Home</a>
       <a href="#about" class="nav-item nav-link active" data-toggle="modal" data-target="#about">About</a>
-      <a *ngIf="sessionService.authenticated == true" routerLink="home/discover" routerLinkActive="active" class="nav-item nav-link active" href="/">Explore</a>
-      <a *ngIf="sessionService.authenticated == true" routerLink="home/news" routerLinkActive="active" class="nav-item nav-link active" href="/">Activity</a>
+      <a *ngIf="sessionService.authenticated == true" routerLink="/home/discover" routerLinkActive="active" class="nav-item nav-link active" href="/">Explore</a>
+      <a *ngIf="sessionService.authenticated == true" routerLink="/home/news" routerLinkActive="active" class="nav-item nav-link active" href="/">Activity</a>
     </div>
   </div>
   <div class="navbar-expand ml-auto navbar-nav">

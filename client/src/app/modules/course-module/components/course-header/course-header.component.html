@@ -16,14 +16,12 @@
         <div id="description" class="tab-pane fade">
           <h3> > about this course</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            {{this.courseModuleService.course.descriptions}}
           </p>
         </div>
         <div id="stats" class="tab-pane fade">
           <h3> > statistics</h3>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
+          <canvas id="bar" class="chart chart-bar" chart-data="this.courseModuleService.coursePulse" chart-labels="['asd', 'asd', 'ert', 's', 'k', 'sad', 'fff']" chart-series="['haha']"></canvas>
         </div>
         <div id="settings" class="tab-pane fade">
           <h3> > settings</h3>

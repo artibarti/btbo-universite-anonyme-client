@@ -8,7 +8,7 @@ import { CourseService } from "../../../shared/services/course/course.service";
 export class CourseModuleService 
 {
     course: Course;
-    coursePulse: string[] = [];
+    coursePulse: number[] = [];
 
     setCourse(id: string)
     {
@@ -26,7 +26,7 @@ export class CourseModuleService
 
         this.courseService.getCoursePulse(id).then(
             res => {        
-                res.forEach(p => this.coursePulse.push(p));
+                res.forEach(p => this.coursePulse.push(parseInt(p)));
                 console.log(this.coursePulse);
                 
             });
