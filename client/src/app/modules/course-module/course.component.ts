@@ -19,8 +19,10 @@ export class CourseComponent
 
   ngOnInit()
   {
+    this.course = new Course;
+
     let tmp = this.route.params.subscribe(params => {
-      this.course = params['course'];
+      this.course.id = params['id'];
     });
   }
 
