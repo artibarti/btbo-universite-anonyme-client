@@ -11,20 +11,39 @@
   <hr>
   <div class="container" *ngFor="let new of news">
     <div class="row">
-      <div class="col">
-        <span class="float-right">
-          <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
-          commented in <a style="font-weight: bold"> {{new.refID}} {{new.refName}} </a>  
-        </span>
-      </div>
-      <div class="col">
-        <span class="float-right" style="color: gray; font-size: 12px">
+      <div class="col" style="font-size: 14px">
+        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
+        commented in <a style="font-weight: bold"> {{new.refID}} {{new.refName}} </a>  
+        <span style="color: gray; font-size: 12px">
           {{new.timestamp}}
         </span>
-      </div>        
+      </div>
     </div>
-    <div class="row news-content" style="padding: 10px;">
-      {{new.content}}
+    <div class="container news-content">
+      <div class="row" style="padding: 7px; font-size: 14px">
+        “{{new.content}}”
+      </div>
+      <div class="row" style="padding: 7px; font-size: 14px; color: lightgray;">
+        &nbsp;
+        <a (click)="onCommentClicked()"> 
+          <i class="fa fa-comment news-icon-comment"></i>
+        </a>
+        &nbsp;
+        <span style="color: gray">30E</span>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <a (click)="onThumbsDownClicked()"> 
+          <i class="fa fa-thumbs-down"></i>
+        </a>
+        &nbsp;
+        <a (click)="onThumbsUpClicked()"> 
+          <i class="fa fa-thumbs-up"></i>
+        </a>
+        &nbsp;
+        <span style="color: gray">126</span>
+      </div>
     </div>
     <hr>
   </div>

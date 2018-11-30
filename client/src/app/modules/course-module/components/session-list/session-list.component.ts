@@ -1,5 +1,5 @@
 import { Component, OnInit, PipeTransform, Pipe } from '@angular/core';
-import { CourseSessionService } from '../../services/session/session.service';
+import { CourseSessionService } from '../../../../shared/services/course-session/course-session.service';
 
 @Pipe({
   name: 'filter',

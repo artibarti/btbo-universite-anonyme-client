@@ -17,6 +17,8 @@ import { SettingsModule } from './modules/settings-module/settings.module'
 
 // services
 import { SessionService } from './shared/services/session/session.service'
+import { CourseService } from './shared/services/course/course.service'
+import { CourseSessionService } from './shared/services/course-session/course-session.service'
 
 // components
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
@@ -44,7 +46,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
     MDBBootstrapModule.forRoot()
   ],
 
-  providers: [AuthGuard],
+  providers: [AuthGuard, CourseService, CourseSessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

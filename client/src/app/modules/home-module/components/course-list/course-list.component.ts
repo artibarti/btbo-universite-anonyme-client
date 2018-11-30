@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseService } from '../../services/course/course.service'
 import { SessionService } from '../../../../shared/services/session/session.service'
 import { HttpClient } from '@angular/common/http';
 import { Pipe, PipeTransform } from '@angular/core'; 
+import { CourseService } from '../../../../shared/services/course/course.service';
 
 @Pipe({
   name: 'filter',
@@ -44,15 +44,9 @@ export class CourseListComponent implements OnInit {
     return false;
   }
 
-  ngOnInit() {
-    
-    /*
-    this.courseService.getAllCoursesForUser(this.sessionService.currentUser.id)
-      .subscribe(data => {
-        this.courses = data;});
-    */
-    
-    this.courseService.getAllCoursesForCurrentUser()
+  ngOnInit() 
+  {      
+    this.courseService.getAllSubscribtionForCurrentUser()
       .subscribe(data => {
         this.courses = data;});
   }

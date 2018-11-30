@@ -13,7 +13,6 @@ import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 import { DiscoverCoursesComponent } from './components/discover-courses/discover-courses.component';
 
 // services
-import { CourseService } from './services/course/course.service';
 import { NewsFeedService } from './services/newsfeed/newsfeed.service';
 
 
@@ -33,6 +32,6 @@ import { NewsFeedService } from './services/newsfeed/newsfeed.service';
     FormsModule,
     MDBBootstrapModule.forRoot()    
   ],
-  providers: [CourseService, NewsFeedService]
+  providers: [NewsFeedService]
 })
 export class HomeModule { }

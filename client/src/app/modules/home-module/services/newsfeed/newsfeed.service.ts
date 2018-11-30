@@ -10,8 +10,7 @@ export class NewsFeedService {
 
   getNewsFeedForUser(id : string) : Observable<any> 
   {
-    var url = "//" + this.sessionService.serverName
-      + ":" + this.sessionService.portNumber
+    var url = this.sessionService.apiURL
       + "/users/" + id + "/newsfeed";
     
       return this.http.get(url);    

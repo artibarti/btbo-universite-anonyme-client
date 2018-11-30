@@ -11,8 +11,9 @@ export class SessionService {
 
   public currentUser: User;
   authenticated = false;  
-  serverName = "localhost";
+  serverName = "//localhost";
   portNumber = "8080";
+  apiURL = this.serverName + ":" + this.portNumber;
 
   hashPasswd(password: string): string 
   {
@@ -28,7 +29,7 @@ export class SessionService {
       headers: headers,
     };
 
-    var url = this.serverName + ":" + this.portNumber + "/register";
+    var url = this.apiURL + "/register";
 
     this.http.get(url, requestHeader).subscribe(response => {
       if (response['email']) 
@@ -56,7 +57,7 @@ export class SessionService {
       headers: headers,
     };
 
-    var url = this.serverName + ":" + this.portNumber + "/login";
+    var url = this.apiURL + "/login";
 
     this.http.get(url, requestHeader).subscribe(response => {
       if (response['email']) {
@@ -80,7 +81,7 @@ export class SessionService {
     this.currentUser.email = "testemail@test.com";
     this.currentUser.firstName = "testfirstname";
     this.currentUser.lastName = "testlastname";
-    this.currentUser.id = "101";
+    this.currentUser.id = "1";
     this.router.navigate(['home']);
   }
 

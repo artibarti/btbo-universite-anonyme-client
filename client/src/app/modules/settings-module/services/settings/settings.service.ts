@@ -13,9 +13,8 @@ export class SettingsService {
 
   updateProfile(user: User)
   {    
-    var url = this.sessionService.serverName + ":" 
-        + this.sessionService.portNumber + "/users/" 
-        + this.sessionService.currentUser.id + "/update";
+    var url = this.sessionService.apiURL 
+      + "/users/" + this.sessionService.currentUser.id + "/update";
       
     this.http.put(url, JSON.stringify(user));
   }
