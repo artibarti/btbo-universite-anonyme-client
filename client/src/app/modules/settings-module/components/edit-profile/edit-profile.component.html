@@ -1,53 +1,39 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      <span class="float-left" style="font-weight: bold">Profile Settings</span>
-    </div>
+    <span style="font-weight: bold">Create Course</span>
   </div>  
   <hr>
-  <div class="row justify-content-start">
-    <div class="col-4">
-      <span class="float-left">
-        First Name
-      </span>
-      <br>
-      <form style="float: left;">
-        <div class="input-group">
-          <input type="text" class="form-control" [(ngModel)]="this.user.firstName" placeholder="Firstname" name="firstName">
-        </div>
-      </form>    
+  <div class="container">
+    <div class="row">
+      Firstname
     </div>
-    <div class="col-4">
-      <span class="float-left">
-        Last Name
-      </span>                  
-      <br>
-      <form style="float: left;">
-        <div class="input-group">
-          <input type="text" class="form-control" [(ngModel)]="this.user.lastName" placeholder="Lastname" name="lastName">
-        </div>
-      </form>      
+    <div class="row">
+      <input type="text" class="form-control" [(ngModel)]="this.user.firstName" placeholder="Firstname" name="firstName">
     </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-md-auto">
-      <span class="float-left">
-        Email address
-      </span>                 
-      <br> 
-      <form>
-        <div class="input-group">
-          <input type="text" class="form-control" [(ngModel)]="this.user.email" placeholder="E-mail" name="email">
-        </div>
-      </form>
+    <br>
+    <div class="row">
+      Lastname
+    </div>
+    <div class="row">
+      <input type="text" class="form-control" [(ngModel)]="this.user.lastName" placeholder="Lastname" name="lastName">
+    </div>
+    <br>  
+    <div class="row">
+      Email
+    </div>
+    <div class="row">
+      <input type="text" class="form-control" [(ngModel)]="this.user.email" placeholder="E-mail" name="email">
       <span style="font-size: 10px; color: grey">
         Please choose a valid e-mail address to make your experience better!
-      </span>     
-    </div>  
-  </div>  
-  <button (click)="onUpdateClicked()" block="true" class="btn float-right btn-success btn-sm float-right" type="button">Update</button>
-  <hr>
+      </span>             
+    </div>    
+  </div>
+  <br>
+  <div class="container">
+    <div class="row float-right">
+      <button (click)="onUpdateClicked()" block="true" class="btn btn-success btn-sm" type="button">Update</button>
+    </div>
+  </div>
   <div class="row">
     <span class="float-left" style="color: grey; font-size: 12px">
       <p>
@@ -56,4 +42,3 @@
     </span>
   </div> 
 </div>
-  

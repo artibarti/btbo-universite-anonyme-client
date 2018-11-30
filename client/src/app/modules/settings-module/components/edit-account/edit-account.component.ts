@@ -9,11 +9,13 @@ import { SettingsService } from '../../services/settings/settings.service';
 export class EditAccountComponent implements OnInit {
 
   passwords = {old: '', new1: '', new2: ''};
+  startedToEdit = false;
 
   constructor(private settingsService: SettingsService) { }
 
   onUpdateClicked()
   {
+    this.startedToEdit = true;
     // this.settingsService.updatePassword(this.passwords);
   }
 

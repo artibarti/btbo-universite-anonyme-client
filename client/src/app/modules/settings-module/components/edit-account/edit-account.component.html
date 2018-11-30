@@ -1,59 +1,45 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <span class="float-left" style="font-weight: bold">Account Settings</span>
+    <div class="row">
+      <span style="font-weight: bold">Create Course</span>
+    </div>  
+    <hr>
+    <div class="container">
+      <div class="row">
+        Old password
+      </div>
+      <div class="row">
+        <input type="password" class="form-control" [(ngModel)]="this.passwords.old" placeholder="Old password" name="old">
+      </div>
+      <br>
+      <div class="row">
+        New password
+      </div>
+      <div class="row">
+        <input type="password" class="form-control" [(ngModel)]="this.passwords.new1" placeholder="New password" name="new1">
+      </div>
+      <br>  
+      <div class="row">
+        Repeat password
+      </div>
+      <div class="row">
+        <input type="password" class="form-control" [(ngModel)]="this.passwords.new2" placeholder="Repeat password" name="new2">
+        <span *ngIf="this.passwords.new1 != this.passwords.new2 && this.startedToEdit" style="font-size: 10px; color: darkred">
+          Something is wrong! Check the passwords again please.
+        </span>             
+      </div>    
     </div>
-  </div>  
-  <hr>
-  <div class="row">
-    <div class="col">
-      <span class="float-left">
-        Old Password
+    <br>
+    <div class="container">
+      <div class="row float-right">
+        <button (click)="onUpdateClicked()" block="true" class="btn btn-success btn-sm" type="button">Update</button>
+      </div>
+    </div>
+    <div class="row">
+      <span class="float-left" style="color: grey; font-size: 12px">
+        <p>
+          ProTip! Security is priority!
+        </p>  
       </span>
-      <br>
-      <form style="float: left;">
-        <div class="input-group">
-          <input type="password" class="form-control" [(ngModel)]="this.passwords.old" placeholder="Old password" name="old">
-        </div>
-      </form>    
-    </div>
+    </div> 
   </div>
-  <br>
-  <div class="row">
-    <div class="col">
-      <span class="float-left">
-        New Password
-      </span>                  
-      <br>
-      <form style="float: left;">
-        <div class="input-group">
-          <input type="password" class="form-control" [(ngModel)]="this.passwords.new1" placeholder="New password" name="new1">
-        </div>
-      </form>      
-    </div>  
-  </div>
-  <br>
-  <div class="row">
-    <div class="col">
-      <span class="float-left">
-        Repeat New Password
-      </span>                  
-      <br>
-      <form style="float: left;">
-        <div class="input-group">
-          <input type="password" class="form-control" [(ngModel)]="this.passwords.new2" placeholder="New password again" name="new2">
-        </div>
-      </form>      
-    </div>  
-  </div>
-  <button (click)="onUpdateClicked" block="true" class="btn float-right btn-success btn-sm float-right" type="button">Update</button>
-  <hr>
-  <div class="row">
-    <span class="float-left" style="color: grey; font-size: 12px">
-      <p>
-        ProTip! Complete your profile! Keep it updated!
-      </p>  
-    </span>
-  </div> 
-</div>
   

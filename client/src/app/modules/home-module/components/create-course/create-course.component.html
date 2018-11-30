@@ -1,3 +1,35 @@
-<p>
-  create-course works!
-</p>
+<div class="container">
+    <div class="row">
+      <span style="font-weight: bold">Create Course</span>
+    </div>  
+    <hr>
+    <div class="container">
+      <div class="row">
+        Name for the Course
+      </div>
+      <div class="row">
+          <input type="text" class="form-control" [(ngModel)]="this.course.name" placeholder="Name" name="name">
+      </div>
+      <br>
+      <div class="row">
+        Description
+      </div>
+      <div class="row">
+        <textarea rows="3" type="text" class="form-control" [(ngModel)]="this.course.description" placeholder="Describe your course" name="description"></textarea>
+      </div>    
+    </div>
+    <br>
+    <div class="container">
+      <div class="row float-right">
+        <button (click)="onCreateClicked()" block="true" class="btn btn-success btn-sm" type="button">Create</button>
+      </div>
+    </div>
+    <div class="row">
+      <span class="float-left" style="color: grey; font-size: 12px">
+        <p>
+          ProTip! Generate invite codes to scale your courses!
+        </p>  
+      </span>
+    </div> 
+  </div>
+    

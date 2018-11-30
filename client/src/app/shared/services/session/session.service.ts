@@ -81,6 +81,7 @@ export class SessionService {
     this.currentUser.email = "testemail@test.com";
     this.currentUser.firstName = "testfirstname";
     this.currentUser.lastName = "testlastname";
+    this.currentUser.userName = "kurwa124";
     this.currentUser.id = "1";
     this.router.navigate(['home']);
   }

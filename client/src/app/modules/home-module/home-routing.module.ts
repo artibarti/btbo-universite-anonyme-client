@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component'
 import { AuthGuard } from '../../shared/guards/auth.guard';
 import { DiscoverCoursesComponent } from './components/discover-courses/discover-courses.component'
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
+import { CreateCourseComponent } from './components/create-course/create-course.component';
 
 const routes: Routes = 
 [
@@ -22,6 +23,11 @@ const routes: Routes =
         path: 'news',
         canActivate: [AuthGuard],
         component: NewsFeedComponent
+      },    
+      {
+        path: 'createcourse',
+        canActivate: [AuthGuard],
+        component: CreateCourseComponent
       },    
     ]
   },

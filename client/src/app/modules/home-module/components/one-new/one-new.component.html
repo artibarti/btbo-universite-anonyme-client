@@ -1,46 +1,58 @@
 <div class="row">
     <div class="col" style="font-size: 14px">
       <span *ngIf="new.type===&quot;QuestionComment&quot;">
-        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
-        commented on your <a style="font-weight: bold">question</a> in<a style="font-weight: bold"> {{new.refName}}</a>  
+        <i class="fa fa-circle" style="color: darkkhaki"></i>
         <span style="color: gray; font-size: 12px">
           {{new.timestamp}}
-        </span>  
+        </span>
+        <br>      
+        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
+        commented on your <a style="font-weight: bold">question</a>  
       </span>
       <span *ngIf="new.type===&quot;CourseRoomComment&quot;">
+        <i class="fa fa-circle" style="color: darkkhaki"></i>
+        <span style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>                
+        <br>
         <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
         commented in one of your <a style="font-weight: bold"> courses {{new.refName}}</a>  
-        <span style="color: gray; font-size: 12px">
-          {{new.timestamp}}
-        </span>            
       </span>
       <span *ngIf="new.type===&quot;Question&quot;">
+        <i class="fa fa-circle" style="color: darkorange"></i>
+        <span style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>                          
+        <br>
         <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
         asked a question in <a style="font-weight: bold"> {{new.refName}}</a>  
-        <span style="color: gray; font-size: 12px">
-          {{new.timestamp}}
-        </span>                      
       </span>
       <span *ngIf="new.type===&quot;CommentRating&quot;">
+        <i class="fa fa-circle" style="color: darkred"></i>
+        <span style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>                          
+        <br>
         <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
         left a rating for your <a style="font-weight: bold">comment</a>
-        <span style="color: gray; font-size: 12px">
-          {{new.timestamp}}
-        </span>                      
       </span>
       <span *ngIf="new.type===&quot;QuestionRating&quot;">
+        <i class="fa fa-circle" style="color: darkred"></i>
+        <span style="color: gray; font-size: 12px">
+          {{new.timestamp}}
+        </span>                                    
+        <br>
         <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
         left a rating for your <a style="font-weight: bold">question</a>
-        <span style="color: gray; font-size: 12px">
-          {{new.timestamp}}
-        </span>                                
       </span>
       <span *ngIf="new.type===&quot;CourseRating&quot;">
-        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
-        left a rating for your <a style="font-weight: bold">course</a>
+        <i class="fa fa-circle" style="color: darkred"></i>
         <span style="color: gray; font-size: 12px">
           {{new.timestamp}}
-        </span>                                          
+        </span>                                              
+        <br>
+        <a class="text-dark news-name" href="#">{{new.anonUserName}} </a> 
+        left a rating for your <a style="font-weight: bold">course</a>
       </span>
       <span *ngIf="new.type===&quot;SessionRating&quot;">
         
