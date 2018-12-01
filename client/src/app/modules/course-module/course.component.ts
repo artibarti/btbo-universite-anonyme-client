@@ -3,7 +3,8 @@ import { SessionService } from '../../shared/services/session/session.service'
 import { Router, ActivatedRoute } from '@angular/router';
 import { Course } from '../../shared/models/course';
 import { CourseService } from '../../shared/services/course/course.service';
-import { CourseModuleService } from './services/course-module.service';
+import { SharedObjects } from './services/shared-objects.service';
+import { log } from 'util';
 
 @Component({
   selector: 'course-root',
@@ -12,14 +13,15 @@ import { CourseModuleService } from './services/course-module.service';
 })
 export class CourseComponent 
 {
-  constructor(private sessionService: SessionService, private router: Router, 
-    private route: ActivatedRoute, private courseService: CourseService,
-    private courseModuleService: CourseModuleService) {}
+  constructor(private router: Router, private route: ActivatedRoute,
+    private sharedObjects: SharedObjects) {}
 
   ngOnInit()
   {
+    console.log("course.componnent ngoninit called");
+    
     this.route.params.subscribe(params => {
-      this.courseModuleService.setCourse( params['id'] );
+      this.sharedObjects.setCourse( params['id'] );
     });
   }
 

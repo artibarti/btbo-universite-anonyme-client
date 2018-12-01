@@ -6,17 +6,17 @@ import { CoursePulse } from "../../../shared/models/coursePulse";
 @Injectable({
     providedIn: 'root'
   })
-export class CourseModuleService 
+export class SharedObjects 
 {
     course: Course;
 
     setCourse(id: string)
     {
         this.course = new Course;
+        this.course.id = id;
 
         this.courseService.getCourseDetails(id).then(
             res => {        
-                this.course.id = res["id"];
                 this.course.name = res["name"];
                 this.course.description = res["description"];
             });                
@@ -25,8 +25,5 @@ export class CourseModuleService
     constructor(private courseService: CourseService)
     {
         this.course = new Course;        
-        this.course.id = "";
-        this.course.name = "";
-        this.course.description = "";
     }
 }

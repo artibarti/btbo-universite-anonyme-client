@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseModuleService } from '../../services/course-module.service';
+import { SharedObjects } from '../../services/shared-objects.service';
 
 @Component({
   selector: 'app-course-info',
@@ -8,7 +8,7 @@ import { CourseModuleService } from '../../services/course-module.service';
 })
 export class CourseInfoComponent implements OnInit {
 
-  constructor(private courseModuleService: CourseModuleService) {}
+  constructor(sharedObjects: SharedObjects) {}
 
   ngOnInit() {
   }

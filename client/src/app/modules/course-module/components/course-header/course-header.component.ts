@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseModuleService } from '../../services/course-module.service';
 import { CoursePulse } from '../../../../shared/models/coursePulse';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from '../../../../shared/services/course/course.service';
+import { SharedObjects } from '../../services/shared-objects.service';
 
 @Component({
   selector: 'app-course-header',
@@ -11,7 +11,8 @@ import { CourseService } from '../../../../shared/services/course/course.service
 })
 export class CourseHeaderComponent implements OnInit {
 
-  constructor(private courseService: CourseService, private route: ActivatedRoute) {}
+  constructor(private courseService: CourseService, private route: ActivatedRoute,
+    private sharedObjects: SharedObjects) {}
 
   id: string;
 
@@ -27,15 +28,12 @@ export class CourseHeaderComponent implements OnInit {
 
   ngOnInit() 
   {
-    this.route.params.subscribe(params => {
-        this.id = params['id'];
-        this.initChart();
-    });
+    this.initChart();
   }
 
   initChart()
-  {
-    this.courseService.getCoursePulse(this.id).then(
+  {    
+    this.courseService.getCoursePulse(this.sharedObjects.course.id).then(
         res => {
             res.forEach(p => this.coursePulse.push(p));
             console.log(this.coursePulse);            

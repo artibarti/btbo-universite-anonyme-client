@@ -13,7 +13,7 @@ import { SessionListComponent } from './components/session-list/session-list.com
 import { CourseInfoComponent } from './components/course-info/course-info.component'
 
 // services
-import { CourseModuleService } from './services/course-module.service';
+import { SharedObjects } from './services/shared-objects.service';
 
 
 @NgModule({
@@ -32,5 +32,6 @@ import { CourseModuleService } from './services/course-module.service';
     MDBBootstrapModule.forRoot()
   ],
   providers: [],
+  bootstrap: []
 })
 export class CourseModule {}
