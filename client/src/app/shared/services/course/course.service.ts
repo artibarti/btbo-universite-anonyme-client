@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs/Observable'
 import { SessionService } from '../session/session.service';
 import { Course } from '../../models/course';
+import { CoursePulse } from '../../models/coursePulse';
 
 @Injectable()
 export class CourseService {
@@ -33,7 +34,7 @@ export class CourseService {
     return this.http.get<any>(url).toPromise();    
   }
 
-  getCoursePulse(id: string) : Promise<Observable<string>>
+  getCoursePulse(id: string) : Promise<Observable<CoursePulse>>
   {
     var url = this.sessionService.apiURL 
       + "/courses/" + id + "/pulse";

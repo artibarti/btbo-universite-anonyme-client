@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseModuleService } from '../../services/course-module.service';
-import { Chart } from 'chart.js'
+import { CoursePulse } from '../../../../shared/models/coursePulse';
+import { ActivatedRoute } from '@angular/router';
+import { CourseService } from '../../../../shared/services/course/course.service';
 
 @Component({
   selector: 'app-course-header',
@@ -9,43 +11,70 @@ import { Chart } from 'chart.js'
 })
 export class CourseHeaderComponent implements OnInit {
 
-  constructor(private courseModuleService: CourseModuleService) {}
+  constructor(private courseService: CourseService, private route: ActivatedRoute) {}
+
+  id: string;
+
+  // chart stuff
+  coursePulse: Array<CoursePulse> = [];
+  
+  public chartType: string;
+  public chartDatasets: Array<any>;
+
+  public chartLabels: Array<String>;
+  public chartColors: Array<any>;
+  public chartOptions:any;
 
   ngOnInit() 
   {
-    // this.initChart();
+    this.route.params.subscribe(params => {
+        this.id = params['id'];
+        this.initChart();
+    });
   }
-
-  chart: Chart;
 
   initChart()
   {
-    this.chart = new Chart('canvas', {
-      type: 'line',
-      data: {
-        labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
-        datasets: [
-          { 
-            data: this.courseModuleService.coursePulse,
-            borderColor: "#3cba9f",
-            fill: false
-          },
-        ]
-      },
-      options: {
-        legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            display: true
-          }],
-          yAxes: [{
-            display: true
-          }],
-        }
-      }
-    });  
+    this.courseService.getCoursePulse(this.id).then(
+        res => {
+            res.forEach(p => this.coursePulse.push(p));
+            console.log(this.coursePulse);            
+
+            this.chartType = 'line';    
+
+            this.chartDatasets = [
+                {data: this.coursePulse.map(p => p.commentPulse) , label: 'Comments'},
+                {data: this.coursePulse.map(p => p.questionPulse) , label: 'Question'},
+            ];
+              
+            this.chartLabels = this.coursePulse.map(p => p.day);
+          
+            this.chartColors = [
+                {
+                    backgroundColor: 'rgba(220,220,220,0.2)',
+                    borderColor: 'rgba(220,220,220,1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(220,220,220,1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(220,220,220,1)'
+                },
+                {
+                    backgroundColor: 'rgba(151,187,205,0.2)',
+                    borderColor: 'rgba(151,187,205,1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(151,187,205,1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(151,187,205,1)'
+                }
+            ];
+          
+            this.chartOptions = {
+                responsive: true
+            };
+                    
+        });      
   }
 
 }

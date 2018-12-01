@@ -16,12 +16,21 @@
         <div id="description" class="tab-pane fade">
           <h3> > about this course</h3>
           <p>
-            {{this.courseModuleService.course.descriptions}}
+            <!-- {{this.courseModuleService.course.descriptions}} -->
           </p>
         </div>
         <div id="stats" class="tab-pane fade">
           <h3> > statistics</h3>
-          <canvas id="bar" class="chart chart-bar" chart-data="this.courseModuleService.coursePulse" chart-labels="['asd', 'asd', 'ert', 's', 'k', 'sad', 'fff']" chart-series="['haha']"></canvas>
+          <div style="display: block">
+            <canvas mdbChart
+                [chartType]="chartType"
+                [datasets]="chartDatasets"
+                [labels]="chartLabels"
+                [colors]="chartColors"
+                [options]="chartOptions"
+                [legend]="true">
+            </canvas>
+          </div>
         </div>
         <div id="settings" class="tab-pane fade">
           <h3> > settings</h3>
