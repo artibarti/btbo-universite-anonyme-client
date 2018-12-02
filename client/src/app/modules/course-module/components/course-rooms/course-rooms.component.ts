@@ -23,18 +23,16 @@ export class FilterPipe implements PipeTransform
 }
 
 @Component({
-  selector: 'app-room-list',
-  templateUrl: './room-list.component.html',
-  styleUrls: ['./room-list.component.scss']
+  selector: 'app-course-rooms',
+  templateUrl: './course-rooms.component.html',
+  styleUrls: ['./course-rooms.component.scss']
 })
-export class RoomListComponent implements OnInit {
+export class CourseRoomsComponent implements OnInit {
 
   rooms: CourseRoom[] = [];
+  myCourseRoomFilter: string;
 
-  mySessionFilter: string;
-
-  constructor(private courseService: CourseService, 
-    private sharedObjects: SharedObjects) {}
+  constructor(private courseService: CourseService, private sharedObjects: SharedObjects) {}
 
   ngOnInit() 
   {
@@ -43,6 +41,5 @@ export class RoomListComponent implements OnInit {
         res.forEach(p => this.rooms.push(p));
       });
   }
-
 
 }

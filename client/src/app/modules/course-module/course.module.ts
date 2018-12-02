@@ -6,15 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 // filters
-import { FilterPipe as SessionFilteripe } from './components/session-list/session-list.component'
-import { FilterPipe as RoomFilterPipe } from './components/room-list/room-list.component'
+import { FilterPipe as SessionFilteripe } from './components/course-sessions/course-sessions.component'
+import { FilterPipe as RoomFilterPipe } from './components/course-rooms/course-rooms.component'
 
 // components
-import { CourseHeaderComponent } from './components/course-header/course-header.component'
 import { CourseComponent } from './course.component';
-import { SessionListComponent } from './components/session-list/session-list.component'
-import { CourseInfoComponent } from './components/course-info/course-info.component'
-import { RoomListComponent } from './components/room-list/room-list.component'
+import { AboutCourseComponent } from './components/about-course/about-course.component'
+import { CourseRoomsComponent } from './components/course-rooms/course-rooms.component'
+import { CourseSessionsComponent } from './components/course-sessions/course-sessions.component'
+import { CourseSettingsComponent } from './components/course-settings/course-settings.component'
+import { CourseStatsComponent } from './components/course-stats/course-stats.component'
+
 
 // services
 import { SharedObjects } from './services/shared-objects.service';
@@ -23,12 +25,13 @@ import { SharedObjects } from './services/shared-objects.service';
 @NgModule({
   declarations: [
     CourseComponent,
-    CourseHeaderComponent,
-    SessionListComponent,
     SessionFilteripe,
     RoomFilterPipe,
-    CourseInfoComponent,
-    RoomListComponent
+    AboutCourseComponent,
+    CourseRoomsComponent,
+    CourseSessionsComponent,
+    CourseSettingsComponent,
+    CourseStatsComponent
   ],
   imports: [
     CommonModule,

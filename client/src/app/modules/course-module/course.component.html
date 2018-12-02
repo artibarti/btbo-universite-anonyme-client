@@ -1,34 +1,83 @@
-<div class="container" style="padding: 5px;">
-  <div class="row">
-    <div class="col">
-      <span class="float-left" style="color: darkblue; font-size: 20px">
-        <i class="fa fa-box"></i> &nbsp;
-        <a routerLink="/home/discover" routerLinkActive="active">Courses</a> &nbsp;/
-        <span style="font-weight: bold">{{this.sharedObjects.course.name}}</span> &nbsp;
-      </span>
-    </div>
-    <div class="col">
-      <div class="float-right btn-group" role="group" aria-label="Subs" style="margin: 3px">
-        <button type="button" class="btn btn-secondary btn-sm" disabled="true">124</button>
-        <button (click)="onStarClicked()" type="button" class="btn btn-outline-secondary btn-sm">Star</button>
+<div class=" ml-5 mr-5 mt-3">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <span class="float-left" style="color: black; font-size: 16px">
+            <i class="fa fa-backward" style="color: lightblue"></i> &nbsp;
+            <a routerLink="/home/discover" routerLinkActive="active">Courses</a> &nbsp;/
+            <span style="font-weight: bold; color: black">{{this.sharedObjects.course.name}}</span> &nbsp;
+          </span>
+        </div>
+        <div class="col">
+          <div class="float-right btn-group" role="group" aria-label="Subs" style="margin: 3px">
+            <button type="button" class="btn btn-dark btn-sm">124</button>
+            <button (click)="onStarClicked()" type="button" class="btn btn-info btn-sm">
+              <i class="fa fa-star" style="color: lightyellow"></i>              
+              Star
+            </button>
+          </div>
+          <div class="float-right btn-group" role="group" aria-label="Stars" style="margin: 3px">
+            <button type="button" class="btn btn-dark btn-sm">32</button>
+            <button type="button" disabled="true" class="btn btn-info btn-sm">
+              Subs
+            </button>
+          </div>  
+        </div>
       </div>
-      <div class="float-right btn-group" role="group" aria-label="Stars" style="margin: 3px">
-        <button type="button" class="btn btn-secondary btn-sm" disabled="true">32</button>
-        <button type="button" disabled="true" class="btn btn-outline-secondary btn-sm">Subs</button>
-      </div>  
+    
+      <hr style="background-color: #F5D0A9; height: 2px; border: 0;">
+      <div class="card-fluid text-center">
+        <div class="card-header-fluid">
+          <ul class="nav nav-tabs card-body-tabs">
+            <li>
+              <a id="aboutToggleLink" class="nav-link" data-toggle="tab" href="#description" style="color: black">
+                <i class="fa fa-map" style="color: lightblue"></i>
+                About
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" data-toggle="tab" href="#stats" style="color: black">
+                <i class="fa fa-beer" style="color: lightblue"></i>
+                Statistics              
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" data-toggle="tab" href="#settings" style="color: black">
+                <i class="fa fa-cog" style="color: lightblue"></i>              
+                Settings
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" data-toggle="tab" href="#sessions" style="color: black">
+                <i class="fa fa-archive" style="color: lightblue"></i>              
+                Sessions
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" data-toggle="tab" href="#rooms" style="color: black">
+                <i class="fa fa-map-marker" style="color: lightblue"></i>              
+                Rooms
+              </a>
+            </li>    
+          </ul>
+          <div class="tab-content in active" style="padding: 5px">
+            <div id="description" class="tab-pane fade">
+              <app-about-course></app-about-course>              
+            </div>
+            <div id="stats" class="tab-pane fade">
+              <app-course-stats></app-course-stats>
+            </div>
+            <div id="settings" class="tab-pane fade">
+              <app-course-settings></app-course-settings>
+            </div>
+            <div id="sessions" class="tab-pane fade">
+              <app-course-sessions></app-course-sessions>
+            </div>  
+            <div id="rooms" class="tab-pane fade">
+              <app-course-rooms></app-course-rooms>
+            </div>  
+          </div>  
+        </div>
+      </div>
     </div>
   </div>
-  <hr>
-  <div class="row">
-    <div class="col-xs-2">  
-      <app-session-list></app-session-list>
-      <br>
-      <app-room-list></app-room-list>
-    </div>
-    <div class="d-flex flex-column col" style="background-color: white">
-      <app-course-header></app-course-header>
-      <hr>
-      <router-outlet></router-outlet>
-    </div>
-  </div>  
-</div>

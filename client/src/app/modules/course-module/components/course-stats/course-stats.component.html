@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <br>
+      <div class="card">
+        <div class="card-header">
+          Overview
+        </div>
+        <div class="card-body">
+          <div class="row" style="font-weight: bold">
+            <div class="col">
+              <i class="fa fa-question" style="color: #0080FF"></i>
+              0 active issues
+            </div>
+            <div class="col">
+              <i class="fa fa-play" style="color: #0080FF"></i>
+              0 active session
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h3>weekly pulse</h3>
+      <div style="display: block">
+        <canvas mdbChart
+            [chartType]="chartType"
+            [datasets]="chartDatasets"
+            [labels]="chartLabels"
+            [colors]="chartColors"
+            [options]="chartOptions"
+            [legend]="true">
+        </canvas>
+      </div>        
+    </div>
+  </div>
+</div>

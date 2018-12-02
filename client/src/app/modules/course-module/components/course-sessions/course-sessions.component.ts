@@ -1,8 +1,7 @@
-import { Component, OnInit, PipeTransform, Pipe } from '@angular/core';
-import { CourseSessionService } from '../../../../shared/services/course-session/course-session.service';
-import { SharedObjects } from '../../services/shared-objects.service';
-import { CourseService } from '../../../../shared/services/course/course.service';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { CourseSession } from '../../../../shared/models/session';
+import { CourseService } from '../../../../shared/services/course/course.service';
+import { SharedObjects } from '../../services/shared-objects.service';
 
 @Pipe({
   name: 'filter',
@@ -24,18 +23,16 @@ export class FilterPipe implements PipeTransform
 }
 
 @Component({
-  selector: 'app-session-list',
-  templateUrl: './session-list.component.html',
-  styleUrls: ['./session-list.component.scss']
+  selector: 'app-course-sessions',
+  templateUrl: './course-sessions.component.html',
+  styleUrls: ['./course-sessions.component.scss']
 })
-export class SessionListComponent implements OnInit {
+export class CourseSessionsComponent implements OnInit {
 
   sessions: CourseSession[] = [];
-
   mySessionFilter: string;
 
-  constructor(private courseService: CourseService, 
-    private sharedObjects: SharedObjects) {}
+  constructor(private courseService: CourseService, private sharedObjects: SharedObjects) {}
 
   ngOnInit() 
   {
