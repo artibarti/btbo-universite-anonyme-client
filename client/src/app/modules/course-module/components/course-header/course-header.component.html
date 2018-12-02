@@ -17,9 +17,11 @@
       </ul>
       <div class="tab-content" style="padding: 5px">
         <div id="description" class="tab-pane fade">
-          <h3> > about this course</h3>
+          <br>
+          <h3>about this course</h3>
+          <br>
           <p>
-            <!-- {{this.courseModuleService.course.descriptions}} -->
+            {{this.sharedObjects.course.description}}
           </p>
         </div>
         <div id="stats" class="tab-pane fade">
@@ -29,7 +31,7 @@
           </p>
         </div>
         <div id="pulse" class="tab-pane fade">
-          <h3> > pulse</h3>
+          <h3>pulse</h3>
           <div style="display: block">
             <canvas mdbChart
                 [chartType]="chartType"
@@ -42,7 +44,7 @@
           </div>
         </div>
         <div id="settings" class="tab-pane fade">
-          <h3> > settings</h3>
+          <h3>settings</h3>
           <p>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
           </p>

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark" style="background-color: #070719; color: #fff;">
-  <a class="navbar-brand" href="" style="font: 2em  Lucida Console;">{{title}}</a>
+  <span class="navbar-brand" style="font: 2em  Lucida Console;">{{title}}</span>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav">
       <a *ngIf="sessionService.authenticated == true" routerLink="/home/news" routerLinkActive="active" class="nav-item nav-link active">Home</a>
@@ -32,11 +32,11 @@
           <a class="dropdown-item" href="#">Manage Courses</a>
         </div>
       </div>
-      <button routerLink="/login" routerLinkActive="active" style="margin: 5px" mdbBtn *ngIf="sessionService.authenticated == false" type="button" class="btn btn-primary navbar-btn">Login</button>
-      <button routerLink="/register" routerLinkActive="active" style="margin: 5px" mdbBtn *ngIf="sessionService.authenticated == false" type="button" class="btn btn-primary navbar-btn">SignUp</button>
+      <button routerLink="/login" routerLinkActive="active" style="margin: 5px" mdbBtn *ngIf="sessionService.authenticated == false" type="button" class="btn btn-light navbar-btn">Login</button>
+      <button routerLink="/register" routerLinkActive="active" style="margin: 5px" mdbBtn *ngIf="sessionService.authenticated == false" type="button" class="btn btn-light navbar-btn">SignUp</button>
       <form *ngIf="sessionService.authenticated == true" class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-light my-2 my-sm-0 btn-sm" type="submit">Search</button>
       </form>
       <a class="nav-item nav-link" href="https://github.com/artibarti/btbo-universite-anonyme-client" target="_blank">
         <i class="fa fa-github"></i>
