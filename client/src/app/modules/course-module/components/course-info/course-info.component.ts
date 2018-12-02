@@ -10,7 +10,9 @@ export class CourseInfoComponent implements OnInit {
 
   constructor(sharedObjects: SharedObjects) {}
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    
   }
 
 }

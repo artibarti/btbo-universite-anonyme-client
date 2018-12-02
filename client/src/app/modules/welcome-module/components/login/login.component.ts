@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SessionService } from '../../../../shared/services/session/session.service';
 import { Router } from '@angular/router';
+import { User } from '../../../../shared/models/user';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  credentials = {username: '', password: ''};
+  user: User = new User;
+
   loginAttemptRefused = false;
   error_msg = "email or password is incorrect"
 
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   onLoginClicked() 
   {
-    this.sessionService.validateLogin(this.credentials);
+    this.sessionService.validateLogin(this.user);
   }
 
 }

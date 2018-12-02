@@ -2,12 +2,14 @@ import { Course } from "../../../shared/models/course";
 import { Injectable } from "@angular/core";
 import { CourseService } from "../../../shared/services/course/course.service";
 import { CoursePulse } from "../../../shared/models/coursePulse";
+import { Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
   })
 export class SharedObjects 
 {
+
     course: Course;
 
     setCourse(id: string)

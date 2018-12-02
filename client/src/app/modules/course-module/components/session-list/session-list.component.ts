@@ -1,6 +1,8 @@
 import { Component, OnInit, PipeTransform, Pipe } from '@angular/core';
 import { CourseSessionService } from '../../../../shared/services/course-session/course-session.service';
 import { SharedObjects } from '../../services/shared-objects.service';
+import { CourseService } from '../../../../shared/services/course/course.service';
+import { CourseSession } from '../../../../shared/models/session';
 
 @Pipe({
   name: 'filter',
@@ -28,11 +30,19 @@ export class FilterPipe implements PipeTransform
 })
 export class SessionListComponent implements OnInit {
 
+  sessions: CourseSession[] = [];
+
   mySessionFilter: string;
 
-  constructor(private courseSessionService: CourseSessionService, 
+  constructor(private courseService: CourseService, 
     private sharedObjects: SharedObjects) {}
 
-  ngOnInit() {}
+  ngOnInit() 
+  {
+    this.courseService.getSessionsForCourse(this.sharedObjects.course.id).then(
+      res => {        
+        res.forEach(p => this.sessions.push(p));
+      });
+  }
 
 }

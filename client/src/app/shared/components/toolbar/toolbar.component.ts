@@ -13,18 +13,11 @@ export class ToolbarComponent implements OnInit {
   
   onLogoutClicked()
   {
-    this.sessionService.authenticated = false;
-    this.router.navigate(['/login'])
+    this.sessionService.logout();
   }
 
-  constructor(private sessionService: SessionService, private router: Router) 
-  {
-    
-  }
+  constructor(private sessionService: SessionService, private router: Router) {}
 
-  ngOnInit() 
-  {
-  
-  }
+  ngOnInit() {}
 
 }

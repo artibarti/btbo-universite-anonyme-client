@@ -20,7 +20,7 @@
           <a routerLink="/settings" routerLinkActive="active" class="dropdown-item">Profile</a>
           <div class="dropdown-divider"></div>          
           <a routerLink="/settings" routerLinkActive="active" class="dropdown-item">Settings</a>
-          <a routerLink="/login" routerLinkActive="active" class="dropdown-item" role="link">Logout</a>
+          <a (click)="onLogoutClicked()" class="dropdown-item" role="link">Logout</a>
         </div>
       </div>
       <div class="dropdown" *ngIf="sessionService.authenticated == true">

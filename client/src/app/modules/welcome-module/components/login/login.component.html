@@ -3,8 +3,8 @@
   <div class="row justify-content-center" style="padding: 10px">
     <form class="text-center border border-light p-5" style="background-color: white;">
       <p class="h4 mb-4">Login</p>
-      <input type="email" id="usernameInput" name="username" class="form-control mb-4" placeholder="Username" [(ngModel)]="credentials.username">  
-      <input type="password" id="passwordInput" name="password" class="form-control mb-4" placeholder="Password" [(ngModel)]="credentials.password">  
+      <input type="email" id="usernameInput" name="userName" class="form-control mb-4" placeholder="Username" [(ngModel)]="user.userName">  
+      <input type="password" id="passwordInput" name="password" class="form-control mb-4" placeholder="Password" [(ngModel)]="user.password">  
       <div class="d-flex justify-content-around">
         <div>
           <mdb-checkbox [default]="true">Remember me</mdb-checkbox>

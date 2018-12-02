@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../../../../shared/models/course';
+import { CourseService } from '../../../../shared/services/course/course.service';
 
 @Component({
   selector: 'app-create-course',
@@ -10,11 +11,15 @@ export class CreateCourseComponent implements OnInit {
 
   course: Course;
 
-  constructor() {}
+  constructor(private courseService: CourseService) {}
 
   ngOnInit() 
   {
     this.course = new Course;
   }
 
+  onCreateClicked()
+  {
+    this.courseService.addCourse(this.course);
+  }
 }

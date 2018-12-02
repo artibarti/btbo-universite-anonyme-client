@@ -23,8 +23,10 @@ export class SessionService {
     return hashInBase64 + '#' + salt;
   }
 
-  validateRegistration(credentials) {
-    const headers = new HttpHeaders(credentials);
+  validateRegistration(user: User) {
+    
+    var userDTO: User = user;
+    const headers = new HttpHeaders(JSON.stringify(userDTO));
     const requestHeader = {
       headers: headers,
     };
@@ -49,10 +51,14 @@ export class SessionService {
   }
 
 
-  validateLogin(credentials) {
+  validateLogin(user: User) {
 
-    /*
-    const headers = new HttpHeaders(credentials);
+    var userDTO = {
+      userName: user.userName,
+      password: user.password
+    };
+
+    const headers = new HttpHeaders(userDTO);
     const requestHeader = {
       headers: headers,
     };
@@ -60,11 +66,13 @@ export class SessionService {
     var url = this.apiURL + "/login";
 
     this.http.get(url, requestHeader).subscribe(response => {
-      if (response['email']) {
+      if (response['id']) {
         this.authenticated = true;
         this.currentUser.email = response['email'];
-        this.currentUser.name = response['name'];
+        this.currentUser.firstName = response['firstName'];
+        this.currentUser.lastName = response['lastName'];
         this.currentUser.id = response['id'];
+        this.currentUser.token = response['token'];
       } else {
         this.authenticated = false;
       }
@@ -75,8 +83,7 @@ export class SessionService {
       () => {
         this.router.navigate(['home'])
       });
-    */
-
+    
     this.authenticated = true;
     this.currentUser.email = "testemail@test.com";
     this.currentUser.firstName = "testfirstname";
@@ -84,6 +91,13 @@ export class SessionService {
     this.currentUser.userName = "kurwa124";
     this.currentUser.id = "1";
     this.router.navigate(['home']);
+  }
+
+  logout()
+  {
+    this.currentUser = new User;
+    this.authenticated = false;
+    this.router.navigate(['/login']);
   }
 
   constructor(private http: HttpClient, private router: Router) 

@@ -1,8 +1,26 @@
 <div class="container" style="padding: 5px;">
   <div class="row">
+    <div class="col">
+      <span class="float-left" style="color: darkblue; font-size: 20px">
+        <i class="fa fa-box"></i> &nbsp;
+        <a routerLink="/home/discover" routerLinkActive="active">Courses</a> &nbsp;/
+        <span style="font-weight: bold">{{this.sharedObjects.course.name}}</span> &nbsp;
+      </span>
+    </div>
+    <div class="col">
+      <div class="float-right btn-group" role="group" aria-label="Subs" style="margin: 3px">
+        <button type="button" class="btn btn-secondary btn-sm" disabled="true">124</button>
+        <button (click)="onStarClicked()" type="button" class="btn btn-outline-secondary btn-sm">Star</button>
+      </div>
+      <div class="float-right btn-group" role="group" aria-label="Stars" style="margin: 3px">
+        <button type="button" class="btn btn-secondary btn-sm" disabled="true">32</button>
+        <button type="button" disabled="true" class="btn btn-outline-secondary btn-sm">Subs</button>
+      </div>  
+    </div>
+  </div>
+  <hr>
+  <div class="row">
     <div class="col-xs-2">  
-      <app-course-info></app-course-info>
-      <br>
       <app-session-list></app-session-list>
     </div>
     <div class="d-flex flex-column col" style="background-color: white">
@@ -10,5 +28,5 @@
       <hr>
       <router-outlet></router-outlet>
     </div>
-  </div>
-</div>      
+  </div>  
+</div>

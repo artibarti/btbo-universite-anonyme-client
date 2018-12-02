@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../../../shared/services/session/session.service';
+import { User } from '../../../../shared/models/user';
 
 @Component({
   selector: 'app-registration',
@@ -8,24 +9,16 @@ import { SessionService } from '../../../../shared/services/session/session.serv
 })
 export class RegistrationComponent implements OnInit {
 
-  credentials = 
-  {
-    email: '', 
-    password: '', 
-    username: '',
-    firstname: '',
-    lastname: ''
-  };
+  user: User = new User;
   
   registrationAttemptRefused = false;
-
   error_msg = "email address is already in use"
 
   constructor(private sessionService: SessionService) {}
 
   onRegistrationClicked() 
   {
-    this.sessionService.validateRegistration(this.credentials);
+    this.sessionService.validateRegistration(this.user);
   }
 
   ngOnInit() {}

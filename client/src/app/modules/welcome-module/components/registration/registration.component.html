@@ -4,15 +4,15 @@
       <p class="h4 mb-4">Sign up</p>
       <div class="form-row mb-4">
         <div class="col">
-          <input type="text" id="firstNameInput" name="firstname" class="form-control" placeholder="First name" [(ngModel)]="credentials.firstname">
+          <input type="text" id="firstNameInput" name="firstName" class="form-control" placeholder="First name" [(ngModel)]="user.firstName">
         </div>
         <div class="col">
-          <input type="text" id="lastNameInput" name="lastname" class="form-control" placeholder="Last name" [(ngModel)]="credentials.lastname">
+          <input type="text" id="lastNameInput" name="lastName" class="form-control" placeholder="Last name" [(ngModel)]="user.lastName">
         </div>
       </div>
-      <input type="text" id="usernameInput" name="username" class="form-control mb-4" placeholder="Username" [(ngModel)]="credentials.username">
-      <input type="email" id="emailInput" name="email" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="credentials.email">
-      <input type="password" id="passwordInput" name="password" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)]="credentials.password">
+      <input type="text" id="usernameInput" name="userName" class="form-control mb-4" placeholder="Username" [(ngModel)]="user.userName">
+      <input type="email" id="emailInput" name="email" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="user.email">
+      <input type="password" id="passwordInput" name="password" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)]="user.password">
       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         At least 8 characters and 1 digit
       </small>
