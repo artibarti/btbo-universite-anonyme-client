@@ -13,17 +13,34 @@ export class LoginComponent implements OnInit {
   user: User = new User;
 
   loginAttemptRefused = false;
-  error_msg = "email or password is incorrect"
+  error_msg = "Pls fill all fields";
 
   constructor(
     private sessionService: SessionService,
     private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() 
+  {
+    this.loginAttemptRefused = false;
+    this.user = new User;
+  }
 
   onLoginClicked() 
   {
-    this.sessionService.validateLogin(this.user);
+    if (this.preValidateLogin())
+    {
+      this.sessionService.validateLogin(this.user);
+    }
+  }
+
+  preValidateLogin() : boolean
+  {
+    if (this.user.userName = "" && this.user.password != "")
+    {
+      return true;
+    }
+    this.loginAttemptRefused = true;
+    return false;
   }
 
 }

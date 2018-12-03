@@ -12,15 +12,35 @@ export class RegistrationComponent implements OnInit {
   user: User = new User;
   
   registrationAttemptRefused = false;
-  error_msg = "email address is already in use"
+  error_msg = "All fields are required!"
 
   constructor(private sessionService: SessionService) {}
 
   onRegistrationClicked() 
   {
-    this.sessionService.validateRegistration(this.user);
+    if (this.preValidateRagistration())
+    {
+      this.sessionService.validateRegistration(this.user);
+    }
   }
 
-  ngOnInit() {}
+  preValidateRagistration() : boolean
+  {
+    if (this.user.email != "" && this.user.firstName != ""
+      && this.user.lastName != "" && this.user.password != ""
+      && this.user.userName != "") 
+      {
+        return true;
+      }
+    
+    this.registrationAttemptRefused = true;
+    return false;
+  }
+
+  ngOnInit() 
+  {
+    this.registrationAttemptRefused = false;
+    this.user = new User;
+  }
 
 }
