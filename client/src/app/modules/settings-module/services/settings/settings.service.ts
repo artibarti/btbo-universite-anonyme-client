@@ -13,10 +13,7 @@ export class SettingsService {
 
   updateProfile(user: User)
   {    
-    var url = this.sessionService.apiURL 
-      + "/users/" + this.sessionService.currentUser.id + "/update";
-          
-    this.http.put(url, user);
+
   }
 
 }

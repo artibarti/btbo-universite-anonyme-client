@@ -11,8 +11,8 @@ export class NewsFeedService {
   getNewsFeedForUser(id : string) : Observable<any> 
   {
     var url = this.sessionService.apiURL
-      + "/users/" + id + "/newsfeed";
+      + "/user/newsfeed";
     
-      return this.http.get(url);    
+      return this.http.get(url, {headers : {'token' : this.sessionService.token}});    
   }
 }

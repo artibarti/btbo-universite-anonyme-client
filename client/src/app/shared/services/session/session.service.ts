@@ -3,6 +3,7 @@ import { User } from '../../models/user'
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js'
+import { log } from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,14 @@ export class SessionService {
   portNumber = "8080";
   apiURL = this.serverName + ":" + this.portNumber;
 
+  token: string = "";
+
+  getMySaltFromServer(username: string)
+  {
+    var url = "/users/" + username + "/getsalt";
+    return this.http.get(url).toPromise();
+  }
+
   hashPasswd(password: string): string 
   {
     var salt = "d84b7eb1";
@@ -23,18 +32,14 @@ export class SessionService {
     return hashInBase64 + '#' + salt;
   }
 
-  validateRegistration(user: User) {
+  validateRegistration(user: User) 
+  {
     
-    var userDTO: User = user;
-    const headers = new HttpHeaders(JSON.stringify(userDTO));
-    const requestHeader = {
-      headers: headers,
-    };
-
     var url = this.apiURL + "/register";
 
-    this.http.get(url, requestHeader).subscribe(response => {
-      if (response['email']) 
+    this.http.get(url, { headers : {'userName': user.userName, 'email': user.email, 'firstName' : user.firstName, 
+      'lastName' : user.lastName, 'password' : this.hashPasswd(user.password) }}).subscribe(response => {
+      if (response['firstName']) 
       {
         console.log("registration success");        
       } else 
@@ -50,29 +55,17 @@ export class SessionService {
       });
   }
 
-
   validateLogin(user: User) {
-
-    var userDTO = {
-      userName: user.userName,
-      password: user.password
-    };
-
-    const headers = new HttpHeaders(userDTO);
-    const requestHeader = {
-      headers: headers,
-    };
-
+   
     var url = this.apiURL + "/login";
 
-    this.http.get(url, requestHeader).subscribe(response => {
-      if (response['id']) {
+    this.http.get(url, { headers : {'userName' : user.userName, 'password' : this.hashPasswd(user.password)}}).subscribe(response => {
+      if (response['token']) {
         this.authenticated = true;
         this.currentUser.email = response['email'];
         this.currentUser.firstName = response['firstName'];
         this.currentUser.lastName = response['lastName'];
-        this.currentUser.id = response['id'];
-        this.currentUser.token = response['token'];
+        this.token = response['token'];
       } else {
         this.authenticated = false;
       }
@@ -82,15 +75,7 @@ export class SessionService {
       },
       () => {
         this.router.navigate(['home'])
-      });
-    
-    this.authenticated = true;
-    this.currentUser.email = "testemail@test.com";
-    this.currentUser.firstName = "testfirstname";
-    this.currentUser.lastName = "testlastname";
-    this.currentUser.userName = "kurwa124";
-    this.currentUser.id = "1";
-    this.router.navigate(['home']);
+      });    
   }
 
   logout()

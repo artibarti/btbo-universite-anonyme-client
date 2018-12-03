@@ -1,7 +1,6 @@
 export class User {
     
     id: string;
-    token: string;
     firstName: string;
     lastName: string;
     userName: string;
@@ -11,7 +10,6 @@ export class User {
     constructor() 
     { 
         this.id = ""; 
-        this.token = "";
         this.firstName = ""; 
         this.lastName = "";
         this.userName = "";

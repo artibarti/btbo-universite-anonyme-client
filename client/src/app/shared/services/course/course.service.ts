@@ -15,17 +15,17 @@ export class CourseService {
   getAllSubscribtionForCurrentUser() : Promise<Observable<Course>>
   {
     var url = this.sessionService.apiURL 
-      + "/users/" + this.sessionService.currentUser.id + "/subs";
+      + "/user/subs";
     
-    return this.http.get<any>(url).toPromise();
+    return this.http.get<any>(url, { headers : {'token' : this.sessionService.token}}).toPromise();
   }
 
   getAdminedCoursesForCurrentUser() : Promise<Observable<Course>>
   {
     var url = this.sessionService.apiURL 
-      + "/users/" + this.sessionService.currentUser.id + "/adminroles";
+      + "/user/adminroles";
     
-    return this.http.get<any>(url).toPromise();
+    return this.http.get<any>(url, {headers : {'token' : this.sessionService.token}}).toPromise();
   }
 
   getCourseDetails(id: string) : Promise<Observable<Course>> 
