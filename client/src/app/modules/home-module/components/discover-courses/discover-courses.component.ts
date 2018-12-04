@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from '../../../../shared/services/course/course.service';
 
 @Component({
   selector: 'app-discover-courses',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiscoverCoursesComponent implements OnInit {
 
-  constructor() { }
+  inviteCode: string = "";
+  errorMsg: string = "Invite code is unacceptable";
+  showError: boolean = false;
 
-  ngOnInit() {
+  constructor(private courseService: CourseService) { }
+
+  ngOnInit() 
+  {
+    this.inviteCode = "";
+  }
+
+  onJoinClicked()
+  {
+    if (this.inviteCode != "")
+    {
+      this.showError = true;
+    }
+
+    this.courseService.joinCourseWithInviteCode(this.inviteCode);
   }
 
 }

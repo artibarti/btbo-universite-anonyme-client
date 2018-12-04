@@ -14,6 +14,7 @@ import { WelcomeModule } from './modules/welcome-module/welcome.module'
 import { HomeModule } from './modules/home-module/home.module'
 import { CourseModule } from './modules/course-module/course.module'
 import { SettingsModule } from './modules/settings-module/settings.module'
+import { CreateCourseModule } from './modules/create-course-module/create-course.module'
 
 // services
 import { SessionService } from './shared/services/session/session.service'
@@ -38,6 +39,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
     HomeModule,
     CourseModule,
     SettingsModule,
+    CreateCourseModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

@@ -6,6 +6,22 @@
       <a href="#about" class="nav-item nav-link active" data-toggle="modal" data-target="#about">About</a>
       <a *ngIf="sessionService.authenticated == true" routerLink="/home/discover" routerLinkActive="active" class="nav-item nav-link active" href="/">Explore</a>
       <a *ngIf="sessionService.authenticated == true" routerLink="/home/news" routerLinkActive="active" class="nav-item nav-link active" href="/">Activity</a>
+      <div *ngIf="sessionService.authenticated == true && sessionService.anonym == false" class="btn-group" role="group" aria-label="Subs" style="margin: 3px">
+        <button type="button" disabled="true" class="btn btn-dark btn-sm">
+          <i class="fa fa-toggle-off" style="color: lightyellow"></i>              
+        </button>
+        <button (click)="onSwitchToAnonymClicked()" type="button" class="btn btn-info btn-sm">
+          Switch to anonym
+        </button>
+      </div>  
+      <div *ngIf="sessionService.authenticated == true && sessionService.anonym == true" class="btn-group" role="group" aria-label="Subs" style="margin: 3px">
+        <button type="button" disabled="true" class="btn btn-warning btn-sm">
+          <i class="fa fa-toggle-on" style="color: lightyellow"></i>              
+        </button>
+        <button (click)="onSwitchToPublicClicked()" type="button" class="btn btn-info btn-sm">
+          Switch to public
+        </button>
+      </div>    
     </div>
   </div>
   <div class="navbar-expand ml-auto navbar-nav">

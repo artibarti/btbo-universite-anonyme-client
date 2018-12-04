@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   preValidateLogin() : boolean
   {
-    if (this.user.userName = "" && this.user.password != "")
+    if (this.user.userName != "" && this.user.password != "")
     {
       return true;
     }

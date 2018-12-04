@@ -20,4 +20,14 @@ export class ToolbarComponent implements OnInit {
 
   ngOnInit() {}
 
+  onSwitchToAnonymClicked()
+  {    
+    this.sessionService.anonym = true;
+  }
+
+  onSwitchToPublicClicked()
+  {
+    this.sessionService.anonym = false;
+  }
+
 }

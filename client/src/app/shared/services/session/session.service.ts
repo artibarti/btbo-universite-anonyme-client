@@ -17,6 +17,8 @@ export class SessionService {
   apiURL = this.serverName + ":" + this.portNumber;
 
   token: string = "";
+  anonym: boolean = false;
+
 
   getMySaltFromServer(username: string)
   {

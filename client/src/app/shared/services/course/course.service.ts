@@ -6,11 +6,13 @@ import { Course } from '../../models/course';
 import { CoursePulse } from '../../models/coursePulse';
 import { CourseSession } from '../../models/session';
 import { CourseRoom } from '../../models/courseRoom';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class CourseService {
 
-  constructor(private http: HttpClient, private sessionService : SessionService) {}
+  constructor(private http: HttpClient, private sessionService : SessionService,
+    private router: Router) {}
 
   getAllSubscribtionForCurrentUser() : Promise<Observable<Course>>
   {
@@ -21,7 +23,7 @@ export class CourseService {
   }
 
   getAdminedCoursesForCurrentUser() : Promise<Observable<Course>>
-  {
+  {    
     var url = this.sessionService.apiURL 
       + "/user/adminroles";
     
@@ -43,11 +45,15 @@ export class CourseService {
     return this.http.get<any>(url).toPromise();    
   }
 
-  addCourse(course: Course)
+  createCourse(course: Course)
   {
     var url = this.sessionService.apiURL 
       + "/courses/add";
-    this.http.post(url, course);
+    this.http.post(url, {'name' : course.name, 'description' : course.description}, 
+        {headers : {'token' : this.sessionService.token}}).toPromise().then(
+          res => {
+            this.router.navigate(["/home"]);
+        });
   }
 
   getSessionsForCourse(courseID: string) : Promise<Observable<CourseSession>>
@@ -61,7 +67,7 @@ export class CourseService {
   {
     var url = this.sessionService.apiURL 
       + "/courses/" + courseID + "/subs/sum";
-    this.http.get<any>(url);
+    return this.http.get<any>(url).toPromise();
   }
 
   getCourseRoomsForCourse(courseID: string) : Promise<Observable<CourseRoom>>
@@ -69,5 +75,10 @@ export class CourseService {
     var url = this.sessionService.apiURL 
       + "/courses/" + courseID + "/rooms";
     return this.http.get<any>(url).toPromise();
+  }
+
+  joinCourseWithInviteCode(code: string)
+  {
+
   }
 }

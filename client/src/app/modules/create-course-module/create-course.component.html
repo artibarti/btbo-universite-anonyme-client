@@ -1,0 +1,113 @@
+<div class=" ml-5 mr-5 mt-3">
+  <div class="container">
+    <div class="row">
+      <span style="font-weight: bold; font-size: 20px">Create Course</span>
+    </div>
+    <div class="row">
+      <span style="font-size: 15px; color: gray">
+        You can easily share knowledge by managing your courses with Universite Anonyme!
+      </span>
+    </div>  
+    <hr>
+    <br>
+    <div class="row">
+      <div class="col-4">
+        <div class="container">
+          <div class="row">      
+            <span style="font-weight: bold">Course Name</span>
+            <br>
+            <input type="text" class="form-control" [(ngModel)]="this.course.name" placeholder="Name" name="name">                
+          </div>
+          <div class="row" style="font-size: 14px; color: gray">
+            <span>
+              Great course names brings more interest. Get inspiration here: <a target="_tab" href="http://julianrosenblum.com/yalecourse/">course name generator</a>
+            </span>
+          </div>        
+          <br>
+          <div class="row">
+            <span style="font-weight: bold">Description</span>
+            <br>
+            <textarea rows="3" type="text" class="form-control" [(ngModel)]="this.course.description" placeholder="Describe your course" name="description"></textarea>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-4">
+              <div *ngIf="this.course.private == true" class="btn-group" role="group" aria-label="Public" style="margin: 3px">
+                <button type="button" class="btn btn-dark btn-sm">
+                  <i class="fa fa-lock" style="color: lightyellow"></i>              
+                </button>
+                <button (click)="onSwitchToPublicClicked()" type="button" class="btn btn-dark btn-sm">
+                  Make it public
+                </button>
+              </div>          
+              <div *ngIf="this.course.private == false" class="btn-group" role="group" aria-label="Private" style="margin: 3px">
+                <button type="button" class="btn btn-dark btn-sm">
+                  <i class="fa fa-lock" style="color: lightyellow"></i>              
+                </button>
+                <button (click)="onSwitchToPrivateClicked()" type="button" class="btn btn-dark btn-sm">
+                  Make it private
+                </button>
+              </div>            
+            </div>
+          </div>        
+        </div>
+      </div>
+      <div *ngIf="this.course.private == true" class="col-4">
+        <div class="container">          
+          <div class="row">
+            <span style="font-size: 20px; font-weight: bold">
+              Generate Invite Codes
+            </span>
+          </div>
+          <div class="row">            
+            <span style="font-size: 15px; color:darkslategray;">
+                You can generate persistent invite codes, invite codes with expiration date or with a limitation of maximum usage. You can skip this step and generate your invite codes later!
+            </span>    
+          </div>
+          <hr>
+          <br>
+          <div class="row">
+            <span style="font-weight: bold">Persistent invite code</span>
+          </div>
+          <div class="row">
+            <span style="font-weight: bold">Invite code with expiration date</span>            
+          </div>    
+          <div class="row">
+            <span style="font-weight: bold">Invite code with limitation of usage</span>            
+          </div>      
+        </div>        
+      </div>
+      <br>
+      <hr>  
+    </div>
+    <br>
+    <hr>
+    <div class="row">        
+      <button (click)="onCreateClicked()" block="true" class="btn btn-success btn-sm" type="button">Create</button>
+      &nbsp;&nbsp;
+      <button routerLink="/home" routerLinkActive="active" block="true" class="btn btn-danger btn-sm" type="button">Cancel</button>
+    </div>  
+    <br>
+    <hr>
+    <div class="row">        
+      <span class="float-left" style="color: grey; font-size: 12px">
+        <p>
+          ProTip! Generate invite codes for your private classes, so you can share with the ones you want!
+        </p>  
+      </span>
+    </div>           
+  </div>
+</div>
+
+    <!--
+    <br>
+    <hr>
+    <div class="row">        
+      <div class="col-4">
+        <button (click)="onCreateClicked()" block="true" class="btn btn-success btn-sm" type="button">Create</button>
+        &nbsp;&nbsp;
+        <button (click)="onCancelClicked()" block="true" class="btn btn-danger btn-sm" type="button">Cancel</button>
+      </div>
+    </div>
+
+    -->

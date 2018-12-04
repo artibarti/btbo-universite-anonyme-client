@@ -17,7 +17,6 @@ import { CourseSessionsComponent } from './components/course-sessions/course-ses
 import { CourseSettingsComponent } from './components/course-settings/course-settings.component'
 import { CourseStatsComponent } from './components/course-stats/course-stats.component'
 
-
 // services
 import { SharedObjects } from './services/shared-objects.service';
 
@@ -31,7 +30,7 @@ import { SharedObjects } from './services/shared-objects.service';
     CourseRoomsComponent,
     CourseSessionsComponent,
     CourseSettingsComponent,
-    CourseStatsComponent
+    CourseStatsComponent,
   ],
   imports: [
     CommonModule,

@@ -14,15 +14,19 @@ import { log } from 'util';
 export class CourseComponent 
 {
   constructor(private router: Router, private route: ActivatedRoute,
-    private sharedObjects: SharedObjects) {}
+    private sharedObjects: SharedObjects, private courseService: CourseService) {}
+
+  numberOfSubs : string;
 
   ngOnInit()
-  {
-    console.log("course.componnent ngoninit called");
-    
+  {    
     this.route.params.subscribe(params => {
       this.sharedObjects.setCourse( params['id'] );
     });
+
+    this.courseService.getCourseSubsSumForCourse(this.sharedObjects.course.id).then(
+      res => {this.numberOfSubs = res;}
+    )
   }
 
 }

@@ -23,6 +23,11 @@ const routes: Routes =
     loadChildren: './modules/course-module/course.module#CourseModule',
   },
   {
+    path: 'create/course',
+    canLoad: [AuthGuard],
+    loadChildren: './modules/create-course-module/create-course.module#CreateCourseModule',
+  },
+  {
     path: 'settings',
     canLoad: [AuthGuard],
     loadChildren: './modules/settings-module/settings.module#SettingsModule',
