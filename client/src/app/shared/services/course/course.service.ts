@@ -7,6 +7,8 @@ import { CoursePulse } from '../../models/coursePulse';
 import { CourseSession } from '../../models/session';
 import { CourseRoom } from '../../models/courseRoom';
 import { Router } from '@angular/router';
+import { log } from 'util';
+import { InviteCode } from '../../models/inviteCode';
 
 @Injectable()
 export class CourseService {
@@ -14,12 +16,14 @@ export class CourseService {
   constructor(private http: HttpClient, private sessionService : SessionService,
     private router: Router) {}
 
+
   getAllSubscribtionForCurrentUser() : Promise<Observable<Course>>
   {
     var url = this.sessionService.apiURL 
       + "/user/subs";
     
-    return this.http.get<any>(url, { headers : {'token' : this.sessionService.token}}).toPromise();
+    return this.http.get<any>(url, { headers : 
+      {'token' : this.sessionService.token}}).toPromise();
   }
 
   getAdminedCoursesForCurrentUser() : Promise<Observable<Course>>
@@ -27,7 +31,8 @@ export class CourseService {
     var url = this.sessionService.apiURL 
       + "/user/adminroles";
     
-    return this.http.get<any>(url, {headers : {'token' : this.sessionService.token}}).toPromise();
+    return this.http.get<any>(url, {headers : 
+      {'token' : this.sessionService.token}}).toPromise();
   }
 
   getCourseDetails(id: string) : Promise<Observable<Course>> 
@@ -42,18 +47,17 @@ export class CourseService {
   {
     var url = this.sessionService.apiURL 
       + "/courses/" + id + "/pulse";
-    return this.http.get<any>(url).toPromise();    
+    
+      return this.http.get<any>(url).toPromise();    
   }
 
-  createCourse(course: Course)
-  {
+  createCourse(course: Course) : Promise<Course>
+  {    
     var url = this.sessionService.apiURL 
       + "/courses/add";
-    this.http.post(url, {'name' : course.name, 'description' : course.description}, 
-        {headers : {'token' : this.sessionService.token}}).toPromise().then(
-          res => {
-            this.router.navigate(["/home"]);
-        });
+
+    return this.http.post<Course>(url, {'name' : course.name, 'description' : course.description, 'hidden' : course.hidden}, 
+        {headers : {'token' : this.sessionService.token}}).toPromise();
   }
 
   getSessionsForCourse(courseID: string) : Promise<Observable<CourseSession>>
@@ -74,11 +78,26 @@ export class CourseService {
   {
     var url = this.sessionService.apiURL 
       + "/courses/" + courseID + "/rooms";
+
     return this.http.get<any>(url).toPromise();
+  }
+
+  addInviteCodeToCourse(courseID: string, invitecode: InviteCode)
+  {
+    var url = this.sessionService.apiURL
+      + "/courses/" + courseID + "/invitecodes/generate";
+    
+    return this.http.post(url, {"id": invitecode.id, "maxCopy" : invitecode.maxCopy, 
+          "validUntil" : invitecode.validUntil, "code" : invitecode.code}, 
+      {headers: {'token' : this.sessionService.token}}).toPromise();
   }
 
   joinCourseWithInviteCode(code: string)
   {
+    var url = this.sessionService.apiURL
+      + "/courses/subscribe";
 
+    return this.http.get<Course>(url, {headers: {"code" : code, 
+      "token" : this.sessionService.token}}).toPromise();
   }
 }

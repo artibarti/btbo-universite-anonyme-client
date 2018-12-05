@@ -4,7 +4,7 @@
       <div class="row" style="padding: 5px; color: black; font-weight: bold">
         <div class=" col">
           <span class="float-left">Subscribtions</span>
-          <button routerLink="discover" routerLinkActive="active" block="true" class="btn float-right btn-info btn-sm" type="button">Discover</button>
+          <button routerLink="/discover" routerLinkActive="active" block="true" class="btn float-right btn-info btn-sm" type="button">Discover</button>
         </div>
       </div>
       <div class="row">
@@ -34,7 +34,7 @@
     </div>
     <div class="card-body">
       <a *ngFor="let course of adminedCourses | filter: subsFilter" [routerLink]="['/course', course.id]" routerLinkActive="active" style="font-weight: bold; font-size: 12px">
-        <i class="fa fa-bookmark"></i> {{course.name}}
+        <i class="fa fa-bookmark"></i> {{course.name}} <i *ngIf="course.hidden == true" class="fa fa-lock"></i>
         <br>
       </a>
     </div>

@@ -15,7 +15,7 @@ export class DiscoverCoursesComponent implements OnInit {
   constructor(private courseService: CourseService) { }
 
   ngOnInit() 
-  {
+  {    
     this.inviteCode = "";
   }
 

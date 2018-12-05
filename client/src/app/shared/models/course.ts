@@ -3,13 +3,13 @@ export class Course {
     id: string;
     name: string;
     description: string;
-    private: boolean;
+    hidden: boolean;
 
     constructor() 
     { 
         this.id = ""; 
         this.name = "";
         this.description = "";
-        this.private = false;
+        this.hidden = false;
     }
 }

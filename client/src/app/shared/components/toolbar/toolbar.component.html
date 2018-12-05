@@ -2,10 +2,10 @@
   <span class="navbar-brand" style="font: 2em  Lucida Console;">{{title}}</span>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav">
-      <a *ngIf="sessionService.authenticated == true" routerLink="/home/news" routerLinkActive="active" class="nav-item nav-link active">Home</a>
+      <a *ngIf="sessionService.authenticated == true" routerLink="/home" routerLinkActive="active" class="nav-item nav-link active">Home</a>
       <a href="#about" class="nav-item nav-link active" data-toggle="modal" data-target="#about">About</a>
-      <a *ngIf="sessionService.authenticated == true" routerLink="/home/discover" routerLinkActive="active" class="nav-item nav-link active" href="/">Explore</a>
-      <a *ngIf="sessionService.authenticated == true" routerLink="/home/news" routerLinkActive="active" class="nav-item nav-link active" href="/">Activity</a>
+      <a *ngIf="sessionService.authenticated == true" routerLink="/discover" routerLinkActive="active" class="nav-item nav-link active" href="/">Explore</a>
+      <a *ngIf="sessionService.authenticated == true" routerLink="/home" routerLinkActive="active" class="nav-item nav-link active" href="/">Activity</a>
       <div *ngIf="sessionService.authenticated == true && sessionService.anonym == false" class="btn-group" role="group" aria-label="Subs" style="margin: 3px">
         <button type="button" disabled="true" class="btn btn-dark btn-sm">
           <i class="fa fa-toggle-off" style="color: lightyellow"></i>              

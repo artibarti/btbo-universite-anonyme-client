@@ -9,8 +9,5 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent 
 {
-  constructor(private sessionService: SessionService, private router: Router) 
-  {
-    this.router.navigate(['home/news']);
-  }
+  constructor(private sessionService: SessionService, private router: Router) {}
 }

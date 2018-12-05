@@ -1,41 +1,47 @@
-<div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <span class="float-left" style="font-weight: bold">Hot Courses</span>
-      </div>
-    </div>  
-    <hr style="color: pink">
-    <div class="row">
-      <div class="card">
-        <div class="card-header" style="font-weight: bold">
-          Attention!
+<div class="container-fluid mt-3 ml-5 mr-5">
+  <div class="row">
+    <div class="col-4">
+      <div class="container">
+        <div class="row">
+          <span class="float-left" style="font-weight: bold">Join Course</span>
         </div>
-        <div class="card-body">
-          Invite codes may hava an expiration time, or maybe a maximum value of usage, it can be a rush to get into a course depends on owner!
+        <hr style="color: pink">
+        <div class="row">
+          <div class="card">
+            <div class="card-header" style="font-weight: bold">
+              Attention!
+            </div>
+            <div class="card-body">
+              Invite codes may hava an expiration time, or maybe a maximum value of usage, it can be a rush to get into a course depends on owner!
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col">
-        <input type="text" class="form-control" [(ngModel)]="this.inviteCode" placeholder="Invite Code" name="inviteCode">
         <br>
-        <button (click)="onJoinClicked()" class="btn btn-success btn-sm btn-block" type="button">Join</button>
-      </div>  
-      <div class="col">
-      
-      </div>  
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="this.inviteCode" placeholder="Invite Code" name="inviteCode">
+          </div>
+          <div class="col">
+            <button (click)="onJoinClicked()" class="btn btn-success btn-sm btn-block" type="button">Join</button>
+          </div>  
+        </div>
+        <br>
+        <div class="row">
+          <span class="float-left" style="color: grey; font-size: 12px">
+              ProTip! You can subscribe and leave courses whenever you want!
+          </span>
+        </div>                    
+      </div>      
+    </div>    
+    <div class="col-4">
+      <div class="container">
+        <div class="row">
+          <span class="float-left" style="font-weight: bold">Hot Courses</span>
+        </div>
+        <hr>
+        <!-- hot courses come here -->
+      </div>      
     </div>
-    <div class="row" *ngFor="let course of courses">
-  
-    </div>
-    <hr>
-    <div class="row">
-      <span class="float-left" style="color: grey; font-size: 12px">
-        <p>
-          ProTip! You can subscribe and leave courses whenever you want!
-        </p>  
-      </span>
-    </div> 
   </div>
-  
+  <hr>
+</div>  

@@ -31,28 +31,40 @@
           </div>
           <br>
           <div class="row">
-            <div class="col-4">
-              <div *ngIf="this.course.private == true" class="btn-group" role="group" aria-label="Public" style="margin: 3px">
-                <button type="button" class="btn btn-dark btn-sm">
-                  <i class="fa fa-lock" style="color: lightyellow"></i>              
-                </button>
-                <button (click)="onSwitchToPublicClicked()" type="button" class="btn btn-dark btn-sm">
-                  Make it public
-                </button>
-              </div>          
-              <div *ngIf="this.course.private == false" class="btn-group" role="group" aria-label="Private" style="margin: 3px">
-                <button type="button" class="btn btn-dark btn-sm">
-                  <i class="fa fa-lock" style="color: lightyellow"></i>              
-                </button>
-                <button (click)="onSwitchToPrivateClicked()" type="button" class="btn btn-dark btn-sm">
-                  Make it private
-                </button>
-              </div>            
+            <div *ngIf="this.course.hidden == true" class="btn-group" role="group" aria-label="Public" style="margin: 3px">
+              <button type="button" class="btn btn-dark btn-sm">
+                <i class="fa fa-lock" style="color: lightyellow"></i>              
+              </button>
+              <button (click)="onSwitchToPublicClicked()" type="button" class="btn btn-dark btn-sm">
+                Make it public
+              </button>
+            </div>          
+            <div *ngIf="this.course.hidden == false" class="btn-group" role="group" aria-label="Private" style="margin: 3px">
+              <button type="button" class="btn btn-dark btn-sm">
+                <i class="fa fa-lock" style="color: lightyellow"></i>              
+              </button>
+              <button (click)="onSwitchToPrivateClicked()" type="button" class="btn btn-dark btn-sm">
+                Make it private
+              </button>
+            </div>            
+          </div>
+          <br>
+          <div class="row" *ngIf="this.showError == true">
+            <div>
+              <span style="color: red; font-size: 14px">
+                  {{errorMsg}}
+              </span>
             </div>
-          </div>        
+          </div> 
+          <br>     
+          <div class="row">        
+            <button (click)="onCreateClicked()" block="true" class="btn btn-success btn-md" type="button">Create</button>
+            &nbsp;&nbsp;
+            <button routerLink="/home" routerLinkActive="active" block="true" class="btn btn-danger btn-md" type="button">Cancel</button>
+          </div>                
         </div>
       </div>
-      <div *ngIf="this.course.private == true" class="col-4">
+      <div *ngIf="this.course.hidden == true" class="col">
         <div class="container">          
           <div class="row">
             <span style="font-size: 20px; font-weight: bold">
@@ -67,14 +79,45 @@
           <hr>
           <br>
           <div class="row">
-            <span style="font-weight: bold">Persistent invite code</span>
+            <div class="col">
+              <div class="card w-100">
+                <div class="card-header">
+                  <span style="font-weight: bold">Persistent invite code</span>
+                  <input class="float-right" type="checkbox" [(ngModel)]="this.addPersistentInviteCode">
+                </div>
+                <div class="card-body">
+                  Persistent invite codes are useful if welcome anyone in your course who get this code.
+                </div>
+                <br>
+              </div>      
+            </div>
+            <div class="col">
+              <div class="card w-100">
+                <div class="card-header">
+                  <span style="font-weight: bold">Invite codes with usage limitation</span>
+                  <input class="float-right" type="checkbox" [(ngModel)]="this.addExpirationInviteCode" disabled="true">
+                </div>
+                <div class="card-body">
+                  Invite codes with usage limitation are useful is you want to allow only a limited amount of people into your courses.
+                </div>
+                <br><br>
+              </div>                        
+            </div>  
           </div>
+          <br>
           <div class="row">
-            <span style="font-weight: bold">Invite code with expiration date</span>            
-          </div>    
-          <div class="row">
-            <span style="font-weight: bold">Invite code with limitation of usage</span>            
-          </div>      
+            <div class="card w-100">
+              <div class="card-header">
+                <span style="font-weight: bold">Invite codes with expiration</span>
+                <input class="float-right" type="checkbox" [(ngModel)]="this.addLimitationInviteCode" disabled="true">
+              </div>
+              <div class="card-body">
+                Invite codes with expiration are useful when you want people to join your course only in a specified period.
+                <br><br>
+              </div>
+            </div>
+          </div>
+          <br>
         </div>        
       </div>
       <br>
@@ -82,11 +125,6 @@
     </div>
     <br>
     <hr>
-    <div class="row">        
-      <button (click)="onCreateClicked()" block="true" class="btn btn-success btn-sm" type="button">Create</button>
-      &nbsp;&nbsp;
-      <button routerLink="/home" routerLinkActive="active" block="true" class="btn btn-danger btn-sm" type="button">Cancel</button>
-    </div>  
     <br>
     <hr>
     <div class="row">        
@@ -98,16 +136,3 @@
     </div>           
   </div>
 </div>
-
-    <!--
-    <br>
-    <hr>
-    <div class="row">        
-      <div class="col-4">
-        <button (click)="onCreateClicked()" block="true" class="btn btn-success btn-sm" type="button">Create</button>
-        &nbsp;&nbsp;
-        <button (click)="onCancelClicked()" block="true" class="btn btn-danger btn-sm" type="button">Cancel</button>
-      </div>
-    </div>
-
-    -->
