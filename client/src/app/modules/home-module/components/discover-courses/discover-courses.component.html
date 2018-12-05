@@ -25,6 +25,9 @@
             <button (click)="onJoinClicked()" class="btn btn-success btn-sm btn-block" type="button">Join</button>
           </div>  
         </div>
+        <div class="row" *ngIf="this.showError==true">
+          <span style="color: darkred; font-size: 13px">{{errorMsg}}</span>
+        </div>
         <br>
         <div class="row">
           <span class="float-left" style="color: grey; font-size: 12px">
@@ -39,7 +42,12 @@
           <span class="float-left" style="font-weight: bold">Hot Courses</span>
         </div>
         <hr>
-        <!-- hot courses come here -->
+
+        <!-- hot courses -->
+        <div class="container">
+
+        </div>*ngFor="let singleItem of sevices;let i = index;
+      
       </div>      
     </div>
   </div>
