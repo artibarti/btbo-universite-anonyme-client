@@ -22,6 +22,13 @@ export class DiscoverCoursesComponent implements OnInit {
   {    
     this.inviteCode = "";
     this.showError = false;
+    this.courses = [];
+
+    this.courseService.getHotCourses().then(
+      res => {
+        res.forEach(p => this.courses.push(p));
+      }
+    )
   }
 
   onJoinClicked()
@@ -36,5 +43,10 @@ export class DiscoverCoursesComponent implements OnInit {
         this.route.navigate(["/home"]);
       });
   }
+
+  onJoinFreeCourseClicked(id: string)
+  {
+    console.log("onJoinFreeCourseClicked() with id: " + id);
+  } 
 
 }

@@ -1,5 +1,6 @@
 <div class="container-fluid mt-3 ml-5 mr-5">
   <div class="row">
+
     <div class="col-4">
       <div class="container">
         <div class="row">
@@ -35,21 +36,44 @@
           </span>
         </div>                    
       </div>      
-    </div>    
-    <div class="col-4">
-      <div class="container">
-        <div class="row">
-          <span class="float-left" style="font-weight: bold">Hot Courses</span>
-        </div>
-        <hr>
-
-        <!-- hot courses -->
-        <div class="container">
-
-        </div>*ngFor="let singleItem of sevices;let i = index;
-      
-      </div>      
     </div>
+
+    <div class="col-4 ml-3">
+      <div class="row">
+        <span class="float-left" style="font-weight: bold">Hot Courses</span>
+      </div>
+      <hr>
+      <div class="row mt-2" *ngFor="let course of courses">
+        <div class="card w-100">
+          <div class="card-header">
+            <span style="font-weight: bold; font-size: 18px;">{{course.name}}</span>
+            <div class="btn-group float-right mt-2" role="group" aria-label="Stars">
+              <button type="button" class="btn btn-dark btn-sm">14</button>
+              <button type="button" disabled="true" class="btn btn-info btn-sm">
+                Subs
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                {{course.description}}
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-4">
+                  <button (click)="onJoinFreeCourseClicked(course.id)" class="btn btn-success btn-sm btn-block" type="button">Join</button>                      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
   <hr>
 </div>  
+
+
+
