@@ -37,7 +37,7 @@ export class CourseSessionsComponent implements OnInit {
   ngOnInit() 
   {
     this.courseService.getSessionsForCourse(this.sharedObjects.course.id).then(
-      res => {        
+      res => {
         res.forEach(p => this.sessions.push(p));
       });
   }

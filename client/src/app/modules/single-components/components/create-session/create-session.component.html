@@ -1,0 +1,139 @@
+<div class=" ml-5 mr-5 mt-3">
+    <div class="container">
+      <div class="row">
+        <span style="font-weight: bold; font-size: 20px">Create Course</span>
+      </div>
+      <div class="row">
+        <span style="font-size: 15px; color: gray">
+          You can easily share knowledge by managing your courses with Universite Anonyme!
+        </span>
+      </div>  
+      <hr>
+      <br>
+      <div class="row">
+        <div class="col-4">
+          <div class="container">
+            <div class="row">      
+              <span style="font-weight: bold">Course Name</span>
+              <br>
+              <input type="text" class="form-control" [(ngModel)]="this.course.name" placeholder="Name" name="name">                
+            </div>
+            <div class="row" style="font-size: 14px; color: gray">
+              <span>
+                Great course names brings more interest. Get inspiration here: <a target="_tab" href="http://julianrosenblum.com/yalecourse/">course name generator</a>
+              </span>
+            </div>        
+            <br>
+            <div class="row">
+              <span style="font-weight: bold">Description</span>
+              <br>
+              <textarea rows="3" type="text" class="form-control" [(ngModel)]="this.course.description" placeholder="Describe your course" name="description"></textarea>
+            </div>
+            <br>
+            <div class="row">
+              <div *ngIf="this.course.hidden == true" class="btn-group" role="group" aria-label="Public" style="margin: 3px">
+                <button type="button" class="btn btn-dark btn-sm">
+                  <i class="fa fa-lock" style="color: lightyellow"></i>              
+                </button>
+                <button (click)="onSwitchToPublicClicked()" type="button" class="btn btn-dark btn-sm">
+                  Make it public
+                </button>
+              </div>          
+              <div *ngIf="this.course.hidden == false" class="btn-group" role="group" aria-label="Private" style="margin: 3px">
+                <button type="button" class="btn btn-dark btn-sm">
+                  <i class="fa fa-lock" style="color: lightyellow"></i>              
+                </button>
+                <button (click)="onSwitchToPrivateClicked()" type="button" class="btn btn-dark btn-sm">
+                  Make it private
+                </button>
+              </div>            
+            </div>
+            <br>
+            <div class="row" *ngIf="this.showError == true">
+              <div>
+                <span style="color: red; font-size: 14px">
+                    {{errorMsg}}
+                </span>
+              </div>
+            </div> 
+            <br>     
+            <div class="row">        
+              <button (click)="onCreateClicked()" block="true" class="btn btn-success btn-md" type="button">Create</button>
+              &nbsp;&nbsp;
+              <button routerLink="/home" routerLinkActive="active" block="true" class="btn btn-danger btn-md" type="button">Cancel</button>
+            </div>                
+          </div>
+        </div>
+        <div *ngIf="this.course.hidden == true" class="col">
+          <div class="container">          
+            <div class="row">
+              <span style="font-size: 20px; font-weight: bold">
+                Generate Invite Codes
+              </span>
+            </div>
+            <div class="row">            
+              <span style="font-size: 15px; color:darkslategray;">
+                  You can generate persistent invite codes, invite codes with expiration date or with a limitation of maximum usage. You can skip this step and generate your invite codes later!
+              </span>    
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+              <div class="col">
+                <div class="card w-100">
+                  <div class="card-header">
+                    <span style="font-weight: bold">Persistent invite code</span>
+                    <input class="float-right" type="checkbox" [(ngModel)]="this.addPersistentInviteCode">
+                  </div>
+                  <div class="card-body">
+                    Persistent invite codes are useful if welcome anyone in your course who get this code.
+                  </div>
+                  <br>
+                </div>      
+              </div>
+              <div class="col">
+                <div class="card w-100">
+                  <div class="card-header">
+                    <span style="font-weight: bold">Invite codes with usage limitation</span>
+                    <input class="float-right" type="checkbox" [(ngModel)]="this.addExpirationInviteCode" disabled="true">
+                  </div>
+                  <div class="card-body">
+                    Invite codes with usage limitation are useful is you want to allow only a limited amount of people into your courses.
+                  </div>
+                  <br><br>
+                </div>                        
+              </div>  
+            </div>
+            <br>
+            <div class="row">
+              <div class="card w-100">
+                <div class="card-header">
+                  <span style="font-weight: bold">Invite codes with expiration</span>
+                  <input class="float-right" type="checkbox" [(ngModel)]="this.addLimitationInviteCode" disabled="true">
+                </div>
+                <div class="card-body">
+                  Invite codes with expiration are useful when you want people to join your course only in a specified period.
+                  <br><br>
+                </div>
+              </div>
+            </div>
+            <br>
+          </div>        
+        </div>
+        <br>
+        <hr>  
+      </div>
+      <br>
+      <hr>
+      <br>
+      <hr>
+      <div class="row">        
+        <span class="float-left" style="color: grey; font-size: 12px">
+          <p>
+            ProTip! Use timing when making your sessions!
+          </p>  
+        </span>
+      </div>           
+    </div>
+  </div>
+  

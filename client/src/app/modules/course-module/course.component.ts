@@ -25,8 +25,19 @@ export class CourseComponent
     });
 
     this.courseService.getCourseSubsSumForCourse(this.sharedObjects.course.id).then(
-      res => {this.numberOfSubs = res;}
-    )
+      res => {
+        this.numberOfSubs = res;
+      });
+  }
+
+  onDeleteCourseClicked()
+  {
+    console.log("onDeleteCourseClicked");
+
+    this.courseService.deleteCourse(this.sharedObjects.course.id).then(
+      res => {
+        this.router.navigate(['/home']);
+      });
   }
 
 }

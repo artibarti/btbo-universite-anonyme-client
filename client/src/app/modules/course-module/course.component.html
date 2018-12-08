@@ -65,6 +65,12 @@
                 Invite Codes
               </a>
             </li>    
+            <li>
+              <a class="nav-link" data-toggle="tab" href="#owner_settings" style="color: black">
+                <i class="fa fa-map-marker" style="color: lightblue"></i>              
+                Owner Settings
+              </a>
+            </li>    
           </ul>
           <div class="tab-content in active" style="padding: 5px">
             <div id="description" class="tab-pane fade">
@@ -84,6 +90,9 @@
             </div>  
             <div id="invite_codes" class="tab-pane fade">
               <app-manage-invite-codes></app-manage-invite-codes>
+            </div>  
+            <div id="owner_settings" class="tab-pane fade">
+              <button (click)="onDeleteCourseClicked()" type="button" class="btn btn-danger btn-sm">Delete Course</button>
             </div>  
           </div>  
         </div>

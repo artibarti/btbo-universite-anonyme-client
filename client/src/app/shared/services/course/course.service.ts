@@ -118,4 +118,22 @@ export class CourseService {
     return this.http.get<any>(url, 
       {headers: {"token" : this.sessionService.token}}).toPromise();
   }
+
+  deleteCourse(id: string)
+  {
+    var url = this.sessionService.apiURL
+      + "/courses/" + id + "/delete";
+
+    return this.http.delete<any>(url,
+      {headers: {"token" : this.sessionService.token}}).toPromise();
+  }
+
+  leaveCourse(id: string)
+  {
+    var url = this.sessionService.apiURL
+      + "/courses/" + id + "/leave";
+
+    return this.http.get<any>(url,
+      {headers: {"token" : this.sessionService.token}}).toPromise();    
+  }
 }

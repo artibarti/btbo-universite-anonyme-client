@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { CreateSessionComponent } from './modules/single-components/components/create-session/create-session.component';
 
 const routes: Routes = 
 [
@@ -28,9 +29,19 @@ const routes: Routes =
     loadChildren: './modules/create-course-module/create-course.module#CreateCourseModule',
   },
   {
+    path: 'sessions',
+    canLoad: [AuthGuard],
+    loadChildren: './modules/session-module/session.module#SessionModule',
+  },
+  {
     path: 'settings',
     canLoad: [AuthGuard],
     loadChildren: './modules/settings-module/settings.module#SettingsModule',
+  },
+  {
+    path: 'createsession',
+    canActivate: [AuthGuard],
+    component: CreateSessionComponent,
   },
   {
     path: '**',

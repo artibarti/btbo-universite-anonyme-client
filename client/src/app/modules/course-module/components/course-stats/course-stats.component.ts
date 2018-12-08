@@ -29,7 +29,6 @@ export class CourseStatsComponent implements OnInit {
     this.courseService.getCoursePulse(this.sharedObjects.course.id).then(
         res => {
             res.forEach(p => this.coursePulse.push(p));
-            console.log(this.coursePulse);                
             this.chartType = 'line';      
             this.chartDatasets = [
                 {data: this.coursePulse.map(p => p.commentPulse) , label: 'Comments'},

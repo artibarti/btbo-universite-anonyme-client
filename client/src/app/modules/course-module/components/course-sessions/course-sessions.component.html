@@ -4,7 +4,7 @@
       <div class="row" style="padding: 5px; color: black; font-weight: bold">
         <div class=" col">
           <span class="float-left">Sessions</span>
-          <button routerLink="" routerLinkActive="active" block="true" class="btn float-right btn-success btn-sm" type="button">New Session</button>
+          <button [routerLink]="['/settings', sharedObjects.course.id ]" routerLinkActive="active" block="true" class="btn float-right btn-success btn-sm" type="button">New Session</button>
         </div>
       </div>
       <div class="row">

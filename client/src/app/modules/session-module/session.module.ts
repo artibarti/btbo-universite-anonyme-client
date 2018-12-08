@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateCourseRoutingModule } from './create-course-routing.module';
+import { SessionRoutingModule } from './session-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 // components
-import { CreateCourseComponent } from './create-course.component';
+import { SessionComponent } from './session.component';
+import { CreateSessionComponent } from './components/create-session/create-session.component'
 
 @NgModule({
   declarations: [
-    CreateCourseComponent
+    SessionComponent,
   ],
   imports: [
     CommonModule,
-    CreateCourseRoutingModule,
+    SessionRoutingModule,
     HttpClientModule,
     FormsModule,
     MDBBootstrapModule.forRoot()
@@ -22,4 +23,4 @@ import { CreateCourseComponent } from './create-course.component';
   providers: [],
   bootstrap: []
 })
-export class CreateCourseModule {}
+export class SessionModule {}
