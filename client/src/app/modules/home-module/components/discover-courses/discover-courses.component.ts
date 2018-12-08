@@ -46,7 +46,11 @@ export class DiscoverCoursesComponent implements OnInit {
 
   onJoinFreeCourseClicked(id: string)
   {
-    console.log("onJoinFreeCourseClicked() with id: " + id);
+    this.courseService.joinFreeCourseWithoutInviteCode(id).then(
+      res => {
+        this.route.navigate(["home"]);
+      }
+    )
   } 
 
 }

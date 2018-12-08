@@ -101,6 +101,15 @@ export class CourseService {
       "token" : this.sessionService.token}}).toPromise();
   }
 
+  joinFreeCourseWithoutInviteCode(id : string)
+  {
+    var url = this.sessionService.apiURL
+      + "/courses/" + id + "/subscribe";
+
+    return this.http.get<Course>(url, {headers: 
+      {"token" : this.sessionService.token}}).toPromise();
+  }
+
   getHotCourses() : Promise<Observable<Course>>
   {
     var url = this.sessionService.apiURL

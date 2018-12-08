@@ -50,6 +50,7 @@ export class CourseListComponent implements OnInit {
       res => {        
           res.forEach(p => this.courses.push(p));
       });
+      
     this.courseService.getAdminedCoursesForCurrentUser().then(
       res => {        
           res.forEach(p => this.adminedCourses.push(p));
