@@ -27,7 +27,6 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { AboutPopupComponent } from './shared/components/about-popup/about-popup.component';
 import { AuthGuard } from './shared/guards/auth.guard';
-import { CreateSessionComponent } from './modules/single-components/components/create-session/create-session.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +34,6 @@ import { CreateSessionComponent } from './modules/single-components/components/c
     ToolbarComponent,
     FooterComponent,
     AboutPopupComponent,
-    CreateSessionComponent
   ],
   imports: [
     WelcomeModule,

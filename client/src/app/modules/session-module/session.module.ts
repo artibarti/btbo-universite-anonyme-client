@@ -12,6 +12,7 @@ import { CreateSessionComponent } from './components/create-session/create-sessi
 @NgModule({
   declarations: [
     SessionComponent,
+    CreateSessionComponent
   ],
   imports: [
     CommonModule,

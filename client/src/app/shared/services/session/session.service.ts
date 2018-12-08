@@ -12,8 +12,8 @@ export class SessionService {
 
   public currentUser: User;
   authenticated = false;  
-  serverName = "//192.168.1.2";
-  portNumber = "8081";
+  serverName = "//localhost";
+  portNumber = "8080";
   apiURL = this.serverName + ":" + this.portNumber;
 
   token: string = "";

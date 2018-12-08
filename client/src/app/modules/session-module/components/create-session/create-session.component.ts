@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CourseSession } from '../../../../shared/models/session'
+import { Session } from 'protractor';
 
 @Component({
   selector: 'app-create-session',
@@ -8,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CreateSessionComponent implements OnInit {
 
-  id: string;
+  courseID: string;
+  session: CourseSession;
 
   constructor(private route: ActivatedRoute) 
   { 
@@ -17,11 +20,11 @@ export class CreateSessionComponent implements OnInit {
 
   ngOnInit() 
   {
-    console.log("ngOnInit() reached");
     this.route.params.subscribe(params => {
-      this.id = params['id'];
-      console.log("kapott id: " + this.id);      
+      this.courseID = params['id'];
     });
+
+    this.session = new CourseSession();
   }
 
 }

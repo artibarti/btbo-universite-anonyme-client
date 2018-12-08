@@ -7,9 +7,16 @@ import { CreateSessionComponent } from './components/create-session/create-sessi
 const routes: Routes = 
 [
   {
-    path: 'sessions',
+    path: 'session',
     canActivate: [AuthGuard],
     component: SessionComponent,
+    children: [
+      {
+        path: 'create/:id',
+        canActivate: [AuthGuard],
+        component: CreateSessionComponent,  
+      }
+    ]
   },
 ];
 
