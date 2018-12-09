@@ -17,6 +17,7 @@ import { CourseSessionsComponent } from './components/course-sessions/course-ses
 import { CourseSettingsComponent } from './components/course-settings/course-settings.component'
 import { CourseStatsComponent } from './components/course-stats/course-stats.component'
 import { ManageInviteCodesComponent } from './components/manage-invite-codes/manage-invite-codes.component'
+import { CourseOwnerSettingsComponent } from './components/course-owner-settings/course-owner-settings.component'
 
 // services
 import { SharedObjects } from './services/shared-objects.service';
@@ -32,7 +33,8 @@ import { SharedObjects } from './services/shared-objects.service';
     CourseSessionsComponent,
     CourseSettingsComponent,
     CourseStatsComponent,
-    ManageInviteCodesComponent
+    ManageInviteCodesComponent,
+    CourseOwnerSettingsComponent
   ],
   imports: [
     CommonModule,

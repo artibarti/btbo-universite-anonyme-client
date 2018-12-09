@@ -30,14 +30,4 @@ export class CourseComponent
       });
   }
 
-  onDeleteCourseClicked()
-  {
-    console.log("onDeleteCourseClicked");
-
-    this.courseService.deleteCourse(this.sharedObjects.course.id).then(
-      res => {
-        this.router.navigate(['/home']);
-      });
-  }
-
 }

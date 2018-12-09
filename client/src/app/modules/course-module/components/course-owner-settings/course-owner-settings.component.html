@@ -1,0 +1,88 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-4">
+      <div class="container">
+        <div class="card w-100">
+          <div class="card-header">
+            <span style="font-weight: bold;">
+              Manage sessions
+            </span>
+          </div>
+          <div class="card-body">
+            <button [routerLink]="['/session/create', this.sharedObjects.course.id]" routerLinkActive="active" block="true" class="btn btn-success btn-sm" type="button">New Session</button>                                 
+          </div>
+        </div>
+        <div class="card w-100">
+          <div class="card-header">
+            <span style="font-weight: bold; color: darkred">
+              Danger Zone
+            </span> 
+          </div>
+          <div class="card-body">
+            <button (click)="onDeleteCourseClicked()" type="button" class="btn btn-danger btn-sm">Delete Course</button>
+          </div>
+        </div>  
+      </div>
+    </div>
+    <div class="col">
+      <div class="container">          
+        <div class="row">
+          <span style="font-size: 20px; font-weight: bold">
+            Generate Invite Codes
+          </span>
+        </div>
+        <div class="row">            
+          <span style="font-size: 15px; color:darkslategray;">
+              You can generate persistent invite codes, invite codes with expiration date or with a limitation of maximum usage.
+          </span>    
+        </div>
+        <hr>
+        <br>
+        <div class="row">
+          <div class="col">
+            <div class="card w-100">
+              <div class="card-header">
+                <span style="font-weight: bold">Persistent invite code</span>
+                <input class="float-right" type="checkbox" [(ngModel)]="this.addPersistentInviteCode">
+              </div>
+              <div class="card-body">
+                Persistent invite codes are useful if welcome anyone in your course who get this code.
+              </div>
+              <br>
+            </div>      
+          </div>
+          <div class="col">
+            <div class="card w-100">
+              <div class="card-header">
+                <span style="font-weight: bold">Invite codes with usage limitation</span>
+                <input class="float-right" type="checkbox" [(ngModel)]="this.addExpirationInviteCode" disabled="true">
+              </div>
+              <div class="card-body">
+                Invite codes with usage limitation are useful is you want to allow only a limited amount of people into your courses.
+              </div>
+              <br><br>
+            </div>                        
+          </div>  
+        </div>
+        <br>
+        <div class="row">
+          <div class="card w-100">
+            <div class="card-header">
+              <span style="font-weight: bold">Invite codes with expiration</span>
+              <input class="float-right" type="checkbox" [(ngModel)]="this.addLimitationInviteCode" disabled="true">
+            </div>
+            <div class="card-body">
+              Invite codes with expiration are useful when you want people to join your course only in a specified period.
+              <br><br>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <button block="true" class="btn btn-success btn-sm" type="button">Generate</button>                                 
+        </div>
+      </div>        
+    </div>
+  </div>
+</div>

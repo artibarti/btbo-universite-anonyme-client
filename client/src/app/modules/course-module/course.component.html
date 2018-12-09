@@ -60,14 +60,8 @@
               </a>
             </li>    
             <li>
-              <a class="nav-link" data-toggle="tab" href="#invite_codes" style="color: black">
-                <i class="fa fa-map-marker" style="color: lightblue"></i>              
-                Invite Codes
-              </a>
-            </li>    
-            <li>
-              <a class="nav-link" data-toggle="tab" href="#owner_settings" style="color: black">
-                <i class="fa fa-map-marker" style="color: lightblue"></i>              
+              <a class="nav-link" data-toggle="tab" href="#owner_settings" style="background-color: darkorange; font-weight: bold; color: white">
+                <i class="fa fa-key" style="color: lightblue"></i>              
                 Owner Settings
               </a>
             </li>    
@@ -88,11 +82,8 @@
             <div id="rooms" class="tab-pane fade">
               <app-course-rooms></app-course-rooms>
             </div>  
-            <div id="invite_codes" class="tab-pane fade">
-              <app-manage-invite-codes></app-manage-invite-codes>
-            </div>  
             <div id="owner_settings" class="tab-pane fade">
-              <button (click)="onDeleteCourseClicked()" type="button" class="btn btn-danger btn-sm">Delete Course</button>
+              <app-course-owner-settings></app-course-owner-settings>
             </div>  
           </div>  
         </div>
