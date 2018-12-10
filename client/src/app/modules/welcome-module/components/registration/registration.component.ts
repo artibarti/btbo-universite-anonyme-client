@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../../../shared/services/session/session.service';
 import { User } from '../../../../shared/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -12,15 +13,23 @@ export class RegistrationComponent implements OnInit {
   user: User = new User;
   
   registrationAttemptRefused = false;
-  error_msg = "All fields are required!"
+  error_msg = "Something is wrong with your registration attempt";
 
-  constructor(private sessionService: SessionService) {}
+  constructor(private sessionService: SessionService, private router: Router) {}
 
   onRegistrationClicked() 
   {
     if (this.preValidateRagistration())
     {
-      this.sessionService.validateRegistration(this.user);
+      this.sessionService.validateRegistration(this.user).then(res => {
+        if (res['firstName']) 
+        {
+          this.router.navigate(['/login']);
+        } else 
+        {
+          this.registrationAttemptRefused = true;
+        }
+      });
     }
   }
 

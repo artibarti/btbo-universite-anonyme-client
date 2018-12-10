@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   user: User = new User;
 
   loginAttemptRefused = false;
-  error_msg = "Pls fill all fields";
+  error_msg = "Something is wrong with you login attempt";
 
   constructor(
     private sessionService: SessionService,
@@ -30,7 +30,21 @@ export class LoginComponent implements OnInit {
     if (this.preValidateLogin())
     {
       console.log("login clicked()");
-      this.sessionService.validateLogin(this.user);
+      this.sessionService.validateLogin(this.user).then(
+        res => {
+          
+            if (res['token']) {
+              this.sessionService.authenticated = true;
+              this.sessionService.currentUser.email = res['email'];
+              this.sessionService.currentUser.firstName = res['firstName'];
+              this.sessionService.currentUser.lastName = res['lastName'];
+              this.sessionService.token = res['token'];
+              this.router.navigate(['home'])
+            } else {
+              this.sessionService.authenticated = false;
+              this.loginAttemptRefused = true;
+            }        
+      });      
     }
   }
 

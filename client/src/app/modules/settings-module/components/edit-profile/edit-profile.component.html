@@ -3,7 +3,7 @@
     <span style="font-weight: bold">Edit Profile</span>
   </div>  
   <hr>
-  <div class="container">
+  <div class="container w-50 float-left">
     <div class="row">
       Firstname
     </div>
@@ -23,22 +23,21 @@
     </div>
     <div class="row">
       <input type="text" class="form-control" [(ngModel)]="this.user.email" placeholder="E-mail" name="email">
-      <span style="font-size: 10px; color: grey">
-        Please choose a valid e-mail address to make your experience better!
+      <span *ngIf="this.showError" style="font-size: 14px; color: darkred">
+        {{errorMsg}}
       </span>             
-    </div>    
+    </div>
+    <br>
+    <div class="row">
+      <button (click)="onUpdateClicked()" block="true" class="btn btn-success btn-md" type="button">Update</button>
+    </div>
+    <br>
+    <hr>        
+    <div class="row">
+      <span class="float-left" style="color: grey; font-size: 12px">
+        ProTip! Complete your profile! Keep it updated!
+      </span>      
+    </div>  
   </div>
   <br>
-  <div class="container">
-    <div class="row float-right">
-      <button (click)="onUpdateClicked()" block="true" class="btn btn-success btn-sm" type="button">Update</button>
-    </div>
-  </div>
-  <div class="row">
-    <span class="float-left" style="color: grey; font-size: 12px">
-      <p>
-        ProTip! Complete your profile! Keep it updated!
-      </p>  
-    </span>
-  </div> 
 </div>

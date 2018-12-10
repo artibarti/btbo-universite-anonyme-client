@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SettingsService } from '../../services/settings/settings.service';
 
 @Component({
   selector: 'app-edit-account',
@@ -9,14 +8,12 @@ import { SettingsService } from '../../services/settings/settings.service';
 export class EditAccountComponent implements OnInit {
 
   passwords = {old: '', new1: '', new2: ''};
-  startedToEdit = false;
 
-  constructor(private settingsService: SettingsService) { }
+  constructor() { }
 
   onUpdateClicked()
   {
-    this.startedToEdit = true;
-    // this.settingsService.updatePassword(this.passwords);
+
   }
 
   ngOnInit() 

@@ -6,17 +6,26 @@
     </div>
   </div>
   <div class="row">
-    <textarea style="background-color: white" rows="4" type="text" class="form-control" [(ngModel)]="this.myComment" placeholder="Leave a question" name="myComment"></textarea>
+    <textarea style="background-color: white" rows="2" type="text" class="form-control" [(ngModel)]="this.myComment" placeholder="Leave a comment" name="myComment"></textarea>
   </div>
   <br>
   <div class="row">
     <div class="col">
-      <button (click)="onPostClicked()" block="true" class="m-1 btn btn-info btn-md float-right" type="button">Post question</button>    
-      <button (click)="onGoBackClicked()" block="true" class="m-1 btn btn-info btn-md float-right" type="button">Back to course</button>    
+      <button (click)="onPostClicked()" block="true" class="m-1 btn btn-info btn-md float-right" type="button">Post comment</button>    
     </div>
   </div>
+  <hr style="background-color: #F5D0A9; height: 2px; border: 0;">
   <div *ngFor="let comment of comments" class="row">
-    {{comment.message}}
+    <div class="card w-100 p-2">
+      <div class="card-header" style="background-color: darkorange; color: white">
+        <div class="container">
+          <div class="row">
+            <span class="float-left" style="font-weight: bold">{{comment.name}}</span>
+          </div>          
+        </div>
+        {{comment.message}}
+      </div>
+    </div>
   </div>
 </div>            
 

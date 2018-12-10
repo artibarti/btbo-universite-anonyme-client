@@ -16,8 +16,6 @@ export class CourseComponent
   constructor(private router: Router, private route: ActivatedRoute,
     private sharedObjects: SharedObjects, private courseService: CourseService) {}
 
-  numberOfSubs : string;
-
   ngOnInit()
   {    
     this.route.params.subscribe(params => {
@@ -26,7 +24,7 @@ export class CourseComponent
 
     this.courseService.getCourseSubsSumForCourse(this.sharedObjects.course.id).then(
       res => {
-        this.numberOfSubs = res;
+        this.sharedObjects.numberOfSubs = res;
       });
   }
 

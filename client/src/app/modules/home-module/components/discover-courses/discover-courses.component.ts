@@ -41,8 +41,15 @@ export class DiscoverCoursesComponent implements OnInit {
     {
       this.courseService.joinCourseWithInviteCode(this.inviteCode).then(
         res => {
-          this.route.navigate(["/home"]);
-        });  
+          if (res != null)
+          {
+            this.route.navigate(["/home"]);
+          }
+          else
+          {
+            this.showError = true;
+          }
+        })
     }
   }
 

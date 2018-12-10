@@ -13,6 +13,8 @@ export class SharedObjects
 
     course: Course;
     activeSession: CourseSession = null;
+    numberOfSubs : string;
+    amITheOwner: boolean = false;
 
     setCourse(id: string)
     {
@@ -38,7 +40,20 @@ export class SharedObjects
                 {
                     this.activeSession = null;
                 }
-            });                
+            });
+        
+        this.courseService.amITheOwner(id).then(
+            res => {
+                if (res == 1)
+                {
+                    this.amITheOwner = true;
+                }
+                else
+                {
+                    this.amITheOwner = false;
+                }
+            }
+        )
     }
 
     constructor(private courseService: CourseService)

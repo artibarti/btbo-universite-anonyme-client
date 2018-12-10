@@ -97,7 +97,7 @@ export class CourseService {
     var url = this.sessionService.apiURL
       + "/courses/subscribe";
 
-    return this.http.get<Course>(url, {headers: {"code" : code, 
+    return this.http.get<any>(url, {headers: {"code" : code, 
       "token" : this.sessionService.token}}).toPromise();
   }
 
@@ -141,6 +141,15 @@ export class CourseService {
   {
     var url = this.sessionService.apiURL
       + "/courses/" + id + "/activesession";
+
+    return this.http.get<any>(url,
+      {headers: {"token" : this.sessionService.token}}).toPromise();      
+  }
+
+  amITheOwner(id: string)
+  {
+    var url = this.sessionService.apiURL
+      + "/courses/" + id + "/owner/isme";
 
     return this.http.get<any>(url,
       {headers: {"token" : this.sessionService.token}}).toPromise();      

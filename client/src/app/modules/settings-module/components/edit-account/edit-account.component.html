@@ -23,7 +23,7 @@
       </div>
       <div class="row">
         <input type="password" class="form-control" [(ngModel)]="this.passwords.new2" placeholder="Repeat password" name="new2">
-        <span *ngIf="this.passwords.new1 != this.passwords.new2 && this.startedToEdit" style="font-size: 10px; color: darkred">
+        <span *ngIf="this.passwords.new1 != this.passwords.new2" style="font-size: 10px; color: darkred">
           Something is wrong! Check the passwords again please.
         </span>             
       </div>    

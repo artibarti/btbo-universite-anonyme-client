@@ -21,12 +21,14 @@ import { SessionModule } from './modules/session-module/session.module'
 import { SessionService } from './shared/services/session/session.service'
 import { CourseService } from './shared/services/course/course.service'
 import { CourseSessionService } from './shared/services/course-session/course-session.service'
+import { UserService } from './shared/services/user/user.service'
 
 // components
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { AboutPopupComponent } from './shared/components/about-popup/about-popup.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { QuestionService } from './shared/services/question/question-service';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
     MDBBootstrapModule.forRoot()
   ],
 
-  providers: [AuthGuard, CourseService, CourseSessionService],
+  providers: [AuthGuard, CourseService, CourseSessionService, UserService, QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

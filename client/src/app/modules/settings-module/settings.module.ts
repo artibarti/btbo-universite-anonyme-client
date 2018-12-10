@@ -14,9 +14,6 @@ import { EditAccountComponent } from './components/edit-account/edit-account.com
 import { InviteComponent } from './components/invite/invite.component'
 import { DonateComponent } from './components/donate/donate.component'
 
-// services
-import { SettingsService } from './services/settings/settings.service'
-
 @NgModule({
   declarations: [
     SettingsComponent,

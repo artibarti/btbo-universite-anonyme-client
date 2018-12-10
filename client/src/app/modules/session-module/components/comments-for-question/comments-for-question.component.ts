@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Comment as QuestionComment } from '../../../../shared/models/comment';
+import { QuestionService } from '../../../../shared/services/question/question-service';
 
 @Component({
   selector: 'app-comments-for-question',
@@ -12,16 +13,28 @@ export class CommentsForQuestionComponent implements OnInit {
   questionID: string;
 
   comments: QuestionComment[] = [];
-  myComment: QuestionComment;
+  myComment: string = "";
 
-  constructor() { }
+  constructor(private questionService: QuestionService) {}
 
   ngOnInit() 
   {
     this.comments = [];
-    this.myComment = new QuestionComment;
+    this.myComment = "";
 
+    this.questionService.getCommentsForQuestion(this.questionID).then(
+      res => {
+        res.forEach(p => this.comments.push(p));
+      });
+  }
 
+  onPostClicked()
+  {
+    this.questionService.addCommentForQuestion(this.questionID, this.myComment).then(
+      res => {
+        this.ngOnInit();
+      }
+    )
   }
 
 }

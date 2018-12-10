@@ -43,23 +43,10 @@ export class SessionService {
     var url = this.apiURL + "/register";
     var salt: string = this.generateSalt();
 
-    this.http.get(url, { headers : {'userName': user.userName, 'email': user.email, 'firstName' : user.firstName, 
-      'lastName' : user.lastName, 'password' : this.hashPasswd(user.password, salt) }}).subscribe(response => {
-      if (response['firstName']) 
-      {
-        console.log("registration success");        
-      } else 
-      {
-        console.log("registration failed");
-      }
-    },
-      error => {
-        console.log(error)
-      },
-      () => {
-        this.router.navigate(['login'])
-      });
-  }
+    return this.http.get(url, { headers : {'userName': user.userName, 'email': user.email, 'firstName' : user.firstName, 
+      'lastName' : user.lastName, 'password' : this.hashPasswd(user.password, salt) }}).toPromise();
+
+    }
 
   validateLogin(user: User) {
    
@@ -71,36 +58,14 @@ export class SessionService {
     console.log("salt = " + salt);
     hashedPwd = this.hashPasswd(user.password, salt);
 
-    this.http.get(url, { headers : {'userName' : user.userName, 'password' : hashedPwd}}).subscribe(response => {
-      if (response['token']) {
-        this.authenticated = true;
-        this.currentUser.email = response['email'];
-        this.currentUser.firstName = response['firstName'];
-        this.currentUser.lastName = response['lastName'];
-        this.token = response['token'];
-      } else {
-        this.authenticated = false;
-      }
-    },
-      error => {
-        console.log(error)
-      },
-      () => {
-        this.router.navigate(['home'])
-      });        
-
-    /*this.getMySaltFromServer(user.userName).then(
-      res => {
-      }
-    );*/
-
+    return this.http.get(url, { headers : {'userName' : user.userName, 'password' : hashedPwd}}).toPromise();  
   }
 
   logout()
   {
     console.log("token -> " + this.token);
 
-    var url = this.apiURL + "/logout2";
+    var url = this.apiURL + "/logout";
     
     this.http.delete(url, {headers : {"token" : this.token}}).subscribe(
       res => {
