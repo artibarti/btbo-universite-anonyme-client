@@ -8,11 +8,13 @@ export class NewsFeedService {
 
   constructor(private http: HttpClient, private sessionService : SessionService) {}
 
-  getNewsFeedForUser(id : string) : Observable<any> 
+  getNewsFeedForUser() : Promise<Observable<any>>
   {
+    console.log("getting nwesfeed");
+
     var url = this.sessionService.apiURL
       + "/user/newsfeed";
     
-      return this.http.get(url, {headers : {'token' : this.sessionService.token}});    
+    return this.http.get<any>(url, {headers : {"token" : this.sessionService.token}}).toPromise();    
   }
 }

@@ -98,9 +98,21 @@ export class SessionService {
 
   logout()
   {
-    this.currentUser = new User;
-    this.authenticated = false;
-    this.router.navigate(['/login']);
+    console.log("token -> " + this.token);
+
+    var url = this.apiURL + "/logout2";
+    
+    this.http.delete(url, {headers : {"token" : this.token}}).subscribe(
+      res => {
+        
+        console.log("resolving logout answer");
+
+        this.currentUser = new User;
+        this.authenticated = false;
+        this.token = "";
+        this.router.navigate(['/login']);
+      }
+    );
   }
 
   constructor(private http: HttpClient, private router: Router) 

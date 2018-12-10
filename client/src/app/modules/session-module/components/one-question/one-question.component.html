@@ -1,0 +1,25 @@
+<div class="card-body">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <span class="float-left" style="font-weight: bold; color: darkslategray">{{question.name}}</span>
+      </div>
+      <div class="col">
+        <span class="float-right" style="font-size: 14px; color: gray">{{question.timestamp}}</span>
+      </div>              
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        <span style="font-style: italic; font-size: 18px;">“{{question.message}}“</span>
+      </div>
+      <div class="col-4">
+        <button *ngIf="!this.showComments" (click)="onShowCommentClicked()" block="true" class="m-1 btn btn-info btn-md float-right" type="button">Show comments</button>    
+        <button *ngIf="this.showComments" (click)="onHideCommentClicked()" block="true" class="m-1 btn btn-info btn-md float-right" type="button">Hide comments</button>    
+      </div>  
+    </div>
+    <div *ngIf="this.showComments" class="row">      
+      <app-comments-for-question [questionID]="question.id"></app-comments-for-question>
+    </div>
+  </div>      
+</div>

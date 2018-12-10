@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   {
     if (this.preValidateLogin())
     {
+      console.log("login clicked()");
       this.sessionService.validateLogin(this.user);
     }
   }

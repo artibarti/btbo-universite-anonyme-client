@@ -27,7 +27,7 @@
             <div class="row">
               <span style="font-weight: bold">Description</span>
               <br>
-              <textarea rows="3" type="text" class="form-control" [(ngModel)]="this.session.description" placeholder="Describe your course" name="description"></textarea>
+              <textarea disabled="true" rows="3" type="text" class="form-control" placeholder="Describe your course" name="description"></textarea>
             </div>
             <br>
             <div class="row" *ngIf="this.showError == true">
@@ -38,6 +38,11 @@
               </div>
             </div> 
             <br>     
+            <div class="row">
+              <span style="font-weight: bold">Make it active</span>
+              <input class="float-right" type="checkbox" [(ngModel)]="this.session.active">
+            </div>
+            <br>
             <div class="row">        
               <button (click)="onCreateClicked()" block="true" class="btn btn-success btn-md" type="button">Create</button>
               &nbsp;&nbsp;

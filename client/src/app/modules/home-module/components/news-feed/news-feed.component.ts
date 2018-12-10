@@ -11,7 +11,7 @@ import { OneNewComponent } from '../one-new/one-new.component';
 })
 export class NewsFeedComponent implements OnInit {
 
-  news: Array<New>
+  news: New[] = []
 
   constructor(
       private newsFeedService: NewsFeedService, 
@@ -24,9 +24,20 @@ export class NewsFeedComponent implements OnInit {
 
   ngOnInit() 
   {
-    this.newsFeedService.getNewsFeedForUser(this.sessionService.currentUser.id)
-    .subscribe(data => {
-      this.news = data;});
+    this.news = [];
+    
+    this.newsFeedService.getNewsFeedForUser().then(
+      data => {
+        if (data == null)
+        {
+          console.log("newfeed data is null");
+        }
+        else
+        {
+          console.log("newfeed data is not null");
+          data.forEach(p => this.news.push(p));
+        }
+    })
   }
 
 }

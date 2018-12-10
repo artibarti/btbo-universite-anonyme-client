@@ -136,4 +136,13 @@ export class CourseService {
     return this.http.get<any>(url,
       {headers: {"token" : this.sessionService.token}}).toPromise();    
   }
+
+  getActiveSessionForCourse(id: string) : Promise<Observable<CourseSession>>
+  {
+    var url = this.sessionService.apiURL
+      + "/courses/" + id + "/activesession";
+
+    return this.http.get<any>(url,
+      {headers: {"token" : this.sessionService.token}}).toPromise();      
+  }
 }

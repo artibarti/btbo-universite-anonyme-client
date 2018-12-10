@@ -33,15 +33,17 @@ export class DiscoverCoursesComponent implements OnInit {
 
   onJoinClicked()
   {
-    if (this.inviteCode != "")
+    if (this.inviteCode == "")
     {
       this.showError = true;
     }
-
-    this.courseService.joinCourseWithInviteCode(this.inviteCode).then(
-      res => {
-        this.route.navigate(["/home"]);
-      });
+    else
+    {
+      this.courseService.joinCourseWithInviteCode(this.inviteCode).then(
+        res => {
+          this.route.navigate(["/home"]);
+        });  
+    }
   }
 
   onJoinFreeCourseClicked(id: string)

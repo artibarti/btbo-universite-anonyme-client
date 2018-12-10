@@ -1,0 +1,16 @@
+<div *ngIf="this.sharedObjects.activeSession != null" class="container mt-5">
+  <div class="row justify-content-md-center p-2">
+    <span style="color: darkslategray">do not miss this session! Click and join now!</span>
+  </div>      
+  <div class="row justify-content-md-center p-2">
+    <button [routerLink]="['/session/active', this.sharedObjects.activeSession.id]" routerLinkActive="active" block="true" class="btn btn-success btn-md w-50" type="button">Join live session!</button>    
+  </div>    
+  <br>
+</div>
+<div *ngIf="this.sharedObjects.activeSession == null" class="container mt-5">
+  <div class="row w-100">
+    <span class="text-center float-center mx-auto">
+      <span style="color: gray;">no active session available right now</span>
+    </span>        
+  </div>  
+</div>

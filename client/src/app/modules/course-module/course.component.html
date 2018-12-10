@@ -60,6 +60,12 @@
               </a>
             </li>    
             <li>
+              <a class="nav-link" data-toggle="tab" href="#active_session" style="color: #31B404; font-weight: bold;">
+                Active
+                <i class="fa fa-comments" style="color: #31B404"></i>
+              </a>
+            </li>    
+            <li>
               <a class="nav-link" data-toggle="tab" href="#owner_settings" style="background-color: darkorange; font-weight: bold; color: white">
                 <i class="fa fa-key" style="color: lightblue"></i>              
                 Owner Settings
@@ -81,6 +87,9 @@
             </div>  
             <div id="rooms" class="tab-pane fade">
               <app-course-rooms></app-course-rooms>
+            </div>  
+            <div id="active_session" class="tab-pane fade">
+              <app-active-session></app-active-session>
             </div>  
             <div id="owner_settings" class="tab-pane fade">
               <app-course-owner-settings></app-course-owner-settings>

@@ -1,0 +1,22 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col text-center">
+      <h5 class="text-center" style="color: white">when commenting, you can switch between anon and public mode!</h5>
+    </div>
+  </div>
+  <div class="row">
+    <textarea style="background-color: white" rows="4" type="text" class="form-control" [(ngModel)]="this.myComment" placeholder="Leave a question" name="myComment"></textarea>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <button (click)="onPostClicked()" block="true" class="m-1 btn btn-info btn-md float-right" type="button">Post question</button>    
+      <button (click)="onGoBackClicked()" block="true" class="m-1 btn btn-info btn-md float-right" type="button">Back to course</button>    
+    </div>
+  </div>
+  <div *ngFor="let comment of comments" class="row">
+    {{comment.message}}
+  </div>
+</div>            
+

@@ -13,15 +13,37 @@ export class CourseSessionService
 
   createSession(session: CourseSession)
   {
-    var url = this.sessionService.apiURL;
-    return this.http.get<any>(url, {headers: {"token" : this.sessionService.token}}).toPromise();    
+    var url = this.sessionService.apiURL + "/sessions/create";
+    return this.http.post(url, {"id" : session.id, "name" : session.name, "courseId" : session.courseId, "active" :  session.active} , {headers: {"token" : this.sessionService.token}}).toPromise();    
   }
 
-  getQuestionsForSession(courseID: string, sessionID: string) : Promise<Observable<Question>>
+  startSession(sessionID: string)
   {
     var url = this.sessionService.apiURL 
-      + "/courses/" + courseID + "/sessions/" + sessionID + "/questions";
-    return this.http.get<any>(url).toPromise();
+      + "sessions/" + sessionID + "/activate";
+    return this.http.post<any>(url, {headers : {"status" : true}}).toPromise();
   }
 
+  stopSession(sessionID: string)
+  {
+    var url = this.sessionService.apiURL 
+      + "sessions/" + sessionID + "/activate";
+    return this.http.post<any>(url, {headers : {"status" : false}}).toPromise();
+  }
+
+  getQuestionsForActiveSessions(sessionID: string) : Promise<Observable<Question>>
+  {
+    var url = this.sessionService.apiURL 
+      + "/sessions/" + sessionID + "/questions";
+
+    return this.http.get<any>(url, {headers: {"token" : this.sessionService.token }}).toPromise();
+  }
+
+  postQuestion(question: string, sessionID: string)
+  {
+    var url = this.sessionService.apiURL 
+      + "/sessions/" + sessionID + "/questions/add";
+
+    return this.http.post<any>(url, question, {headers: {"token" : this.sessionService.token }}).toPromise();
+  }
 }
