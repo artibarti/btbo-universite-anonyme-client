@@ -10,14 +10,18 @@
         </div>
         <div class="col">
           <div class="float-right btn-group" role="group" aria-label="Subs" style="margin: 3px">
-            <button type="button" class="btn btn-dark btn-sm">124</button>
-            <button (click)="onStarClicked()" type="button" class="btn btn-info btn-sm">
+            <button type="button" class="btn btn-dark btn-sm">{{this.sharedObjects.course.rating}}</button>
+            <button *ngIf="this.sharedObjects.didIRateThisCourseAlready" (click)="onStarClicked()" type="button" class="btn btn-info btn-sm">
               <i class="fa fa-star" style="color: lightyellow"></i>              
               Star
             </button>
+            <button *ngIf="!this.sharedObjects.didIRateThisCourseAlready" (click)="onStarClicked()" type="button" class="btn btn-info btn-sm">
+              <i class="fa fa-star" style="color: gray"></i>              
+              Star
+            </button>  
           </div>
           <div class="float-right btn-group" role="group" aria-label="Stars" style="margin: 3px">
-            <button type="button" class="btn btn-dark btn-sm">{{this.numberOfSubs}}</button>
+            <button type="button" class="btn btn-dark btn-sm">{{this.sharedObjects.course.subNumber}}</button>
             <button type="button" disabled="true" class="btn btn-info btn-sm">
               Subs
             </button>

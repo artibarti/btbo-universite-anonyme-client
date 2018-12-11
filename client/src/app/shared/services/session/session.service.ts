@@ -12,8 +12,8 @@ export class SessionService {
 
   public currentUser: User;
   authenticated = false;  
-  serverName = "//localhost";
-  portNumber = "8080";
+  serverName = "//78.92.127.18";
+  portNumber = "8081";
   apiURL = this.serverName + ":" + this.portNumber;
 
   token: string = "";
@@ -78,6 +78,13 @@ export class SessionService {
         this.router.navigate(['/login']);
       }
     );
+  }
+
+  amILoggedIn()
+  {
+    var url = this.apiURL + "/amILoggedIn";
+
+    return this.http.get<boolean>(url, {headers : {"token" : this.token}}).toPromise();
   }
 
   constructor(private http: HttpClient, private router: Router) 

@@ -71,7 +71,15 @@ export class CourseService {
   {
     var url = this.sessionService.apiURL 
       + "/courses/" + courseID + "/subs/sum";
-    return this.http.get<any>(url).toPromise();
+    return this.http.get<any>(url, {headers: {"token" : this.sessionService.token}}).toPromise();
+  }
+
+  getCourseRatingsSumForCourse(courseID: string)
+  {
+    var url = this.sessionService.apiURL 
+      + "/courses/" + courseID + "/ratings/sum";
+    return this.http.get<any>(url, 
+      {headers : {"token" : this.sessionService.token}}).toPromise();
   }
 
   getCourseRoomsForCourse(courseID: string) : Promise<Observable<CourseRoom>>
@@ -153,5 +161,45 @@ export class CourseService {
 
     return this.http.get<any>(url,
       {headers: {"token" : this.sessionService.token}}).toPromise();      
+  }
+
+  killActiveSession(sessionID: string)
+  {
+    var url = this.sessionService.apiURL
+      + "/sessions/" + sessionID + "/deactivateSession";
+
+    return this.http.post<any>(url, null,
+      {headers: {"token" : this.sessionService.token}}).toPromise();      
+
+  }
+
+  didIRateThisCourseAlready(id: string)
+  {
+    var url = this.sessionService.apiURL +
+      "/courses/" + id + "/alreadyRated";
+      
+    return this.http.get<boolean>(url, 
+      {headers : {"token" : this.sessionService.token }}).toPromise();
+
+  }
+
+  rateCourse(id: string)
+  {
+    var url = this.sessionService.apiURL + 
+      "/courses/" + id + "/ratings/add/1";
+
+    return this.http.post(url, null, 
+      {headers: {"token" : this.sessionService.token}}).toPromise();
+
+  }
+
+  removeRateFromCourse(id: string)
+  {
+    var url = this.sessionService.apiURL + 
+      "/courses/" + id + "/ratings/remove";
+
+    return this.http.get(url, {headers: 
+      {"token" : this.sessionService.token}}).toPromise();
+
   }
 }

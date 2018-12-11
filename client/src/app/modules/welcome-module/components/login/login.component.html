@@ -5,11 +5,11 @@
       <p class="h4 mb-4">Login</p>
       <input type="email" id="usernameInput" name="userName" class="form-control mb-4" placeholder="Username" [(ngModel)]="user.userName">  
       <input type="password" id="passwordInput" name="password" class="form-control mb-4" placeholder="Password" [(ngModel)]="user.password">  
-      <div class="d-flex justify-content-around">
+      <!-- <div class="d-flex justify-content-around">
         <div>
           <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
         </div>
-      </div>  
+      </div> -->  
       <div class="d-flex justify-content-around" *ngIf="this.loginAttemptRefused == true">
         <div>
           <span style="color: red">
@@ -21,7 +21,7 @@
       <p>Not a member?
           <button mdbBtn routerLink="/register" routerLinkActive="active" color="info" block="true" class="my-3" type="button">Register</button>
       </p>
-      <p>or sign in with:</p>
+      <!-- <p>or sign in with:</p>
       <a type="button" class="light-blue-text mx-2">
         <mdb-icon icon="facebook"></mdb-icon>
       </a>
@@ -33,7 +33,7 @@
       </a>
       <a type="button" class="light-blue-text mx-2">
         <mdb-icon icon="github"></mdb-icon>
-      </a>
+      </a> -->
     </form>
   </div>
 </div>

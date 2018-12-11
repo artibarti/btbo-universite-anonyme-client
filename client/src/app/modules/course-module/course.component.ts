@@ -21,11 +21,29 @@ export class CourseComponent
     this.route.params.subscribe(params => {
       this.sharedObjects.setCourse( params['id'] );
     });
+  }
 
-    this.courseService.getCourseSubsSumForCourse(this.sharedObjects.course.id).then(
-      res => {
-        this.sharedObjects.numberOfSubs = res;
-      });
+  onStarClicked()
+  {
+    if (!this.sharedObjects.didIRateThisCourseAlready)
+    {
+      this.courseService.rateCourse(this.sharedObjects.course.id).then(
+        res => {
+          this.sharedObjects.didIRateThisCourseAlready = true;
+          this.sharedObjects.refreshRating();
+        }
+      )
+    }
+    
+    if (this.sharedObjects.didIRateThisCourseAlready)
+    {
+      this.courseService.removeRateFromCourse(this.sharedObjects.course.id).then(
+        res => {
+          this.sharedObjects.didIRateThisCourseAlready = false;
+          this.sharedObjects.refreshRating();
+        }
+      )
+    }
   }
 
 }

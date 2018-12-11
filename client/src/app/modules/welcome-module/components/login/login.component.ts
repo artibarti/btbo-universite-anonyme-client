@@ -23,6 +23,13 @@ export class LoginComponent implements OnInit {
   {
     this.loginAttemptRefused = false;
     this.user = new User;
+
+    this.sessionService.amILoggedIn().then(
+      res => {
+        if (res) 
+          this.router.navigate(['/home']);        
+      }
+    )
   }
 
   onLoginClicked() 

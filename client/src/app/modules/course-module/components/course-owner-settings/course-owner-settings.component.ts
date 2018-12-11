@@ -27,4 +27,12 @@ export class CourseOwnerSettingsComponent implements OnInit {
       });
   }
 
+  onKillActiveSession()
+  {
+    this.courseService.killActiveSession(this.sharedObjects.activeSession.id).then(
+      res => {
+        this.router.navigate(['/home']);
+      });
+  }
+
 }

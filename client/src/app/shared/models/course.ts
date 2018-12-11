@@ -4,6 +4,8 @@ export class Course {
     name: string;
     description: string;
     hidden: boolean;
+    subNumber: string;
+    rating: string;
 
     constructor() 
     { 
@@ -11,5 +13,7 @@ export class Course {
         this.name = "";
         this.description = "";
         this.hidden = false;
+        this.subNumber = "";
+        this.rating = "";
     }
 }

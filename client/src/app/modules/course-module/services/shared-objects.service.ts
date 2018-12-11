@@ -13,8 +13,16 @@ export class SharedObjects
 
     course: Course;
     activeSession: CourseSession = null;
-    numberOfSubs : string;
     amITheOwner: boolean = false;
+    didIRateThisCourseAlready: boolean = false;
+
+    refreshRating()
+    {
+        this.courseService.getCourseRatingsSumForCourse(this.course.id).then(
+            res => {
+              this.course.rating = res['sum'];
+            });      
+    }
 
     setCourse(id: string)
     {
@@ -25,6 +33,8 @@ export class SharedObjects
             res => {        
                 this.course.name = res["name"];
                 this.course.description = res["description"];
+                this.course.rating = res['rating'];
+                this.course.subNumber = res ['subNumber'];
             });                
 
         this.courseService.getActiveSessionForCourse(id).then(
@@ -52,6 +62,12 @@ export class SharedObjects
                 {
                     this.amITheOwner = false;
                 }
+            }
+        )
+
+        this.courseService.didIRateThisCourseAlready(id).then(
+            res => {
+                this.didIRateThisCourseAlready = res;
             }
         )
     }
