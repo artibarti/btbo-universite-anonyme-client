@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../../../shared/services/session/session.service';
-import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../../../shared/services/user/user.service';
 
 @Component({
@@ -14,12 +13,11 @@ export class ProfileComponent implements OnInit {
 
   points: string;
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.userService.getUserRating().then(
       res => {
         this.points = res;
       }
-    )
+    );
   }
 }

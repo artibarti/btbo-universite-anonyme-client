@@ -10,17 +10,16 @@ import { Router } from '@angular/router';
 })
 export class DiscoverCoursesComponent implements OnInit {
 
-  inviteCode: string = "";
-  errorMsg: string = "Invite code is unacceptable";
-  showError: boolean = false;
+  inviteCode = '';
+  errorMsg = 'Invite code is unacceptable';
+  showError = false;
 
   courses: Course[] = [];
 
   constructor(private courseService: CourseService, private route: Router) { }
 
-  ngOnInit() 
-  {    
-    this.inviteCode = "";
+  ngOnInit() {
+    this.inviteCode = '';
     this.showError = false;
     this.courses = [];
 
@@ -28,38 +27,30 @@ export class DiscoverCoursesComponent implements OnInit {
       res => {
         res.forEach(p => this.courses.push(p));
       }
-    )
+    );
   }
 
-  onJoinClicked()
-  {
-    if (this.inviteCode == "")
-    {
+  onJoinClicked() {
+    if (this.inviteCode == '') {
       this.showError = true;
-    }
-    else
-    {
+    } else {
       this.courseService.joinCourseWithInviteCode(this.inviteCode).then(
         res => {
-          if (res != null)
-          {
-            this.route.navigate(["/home"]);
-          }
-          else
-          {
+          if (res != null) {
+            this.route.navigate(['/home']);
+          } else {
             this.showError = true;
           }
-        })
+        });
     }
   }
 
-  onJoinFreeCourseClicked(id: string)
-  {
+  onJoinFreeCourseClicked(id: string) {
     this.courseService.joinFreeCourseWithoutInviteCode(id).then(
       res => {
-        this.route.navigate(["home"]);
+        this.route.navigate(['home']);
       }
-    )
-  } 
+    );
+  }
 
 }

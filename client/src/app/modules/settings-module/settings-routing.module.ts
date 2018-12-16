@@ -7,7 +7,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { InviteComponent } from './components/invite/invite.component';
 import { DonateComponent } from './components/donate/donate.component';
 
-const routes: Routes = 
+const routes: Routes =
 [
   {
     path: 'settings',

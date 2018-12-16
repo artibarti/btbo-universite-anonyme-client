@@ -1,0 +1,63 @@
+<div class=" ml-5 mr-5 mt-3">
+  <div class="container">
+    <div class="row">
+      <span style="font-weight: bold; font-size: 20px">Create Room</span>
+    </div>
+    <div class="row">
+        <span style="font-size: 15px; color: gray">
+          Make live sessions for your courses where your students can ask anonym questions!
+        </span>
+    </div>
+    <hr>
+    <br>
+    <div class="row">
+      <div class="col-4">
+        <div class="container">
+          <div class="row">
+            <span style="font-weight: bold">Room Title</span>
+            <br>
+            <input type="text" class="form-control" [(ngModel)]="this.name" placeholder="Name" name="name">
+          </div>
+          <div class="row" style="font-size: 14px; color: gray">
+              <span>
+                Great room names brings more interest. Get inspiration here: <a target="_tab" href="http://julianrosenblum.com/yalecourse/">room name generator</a>
+              </span>
+          </div>
+          <br>
+          <div class="row">
+            <span style="font-weight: bold">Description</span>
+            <br>
+            <textarea disabled="true" rows="3" type="text" class="form-control" placeholder="Describe your course" name="description"></textarea>
+          </div>
+          <br>
+          <div class="row" *ngIf="this.showError == true">
+            <div>
+                <span style="color: red; font-size: 14px">
+                    {{errorMsg}}
+                </span>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <button (click)="onCreateClicked()" block="true" class="btn btn-success btn-md" type="button">Create</button>
+            &nbsp;&nbsp;
+            <button [routerLink]="['/course', this.courseID]" routerLinkActive="active" block="true" class="btn btn-danger btn-md" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+      <br>
+      <hr>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <div class="row">
+        <span class="float-left" style="color: grey; font-size: 12px">
+          <p>
+            ProTip! Rooms for everyone!
+          </p>
+        </span>
+    </div>
+  </div>
+</div>

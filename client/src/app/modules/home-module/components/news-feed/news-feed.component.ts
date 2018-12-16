@@ -11,33 +11,28 @@ import { OneNewComponent } from '../one-new/one-new.component';
 })
 export class NewsFeedComponent implements OnInit {
 
-  news: New[] = []
+  news: New[] = [];
 
   constructor(
-      private newsFeedService: NewsFeedService, 
+      private newsFeedService: NewsFeedService,
       private sessionService: SessionService) {}
 
-  stringifyNew(n: New)
-  {
+  stringifyNew(n: New) {
     return JSON.stringify(n);
   }
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.news = [];
-    
+
     this.newsFeedService.getNewsFeedForUser().then(
       data => {
-        if (data == null)
-        {
-          console.log("newfeed data is null");
-        }
-        else
-        {
-          console.log("newfeed data is not null");
+        if (data == null) {
+          console.log('newfeed data is null');
+        } else {
+          console.log('newfeed data is not null');
           data.forEach(p => this.news.push(p));
         }
-    })
+    });
   }
 
 }

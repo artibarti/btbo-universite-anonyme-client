@@ -6,13 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 // components
-import { HomeComponent } from './home.component'
-import { CourseListComponent, FilterPipe } from './components/course-list/course-list.component'
-import { ProfileComponent } from './components/profile/profile.component'
+import { HomeComponent } from './home.component';
+import { CourseListComponent, FilterPipe } from './components/course-list/course-list.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 import { DiscoverCoursesComponent } from './components/discover-courses/discover-courses.component';
-import { OneNewComponent } from './components/one-new/one-new.component'
-import { HomepageComponent } from './components/homepage/homepage.component'
+import { OneNewComponent } from './components/one-new/one-new.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 // services
 import { NewsFeedService } from './services/newsfeed/newsfeed.service';
@@ -34,7 +34,7 @@ import { NewsFeedService } from './services/newsfeed/newsfeed.service';
     HomeRoutingModule,
     HttpClientModule,
     FormsModule,
-    MDBBootstrapModule.forRoot()    
+    MDBBootstrapModule.forRoot()
   ],
   providers: [NewsFeedService]
 })

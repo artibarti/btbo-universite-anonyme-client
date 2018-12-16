@@ -12,31 +12,29 @@ export class CourseStatsComponent implements OnInit {
 
   coursePulse: Array<CoursePulse> = [];
   public chartType: string;
-  public chartDatasets: Array<any>;   
+  public chartDatasets: Array<any>;
   public chartLabels: Array<String>;
   public chartColors: Array<any>;
-  public chartOptions:any;    
+  public chartOptions: any;
 
   constructor(private courseService: CourseService, private sharedObjects: SharedObjects) {}
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.initChart();
   }
 
-  initChart()
-  {    
+  initChart() {
     this.courseService.getCoursePulse(this.sharedObjects.course.id).then(
         res => {
             res.forEach(p => this.coursePulse.push(p));
-            this.chartType = 'line';      
+            this.chartType = 'line';
             this.chartDatasets = [
                 {data: this.coursePulse.map(p => p.commentPulse) , label: 'Comments'},
                 {data: this.coursePulse.map(p => p.questionPulse) , label: 'Question'},
             ];
 
             this.chartLabels = this.coursePulse.map(p => p.day);
-        
+
             this.chartColors = [
                 {
                     backgroundColor: 'rgba(220,220,220,0.2)',
@@ -57,12 +55,12 @@ export class CourseStatsComponent implements OnInit {
                     pointHoverBorderColor: 'rgba(151,187,205,1)'
                 }
             ];
-        
+
             this.chartOptions = {
                 responsive: true
             };
 
-        });      
+        });
   }
 
 }

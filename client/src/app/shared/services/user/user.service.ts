@@ -11,20 +11,17 @@ export class UserService {
 
   constructor(private sessionService: SessionService, private http: HttpClient, private router: Router) {}
 
-  getUserRating()
-  {
-    var url = this.sessionService.apiURL +
-      "/user/points";
+  getUserRating() {
+    const url = this.sessionService.apiURL +
+      '/user/points';
 
-    return this.http.get<any>(url, {headers: {"token" : this.sessionService.token}}).toPromise();
+    return this.http.get<any>(url, {headers: {'token' : this.sessionService.token}}).toPromise();
   }
-  
-  updateProfile(user: User)
-  {    
-    var url = this.sessionService.apiURL +
-      "/user/update";
 
-    return this.http.put<any>(url, {"token" : "", "firstName" : user.firstName, "lastName" : user.lastName, "email" : user.email}, {headers: {"token" : this.sessionService.token}}).toPromise();
+  updateProfile(user: User) {
+    const url = this.sessionService.apiURL + '/user/update';
+    return this.http.put<any>(url, {'token' : '', 'firstName' : user.firstName, 'lastName' : user.lastName, 'email' : user.email},
+{headers: {'token' : this.sessionService.token}}).toPromise();
   }
 
 }

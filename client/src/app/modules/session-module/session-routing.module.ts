@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../../shared/guards/auth.guard';
-import { SessionComponent } from './session.component'
-import { CreateSessionComponent } from './components/create-session/create-session.component'
+import { SessionComponent } from './session.component';
+import { CreateSessionComponent } from './components/create-session/create-session.component';
 import { ActiveSessionComponent } from './components/active-session/active-session.component';
 
-const routes: Routes = 
+const routes: Routes =
 [
   {
     path: 'session',
@@ -15,12 +15,12 @@ const routes: Routes =
       {
         path: 'create/:id',
         canActivate: [AuthGuard],
-        component: CreateSessionComponent,  
+        component: CreateSessionComponent,
       },
       {
         path: 'active/:id',
         canActivate: [AuthGuard],
-        component: ActiveSessionComponent,  
+        component: ActiveSessionComponent,
       }
     ]
   },

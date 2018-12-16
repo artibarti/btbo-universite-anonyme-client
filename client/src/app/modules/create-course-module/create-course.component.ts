@@ -9,63 +9,56 @@ import { Router } from '@angular/router';
   templateUrl: './create-course.component.html',
   styleUrls: ['./create-course.component.scss']
 })
-export class CreateCourseComponent 
-{
+export class CreateCourseComponent {
   course: Course;
 
   persistentInviteCode: InviteCode;
   expirationInviteCode: InviteCode;
   limitationInviteCode: InviteCode;
 
-  addPersistentInviteCode: boolean = true;
-  addExpirationInviteCode: boolean = false;
-  addLimitationInviteCode: boolean = false;
+  addPersistentInviteCode = true;
+  addExpirationInviteCode = false;
+  addLimitationInviteCode = false;
 
-  errorMsg: string = "All fields are required!";
-  showError: boolean = false;
+  errorMsg = 'All fields are required!';
+  showError = false;
 
   constructor(private courseService: CourseService, private router: Router) {}
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.course = new Course;
     this.persistentInviteCode = new InviteCode;
     this.expirationInviteCode = new InviteCode;
     this.limitationInviteCode = new InviteCode;
 
-    this.persistentInviteCode.maxCopy = "-1";
-    this.expirationInviteCode.maxCopy = "-1";
+    this.persistentInviteCode.maxCopy = '-1';
+    this.expirationInviteCode.maxCopy = '-1';
   }
 
-  onCreateClicked()
-  {    
-    if (this.course.name == "" || this.course.description == "")
-    {
+  onCreateClicked() {
+    if (this.course.name == '' || this.course.description == '') {
       this.showError = true;
-    }
-    else
-    {
+    } else {
       this.courseService.createCourse(this.course).then(
         res => {
-          
-          let id = res.id;
 
-          if (this.addPersistentInviteCode && this.course.hidden)
+          const id = res.id;
+
+          if (this.addPersistentInviteCode && this.course.hidden) {
             this.courseService.addInviteCodeToCourse(id, this.persistentInviteCode);
-          
-          this.router.navigate(["/home"]);
+          }
 
-      });  
+          this.router.navigate(['/home']);
+
+      });
     }
   }
 
-  onSwitchToPublicClicked()
-  {
+  onSwitchToPublicClicked() {
     this.course.hidden = false;
   }
 
-  onSwitchToPrivateClicked()
-  {
+  onSwitchToPrivateClicked() {
     this.course.hidden = true;
   }
 }

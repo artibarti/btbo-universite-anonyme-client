@@ -33,6 +33,11 @@ const routes: Routes =
     loadChildren: './modules/session-module/session.module#SessionModule',
   },
   {
+    path: 'courseroom',
+    canLoad: [AuthGuard],
+    loadChildren: './modules/course-room-module/course-room.module#CourseRoomModule',
+  },
+  {
     path: 'settings',
     canLoad: [AuthGuard],
     loadChildren: './modules/settings-module/settings.module#SettingsModule',

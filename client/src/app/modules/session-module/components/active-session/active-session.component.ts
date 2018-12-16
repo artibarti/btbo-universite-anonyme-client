@@ -8,16 +8,13 @@ import { CourseSessionService } from '../../../../shared/services/course-session
   name: 'filter',
   pure: false
 })
-export class FilterPipe implements PipeTransform 
-{
-  transform(items: any[], searchText: string): any[] 
-  {
-    if(!items) return [];
-    if(!searchText) return items;
-  
+export class FilterPipe implements PipeTransform {
+  transform(items: any[], searchText: string): any[] {
+    if (!items) { return []; }
+    if (!searchText) { return items; }
+
     searchText = searchText.toLowerCase();
-    return items.filter( it => 
-      {
+    return items.filter( it => {
         return it.message.toLowerCase().includes(searchText);
       });
    }
@@ -32,16 +29,15 @@ export class ActiveSessionComponent implements OnInit {
 
   questions: Question[] = [];
   sessionID: string;
-  myQuestion: string = "";
+  myQuestion = '';
   questionsFilter: string;
 
   constructor(private route: ActivatedRoute,
-    private courseSessionService : CourseSessionService) { }
+    private courseSessionService: CourseSessionService) { }
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.questions = [];
-    this.myQuestion = "";
+    this.myQuestion = '';
 
     this.route.params.subscribe(params => {
       this.sessionID = params['id'];
@@ -51,21 +47,19 @@ export class ActiveSessionComponent implements OnInit {
       res => {
         res.forEach(p => this.questions.push(p));
 
-        console.log("questions: " + this.questions.length);
+        console.log('questions: ' + this.questions.length);
       }
     );
   }
 
-  onPostClicked()
-  {
+  onPostClicked() {
     this.courseSessionService.postQuestion(this.myQuestion, this.sessionID).then(
       res => {
         this.ngOnInit();
       });
   }
 
-  stringifyQuestion(question: Question)
-  {
+  stringifyQuestion(question: Question) {
     return JSON.stringify(question);
   }
 }

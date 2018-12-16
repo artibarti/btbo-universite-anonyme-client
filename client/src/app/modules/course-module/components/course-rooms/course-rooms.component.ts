@@ -7,16 +7,13 @@ import { SharedObjects } from '../../services/shared-objects.service';
   name: 'filter',
   pure: false
 })
-export class FilterPipe implements PipeTransform 
-{
-  transform(items: any[], searchText: string): any[] 
-  {
-    if(!items) return [];
-    if(!searchText) return items;
-  
+export class FilterPipe implements PipeTransform {
+  transform(items: any[], searchText: string): any[] {
+    if (!items) { return []; }
+    if (!searchText) { return items; }
+
     searchText = searchText.toLowerCase();
-    return items.filter( it => 
-      {
+    return items.filter( it => {
         return it.name.toLowerCase().includes(searchText);
       });
    }
@@ -34,10 +31,9 @@ export class CourseRoomsComponent implements OnInit {
 
   constructor(private courseService: CourseService, private sharedObjects: SharedObjects) {}
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.courseService.getCourseRoomsForCourse(this.sharedObjects.course.id).then(
-      res => {        
+      res => {
         res.forEach(p => this.rooms.push(p));
       });
   }

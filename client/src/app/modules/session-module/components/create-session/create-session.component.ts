@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CourseSession } from '../../../../shared/models/session'
+import { CourseSession } from '../../../../shared/models/session';
 import { Session } from 'protractor';
 import { CourseSessionService } from '../../../../shared/services/course-session/course-session.service';
 
@@ -15,29 +15,26 @@ export class CreateSessionComponent implements OnInit {
   session: CourseSession;
 
   constructor(private route: ActivatedRoute, private courseSessionService: CourseSessionService,
-    private router: Router) 
-  { 
-    console.log("constructor");
+    private router: Router) {
+    console.log('constructor');
   }
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.route.params.subscribe(params => {
       this.courseID = params['id'];
     });
 
-    this.session = new CourseSession()
+    this.session = new CourseSession();
     this.session.courseId = this.courseID;
     this.session.active = true;
   }
 
-  onCreateClicked()
-  {
+  onCreateClicked() {
     this.courseSessionService.createSession(this.session).then(
       res => {
         this.router.navigate(['/course', this.courseID]);
       }
-    )
+    );
   }
 
 }

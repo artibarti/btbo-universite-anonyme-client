@@ -11,16 +11,14 @@ export class EditAccountComponent implements OnInit {
 
   constructor() { }
 
-  onUpdateClicked()
-  {
+  onUpdateClicked() {
 
   }
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.passwords.old = '';
     this.passwords.new1 = '';
-    this.passwords.new2 = '';    
+    this.passwords.new2 = '';
   }
 
 }

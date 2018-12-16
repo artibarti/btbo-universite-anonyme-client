@@ -1,5 +1,5 @@
 export class Course {
-    
+
     id: string;
     name: string;
     description: string;
@@ -7,13 +7,12 @@ export class Course {
     subNumber: string;
     rating: string;
 
-    constructor() 
-    { 
-        this.id = ""; 
-        this.name = "";
-        this.description = "";
+    constructor() {
+        this.id = '';
+        this.name = '';
+        this.description = '';
         this.hidden = false;
-        this.subNumber = "";
-        this.rating = "";
+        this.subNumber = '';
+        this.rating = '';
     }
 }

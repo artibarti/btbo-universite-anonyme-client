@@ -13,13 +13,11 @@ export class CourseOwnerSettingsComponent implements OnInit {
   constructor(private courseService: CourseService, private router: Router,
       private sharedObjects: SharedObjects) { }
 
-  ngOnInit() 
-  {
-  
+  ngOnInit() {
+
   }
 
-  onDeleteCourseClicked()
-  {
+  onDeleteCourseClicked() {
 
     this.courseService.deleteCourse(this.sharedObjects.course.id).then(
       res => {
@@ -27,8 +25,7 @@ export class CourseOwnerSettingsComponent implements OnInit {
       });
   }
 
-  onKillActiveSession()
-  {
+  onKillActiveSession() {
     this.courseService.killActiveSession(this.sharedObjects.activeSession.id).then(
       res => {
         this.router.navigate(['/home']);

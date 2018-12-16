@@ -12,40 +12,34 @@ import { Router } from '@angular/router';
 export class EditProfileComponent implements OnInit {
 
   user: User;
-  errorMsg: string = "Something is wrong";
-  showError: boolean = false;
+  errorMsg = 'Something is wrong';
+  showError = false;
 
   constructor(private userService: UserService, private sessionSevice: SessionService,
-      private router: Router) 
-  {
+      private router: Router) {
     this.user = new User;
-    this.user.email = this.sessionSevice.currentUser.email;            
-    this.user.firstName = this.sessionSevice.currentUser.firstName;            
+    this.user.email = this.sessionSevice.currentUser.email;
+    this.user.firstName = this.sessionSevice.currentUser.firstName;
     this.user.lastName = this.sessionSevice.currentUser.lastName;
   }
 
-  onUpdateClicked()
-  {    
+  onUpdateClicked() {
     this.userService.updateProfile(this.user).then(
       res => {
-        if (res != null)
-        {
+        if (res != null) {
           this.router.navigate(['/home']);
           this.sessionSevice.currentUser.firstName = res['firstName'];
           this.sessionSevice.currentUser.lastName = res['lastName'];
           this.sessionSevice.currentUser.email = res['email'];
-        }
-        else
-        {
+        } else {
           this.showError = true;
         }
       });
   }
 
-  ngOnInit() 
-  {
-      this.user.email = this.sessionSevice.currentUser.email;            
-      this.user.firstName = this.sessionSevice.currentUser.firstName;            
+  ngOnInit() {
+      this.user.email = this.sessionSevice.currentUser.email;
+      this.user.firstName = this.sessionSevice.currentUser.firstName;
       this.user.lastName = this.sessionSevice.currentUser.lastName;
   }
 

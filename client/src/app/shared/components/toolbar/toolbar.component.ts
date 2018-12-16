@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../../services/session/session.service'
+import { SessionService } from '../../services/session/session.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,9 +10,8 @@ import { Router } from '@angular/router';
 export class ToolbarComponent implements OnInit {
 
   title = 'ua >';
-  
-  onLogoutClicked()
-  {
+
+  onLogoutClicked() {
     this.sessionService.logout();
   }
 
@@ -20,13 +19,11 @@ export class ToolbarComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSwitchToAnonymClicked()
-  {    
+  onSwitchToAnonymClicked() {
     this.sessionService.anonym = true;
   }
 
-  onSwitchToPublicClicked()
-  {
+  onSwitchToPublicClicked() {
     this.sessionService.anonym = false;
   }
 

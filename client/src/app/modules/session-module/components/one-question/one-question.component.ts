@@ -10,24 +10,21 @@ export class OneQuestionComponent implements OnInit {
 
   @Input()
   input: string;
-  
+
   question: Question;
-  showComments: boolean = false;
+  showComments = false;
 
   constructor() { }
 
-  ngOnInit() 
-  {
-    this.question = JSON.parse(this.input);  
+  ngOnInit() {
+    this.question = JSON.parse(this.input);
   }
 
-  onShowCommentClicked()
-  {
+  onShowCommentClicked() {
     this.showComments = true;
   }
 
-  onHideCommentClicked()
-  {
+  onHideCommentClicked() {
     this.showComments = false;
   }
 }

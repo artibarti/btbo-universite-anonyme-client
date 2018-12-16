@@ -13,14 +13,13 @@ export class CommentsForQuestionComponent implements OnInit {
   questionID: string;
 
   comments: QuestionComment[] = [];
-  myComment: string = "";
+  myComment = '';
 
   constructor(private questionService: QuestionService) {}
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.comments = [];
-    this.myComment = "";
+    this.myComment = '';
 
     this.questionService.getCommentsForQuestion(this.questionID).then(
       res => {
@@ -28,13 +27,12 @@ export class CommentsForQuestionComponent implements OnInit {
       });
   }
 
-  onPostClicked()
-  {
+  onPostClicked() {
     this.questionService.addCommentForQuestion(this.questionID, this.myComment).then(
       res => {
         this.ngOnInit();
       }
-    )
+    );
   }
 
 }

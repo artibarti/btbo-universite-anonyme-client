@@ -12,16 +12,15 @@ export class OneNewComponent implements OnInit {
 
   @Input()
   input: string;
-  
+
   new: New;
 
   constructor(
       private sessionService: SessionService) {}
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     console.log(this.new);
-    this.new = JSON.parse(this.input);  
+    this.new = JSON.parse(this.input);
   }
 
 }

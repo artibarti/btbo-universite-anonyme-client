@@ -1,5 +1,5 @@
 export class New {
-    
+
     content: string;
     anonUserName: string;
     timestamp: string;
@@ -7,13 +7,12 @@ export class New {
     refID: string;
     refName: string;
 
-    constructor() 
-    { 
-        this.content = ""; 
-        this.anonUserName = "";
-        this.timestamp = "";
-        this.type = "";
-        this.refID = "";
-        this.refName = "";
+    constructor() {
+        this.content = '';
+        this.anonUserName = '';
+        this.timestamp = '';
+        this.type = '';
+        this.refID = '';
+        this.refName = '';
     }
 }

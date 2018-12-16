@@ -4,7 +4,7 @@
       <div class="row" style="padding: 5px; color: black; font-weight: bold">
         <div class=" col">
           <span class="float-left">Rooms</span>
-          <button routerLink="" routerLinkActive="active" block="true" class="btn float-right btn-success btn-sm" type="button">New Room</button>
+          <button [routerLink]="['/courseroom/create', this.sharedObjects.course.id]" routerLinkActive="active" block="true" class="btn float-right btn-success btn-sm" type="button">New Room</button>
         </div>
       </div>
       <div class="row">
@@ -17,8 +17,8 @@
     </div>
     <div class="card-body">
       <div *ngFor="let room of rooms | filter: myRoomFilter">
-        <a href="#" style="font-weight: bold; font-size: 12px">
-          <i class="fa fa-bookmark"></i> {{room.id}}
+        <a [routerLink]="['/courserooms/room', room.id]" routerLinkActive="active" style="font-weight: bold; font-size: 12px">
+          <i class="fa fa-bookmark"></i> {{room.name}}
         </a>
       </div>
     </div>

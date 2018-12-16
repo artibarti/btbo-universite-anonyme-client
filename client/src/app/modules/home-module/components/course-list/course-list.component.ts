@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../../../../shared/services/session/session.service'
+import { SessionService } from '../../../../shared/services/session/session.service';
 import { HttpClient } from '@angular/common/http';
-import { Pipe, PipeTransform } from '@angular/core'; 
+import { Pipe, PipeTransform } from '@angular/core';
 import { CourseService } from '../../../../shared/services/course/course.service';
 import { Course } from '../../../../shared/models/course';
 import { log } from 'util';
@@ -10,16 +10,13 @@ import { log } from 'util';
   name: 'filter',
   pure: false
 })
-export class FilterPipe implements PipeTransform 
-{
-  transform(items: any[], searchText: string): any[] 
-  {
-    if(!items) return [];
-    if(!searchText) return items;
-  
+export class FilterPipe implements PipeTransform {
+  transform(items: any[], searchText: string): any[] {
+    if (!items) { return []; }
+    if (!searchText) { return items; }
+
     searchText = searchText.toLowerCase();
-    return items.filter( it => 
-      {
+    return items.filter( it => {
         return it.name.toLowerCase().includes(searchText);
       });
    }
@@ -32,30 +29,28 @@ export class FilterPipe implements PipeTransform
 })
 export class CourseListComponent implements OnInit {
 
-  private courses : Course[] = [];
-  private adminedCourses : Course[] = [];
+  private courses: Course[] = [];
+  private adminedCourses: Course[] = [];
   subsFilter: string;
   myCoursesFilter: string;
 
-  constructor(private sessionService: SessionService, private courseService : CourseService) {}
+  constructor(private sessionService: SessionService, private courseService: CourseService) {}
 
-  stringifyCourse(course: Course)
-  {
+  stringifyCourse(course: Course) {
     return JSON.stringify(course);
   }
 
-  ngOnInit() 
-  {      
+  ngOnInit() {
     this.courseService.getAllSubscribtionForCurrentUser().then(
-      res => {        
+      res => {
           res.forEach(p => this.courses.push(p));
       });
-      
+
     this.courseService.getAdminedCoursesForCurrentUser().then(
-      res => {        
+      res => {
           res.forEach(p => this.adminedCourses.push(p));
       });
-  
+
   }
 
 }

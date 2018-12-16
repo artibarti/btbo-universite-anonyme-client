@@ -7,10 +7,10 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 // components
 import { SessionComponent } from './session.component';
-import { CreateSessionComponent } from './components/create-session/create-session.component'
-import { ActiveSessionComponent, FilterPipe } from './components/active-session/active-session.component'
-import { OneQuestionComponent } from './components/one-question/one-question.component'
-import { CommentsForQuestionComponent } from './components/comments-for-question/comments-for-question.component'
+import { CreateSessionComponent } from './components/create-session/create-session.component';
+import { ActiveSessionComponent, FilterPipe } from './components/active-session/active-session.component';
+import { OneQuestionComponent } from './components/one-question/one-question.component';
+import { CommentsForQuestionComponent } from './components/comments-for-question/comments-for-question.component';
 
 @NgModule({
   declarations: [

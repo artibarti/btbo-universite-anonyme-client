@@ -11,43 +11,36 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
 
   user: User = new User;
-  
+
   registrationAttemptRefused = false;
-  error_msg = "Something is wrong with your registration attempt";
+  error_msg = 'Something is wrong with your registration attempt';
 
   constructor(private sessionService: SessionService, private router: Router) {}
 
-  onRegistrationClicked() 
-  {
-    if (this.preValidateRagistration())
-    {
+  onRegistrationClicked() {
+    if (this.preValidateRagistration()) {
       this.sessionService.validateRegistration(this.user).then(res => {
-        if (res['firstName']) 
-        {
+        if (res === true) {
           this.router.navigate(['/login']);
-        } else 
-        {
+        } else {
           this.registrationAttemptRefused = true;
         }
       });
     }
   }
 
-  preValidateRagistration() : boolean
-  {
-    if (this.user.email != "" && this.user.firstName != ""
-      && this.user.lastName != "" && this.user.password != ""
-      && this.user.userName != "") 
-      {
+  preValidateRagistration(): boolean {
+    if (this.user.email !== '' && this.user.firstName !== ''
+      && this.user.lastName !== '' && this.user.password !== ''
+      && this.user.userName !== '') {
         return true;
       }
-    
+
     this.registrationAttemptRefused = true;
     return false;
   }
 
-  ngOnInit() 
-  {
+  ngOnInit() {
     this.registrationAttemptRefused = false;
     this.user = new User;
   }

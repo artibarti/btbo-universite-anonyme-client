@@ -8,11 +8,11 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 // components
 import { SettingsComponent } from './settings.component';
-import { ProfileMenuComponent } from './components/profile-menu/profile-menu.component'
-import { EditProfileComponent } from './components/edit-profile/edit-profile.component'
-import { EditAccountComponent } from './components/edit-account/edit-account.component'
-import { InviteComponent } from './components/invite/invite.component'
-import { DonateComponent } from './components/donate/donate.component'
+import { ProfileMenuComponent } from './components/profile-menu/profile-menu.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { EditAccountComponent } from './components/edit-account/edit-account.component';
+import { InviteComponent } from './components/invite/invite.component';
+import { DonateComponent } from './components/donate/donate.component';
 
 @NgModule({
   declarations: [

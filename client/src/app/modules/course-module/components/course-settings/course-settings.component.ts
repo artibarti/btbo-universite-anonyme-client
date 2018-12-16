@@ -11,14 +11,13 @@ import { Router } from '@angular/router';
 })
 export class CourseSettingsComponent implements OnInit {
 
-  constructor(private courseService: CourseService, 
+  constructor(private courseService: CourseService,
       private sharedObjects: SharedObjects,
       private router: Router) { }
 
   ngOnInit() {}
 
-  onLeaveCourseClicked()
-  {
+  onLeaveCourseClicked() {
     this.courseService.leaveCourse(this.sharedObjects.course.id.toString()).then(
       res => {
         this.router.navigate(['home']);
