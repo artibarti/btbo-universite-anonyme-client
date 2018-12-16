@@ -20,7 +20,7 @@ export class CourseRoomService {
 
   getCommentsForCourseRoom(id: string): Promise<Observable<CourseRoomComment>> {
     const url = this.sessionService.apiURL + '/courserooms/' + id + '/comments';
-    return this.http.get(url, {headers: {'token' : this.sessionService.token}}).toPromise();
+    return this.http.get<any>(url, {headers: {'token' : this.sessionService.token}}).toPromise();
   }
 
   addCommentForCourseRoom(id: string, message: string) {
