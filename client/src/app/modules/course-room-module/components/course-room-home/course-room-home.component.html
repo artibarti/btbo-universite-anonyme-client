@@ -1,3 +1,41 @@
-<p>
-  course-room-home works!
-</p>
+<div class="container mt-5 mr-3 ml-3 mx-auto">
+  <div class="row">
+    <div class="card w-100">
+      <div class="card-header" style="background-color: #00BFFF">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col text-center">
+              <h3 class="text-center" style="color: white">comment. help. contribute.</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <h5 class="text-center" style="color: darkslategray"> &lt; be careful and use anonym mode if U want to stay in the shadow &gt; </h5>
+            </div>
+          </div>
+          <div class="row">
+            <textarea style="background-color: white" rows="4" type="text" class="form-control" [(ngModel)]="this.myComment" placeholder="Leave a comment" name="myComment"></textarea>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col">
+              <button (click)="onPostClicked()" block="true" class="m-1 btn btn-info btn-md float-right" type="button">Post comment</button>
+              <button (click)="onGoBackClicked()" block="true" class="m-1 btn btn-info btn-md float-right" type="button">Back to course</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body mt-3">
+        <div class="container">
+          <div class="col float-center">
+            <input type="text" class="form-control" [(ngModel)]="questionsFilter" placeholder="Find comment..." name="questionsFilter">
+          </div>
+          <hr style="background-color: darkorange; height: 2px; border: 0;">
+          <div class="card w-100 p-3" *ngFor="let comment of comments | filter: commentFilter">
+            {{comment.message}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

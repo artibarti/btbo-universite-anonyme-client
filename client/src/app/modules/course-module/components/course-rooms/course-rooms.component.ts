@@ -2,6 +2,7 @@ import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { CourseRoom } from '../../../../shared/models/courseRoom';
 import { CourseService } from '../../../../shared/services/course/course.service';
 import { SharedObjects } from '../../services/shared-objects.service';
+import {log} from 'util';
 
 @Pipe({
   name: 'filter',
@@ -34,7 +35,10 @@ export class CourseRoomsComponent implements OnInit {
   ngOnInit() {
     this.courseService.getCourseRoomsForCourse(this.sharedObjects.course.id).then(
       res => {
-        res.forEach(p => this.rooms.push(p));
+        res.forEach(
+          p => {
+            this.rooms.push(p);
+          });
       });
   }
 

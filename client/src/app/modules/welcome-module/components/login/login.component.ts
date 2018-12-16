@@ -23,13 +23,13 @@ export class LoginComponent implements OnInit {
     this.loginAttemptRefused = false;
     this.user = new User;
 
-    this.sessionService.amILoggedIn().then(
+    /*this.sessionService.amILoggedIn().then(
       res => {
         if (res) {
           this.router.navigate(['/home']);
         }
       }
-    );
+    );*/
   }
 
   onLoginClicked() {
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       this.sessionService.validateLogin(this.user).then(
         res => {
 
-            if (res['token']) {
+            if (res !== null) {
               this.sessionService.authenticated = true;
               this.sessionService.currentUser.email = res['email'];
               this.sessionService.currentUser.firstName = res['firstName'];

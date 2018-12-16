@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CourseRoomService} from '../../../../shared/services/course-room/course-room.service';
-import {SharedObjects} from '../../../course-module/services/shared-objects.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-course-room',
@@ -10,17 +10,21 @@ import {SharedObjects} from '../../../course-module/services/shared-objects.serv
 export class CreateCourseRoomComponent implements OnInit {
 
   name = '';
+  courseID = '';
 
-  constructor(private courseRoomService: CourseRoomService,
-      private sharedObjects: SharedObjects) {}
+  constructor(private courseRoomService: CourseRoomService, private router: Router,
+              private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.courseID = params['id'];
+    });
+  }
 
-  onCreateClicked()
-  {
-    this.courseRoomService.createCourseRoom(this.sharedObjects.course.id, this.name).then(
+  onCreateClicked() {
+    this.courseRoomService.createCourseRoom(this.courseID, this.name).then(
       res => {
-        if (res !== null) {}
+        this.router.navigate(['/course', this.courseID]);
       }
     );
   }

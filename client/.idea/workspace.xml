@@ -2,64 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5047fa80-4958-487d-93f9-d04ce7b34d9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/shared/services/course-room/course-room.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/components/course-owner-settings/course-owner-settings.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/components/course-owner-settings/course-owner-settings.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/shared/models/courseRoomComment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/components/course-settings/course-settings.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/components/course-settings/course-settings.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/components/course-stats/course-stats.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/components/course-stats/course-stats.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/course-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/course-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/course.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/course.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/course.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/course.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/services/shared-objects.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/services/shared-objects.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/create-course-module/create-course-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/create-course-module/create-course-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/create-course-module/create-course.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/create-course-module/create-course.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/home-module/components/course-list/course-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/home-module/components/course-list/course-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/home-module/components/discover-courses/discover-courses.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/home-module/components/discover-courses/discover-courses.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/home-module/components/news-feed/news-feed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/home-module/components/news-feed/news-feed.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/home-module/components/one-new/one-new.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/home-module/components/one-new/one-new.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/home-module/components/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/home-module/components/profile/profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/home-module/home-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/home-module/home-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/home-module/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/home-module/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/home-module/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/home-module/home.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/home-module/services/newsfeed/newsfeed.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/home-module/services/newsfeed/newsfeed.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/session-module/components/active-session/active-session.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/session-module/components/active-session/active-session.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/session-module/components/comments-for-question/comments-for-question.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/session-module/components/comments-for-question/comments-for-question.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/session-module/components/create-session/create-session.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/session-module/components/create-session/create-session.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/session-module/components/create-session/create-session.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/session-module/components/create-session/create-session.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/session-module/components/one-question/one-question.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/session-module/components/one-question/one-question.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/session-module/session-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/session-module/session-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/session-module/session.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/session-module/session.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/session-module/session.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/session-module/session.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/settings-module/components/edit-account/edit-account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/settings-module/components/edit-account/edit-account.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/settings-module/components/edit-profile/edit-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/settings-module/components/edit-profile/edit-profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/settings-module/settings-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/settings-module/settings-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/settings-module/settings.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/settings-module/settings.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/settings-module/settings.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/settings-module/settings.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/course-room-module/course-room.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-room-module/course-room.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/modules/welcome-module/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/welcome-module/components/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/welcome-module/components/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/welcome-module/components/registration/registration.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/welcome-module/welcome-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/welcome-module/welcome-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/welcome-module/welcome.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/welcome-module/welcome.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/components/toolbar/toolbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/toolbar/toolbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/guards/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/guards/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/models/comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/models/comment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/models/course.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/models/course.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/models/coursePulse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/models/coursePulse.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/models/courseRoom.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/models/courseRoom.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/models/inviteCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/models/inviteCode.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/models/new.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/models/new.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/models/question.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/models/question.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/models/session.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/models/session.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/models/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/services/course-session/course-session.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/services/course-session/course-session.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/services/course-room/course-room.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/services/course-room/course-room.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shared/services/course/course.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/services/course/course.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/services/question/question-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/services/question/question-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/services/session/session.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/services/session/session.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/services/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/services/user/user.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -82,18 +35,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="17" />
+          <entry key="html" value="23" />
           <entry key="json" value="2" />
           <entry key="scss" value="10" />
-          <entry key="ts" value="92" />
+          <entry key="ts" value="125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="17" />
+          <entry key="HTML" value="23" />
           <entry key="JSON" value="2" />
           <entry key="SCSS" value="10" />
-          <entry key="TypeScript" value="92" />
+          <entry key="TypeScript" value="125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -104,14 +57,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="156" />
-          <entry key="ts" value="949" />
+          <entry key="html" value="336" />
+          <entry key="ts" value="2252" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="156" />
-          <entry key="TypeScript" value="949" />
+          <entry key="HTML" value="336" />
+          <entry key="TypeScript" value="2252" />
         </counts>
       </usages-collector>
     </session>
@@ -119,43 +72,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#0#71#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="199" lean-forward="true" selection-start-line="6" selection-start-column="199" selection-end-line="6" selection-end-column="199" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="315">
+              <caret line="21" selection-start-line="18" selection-end-line="21" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -163,37 +83,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/services/shared-objects.service.ts">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+            <state relative-caret-position="270">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
-                <element signature="e#0#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/shared/services/course-room/course-room.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/course-room-routing.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="n#style#0;n#h5#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/course-room.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+            <state relative-caret-position="255">
+              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="e#336#398#0" expanded="true" />
@@ -213,11 +111,92 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/components/course-sessions/course-sessions.component.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#71#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/services/course-room/course-room.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/services/course/course.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="74" column="47" lean-forward="true" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/models/courseRoomComment.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/services/question/question-service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="76" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="76" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>courseroom</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -229,14 +208,12 @@
         <option value="$PROJECT_DIR$/src/app/modules/session-module/components/create-session/create-session.component.html" />
         <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/shared/services/course/course.service.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/services/course-session/course-session.service.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/services/question/question-service.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/services/session/session.service.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/services/user/user.service.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/models/coursePulse.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/welcome-module/components/registration/registration.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/modules/welcome-module/components/login/login.component.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/welcome-module/welcome.component.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/settings-module/settings-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/settings-module/settings.module.ts" />
@@ -256,12 +233,19 @@
         <option value="$PROJECT_DIR$/src/app/modules/course-module/course-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/course-module/course.module.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/modules/course-room-module/course-room.module.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/course-room-module/course-room-routing.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.html" />
+        <option value="$PROJECT_DIR$/src/app/modules/welcome-module/components/login/login.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/shared/models/courseRoom.ts" />
+        <option value="$PROJECT_DIR$/src/app/shared/services/course/course.service.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.html" />
         <option value="$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/modules/course-room-module/course-room.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/shared/models/courseRoomComment.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/services/course-room/course-room.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.html" />
+        <option value="$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.html" />
       </list>
     </option>
   </component>
@@ -322,6 +306,33 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="course-module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="course-module" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="course-module" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="course-rooms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="course-room-module" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -341,7 +352,58 @@
               <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="course-room-module" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="create-course-room" type="462c0819:PsiDirectoryNode" />
+              <item name="course-room-home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="session-module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="session-module" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="session-module" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="active-session" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="course-room" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -354,7 +416,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544974533106" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544988513952" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -427,12 +489,12 @@
       <updated>1544725290066</updated>
       <workItem from="1544725299149" duration="1941000" />
       <workItem from="1544966732299" duration="2095000" />
-      <workItem from="1544969119091" duration="4510000" />
+      <workItem from="1544969119091" duration="12259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8546000" />
+    <option name="totallyTimeSpent" value="16295000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -475,182 +537,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/session.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/session.component.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/components/one-question/one-question.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/components/comments-for-question/comments-for-question.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/components/active-session/active-session.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/components/create-session/create-session.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/home-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/home.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#326#375#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/home.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="79" selection-start-line="1" selection-start-column="79" selection-end-line="1" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/home.component.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/home.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/services/newsfeed/newsfeed.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/components/course-list/course-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/components/discover-courses/discover-courses.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/components/homepage/homepage.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/components/news-feed/news-feed.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/components/one-new/one-new.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/components/profile/profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/create-course-module/create-course-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="66" selection-start-line="3" selection-start-column="66" selection-end-line="3" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/create-course-module/create-course.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/create-course-module/create-course.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/modules/create-course-module/create-course.component.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -667,9 +553,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/course-room.component.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/course-room.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/course-routing.module.ts">
@@ -757,16 +640,6 @@
     <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/course.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/course.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/course.component.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -777,27 +650,6 @@
           <folding>
             <element signature="e#0#58#0" expanded="true" />
             <element signature="e#1475#1556#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/course-room.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#336#398#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -835,6 +687,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/services/shared-objects.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -845,40 +704,254 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/modules/welcome-module/welcome.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="199" lean-forward="true" selection-start-line="6" selection-start-column="199" selection-end-line="6" selection-end-column="199" />
+        <state>
           <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/modules/welcome-module/components/login/login.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="268">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/welcome-module/components/registration/registration.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/services/course-room/course-room.service.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/modules/welcome-module/components/terms-of-service/terms-of-service.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/settings-module/settings.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state>
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/settings-module/components/edit-profile/edit-profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/session.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/components/comments-for-question/comments-for-question.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/components/create-session/create-session.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/components/one-question/one-question.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/services/newsfeed/newsfeed.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="86" selection-start-line="15" selection-start-column="86" selection-end-line="15" selection-end-column="86" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/modules/home-module/components/course-list/course-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/course-room.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/course.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="21" selection-start-line="18" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/components/active-session/active-session.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/session-module/components/active-session/active-session.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="11" selection-start-line="32" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/models/courseRoom.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/services/course/course.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="74" column="47" lean-forward="true" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/components/create-course-room/create-course-room.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="18" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/services/question/question-service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="76" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/services/course-room/course-room.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/models/courseRoomComment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/components/course-rooms/course-rooms.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/course-room.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#336#398#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

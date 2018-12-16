@@ -8,14 +8,14 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 // components
 import { CourseRoomComponent } from './course-room.component';
 import { CreateCourseRoomComponent } from './components/create-course-room/create-course-room.component';
-import { CourseRoomHomeComponent } from './components/course-room-home/course-room-home.component';
-
+import { CourseRoomHomeComponent, FilterPipe } from './components/course-room-home/course-room-home.component';
 
 @NgModule({
   declarations: [
     CourseRoomComponent,
     CreateCourseRoomComponent,
-    CourseRoomHomeComponent
+    CourseRoomHomeComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,

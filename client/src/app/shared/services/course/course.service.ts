@@ -68,7 +68,7 @@ export class CourseService {
       {headers : {'token' : this.sessionService.token}}).toPromise();
   }
 
-  getCourseRoomsForCourse(courseID: string): Promise<Observable<CourseRoom>> {
+  getCourseRoomsForCourse(courseID: string) {
     const url = this.sessionService.apiURL
       + '/courses/' + courseID + '/rooms';
 
