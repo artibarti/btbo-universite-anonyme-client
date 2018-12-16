@@ -14,6 +14,7 @@ export class SharedObjects {
     activeSession: CourseSession = null;
     amITheOwner = false;
     didIRateThisCourseAlready = false;
+    inviteCode = '';
 
     refreshRating() {
         this.courseService.getCourseRatingsSumForCourse(this.course.id).then(
@@ -48,7 +49,7 @@ export class SharedObjects {
 
         this.courseService.amITheOwner(id).then(
             res => {
-                if (res == 1) {
+                if (res === 1) {
                     this.amITheOwner = true;
                 } else {
                     this.amITheOwner = false;
@@ -60,6 +61,12 @@ export class SharedObjects {
             res => {
                 this.didIRateThisCourseAlready = res;
             }
+        );
+
+        this.courseService.getInviteCodeForCourse(id).then(
+          res => {
+            this.inviteCode = res.toString();
+          }
         );
     }
 

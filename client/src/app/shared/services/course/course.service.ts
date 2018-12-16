@@ -175,4 +175,10 @@ export class CourseService {
       {'token' : this.sessionService.token}}).toPromise();
 
   }
+
+  getInviteCodeForCourse(id: string) {
+
+    const url = this.sessionService.apiURL + '/courses/' + id + '/invitecodes';
+    return this.http.get(url, {headers: {'token' : this.sessionService.token}}).toPromise();
+  }
 }
