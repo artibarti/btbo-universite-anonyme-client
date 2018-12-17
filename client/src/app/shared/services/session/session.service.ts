@@ -9,10 +9,10 @@ import * as CryptoJS from 'crypto-js';
 })
 export class SessionService {
 
-  serverName = '//84.1.185.175';
+  serverName = '//localhost';
   public currentUser: User;
   authenticated = false;
-  portNumber = '8081';
+  portNumber = '8080';
   anonym = false;
   token = '';
   apiURL = this.serverName + ':' + this.portNumber;
@@ -33,7 +33,6 @@ export class SessionService {
 
     const hash = CryptoJS.SHA256(password + salt);
     const hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
-    console.log('hashedPassword = ' + hashInBase64 + '#' + salt);
     return hashInBase64 + '#' + salt;
   }
 

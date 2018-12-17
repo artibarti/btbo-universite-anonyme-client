@@ -53,10 +53,16 @@ export class ActiveSessionComponent implements OnInit {
   }
 
   onPostClicked() {
-    this.courseSessionService.postQuestion(this.myQuestion, this.sessionID).then(
-      res => {
-        this.ngOnInit();
-      });
+    if (this.myQuestion !== '') {
+      this.courseSessionService.postQuestion(this.myQuestion, this.sessionID).then(
+        res => {
+          this.ngOnInit();
+        });
+    }
+  }
+
+  onGoBackClicked() {
+    //
   }
 
   stringifyQuestion(question: Question) {

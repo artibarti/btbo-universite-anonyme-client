@@ -49,7 +49,8 @@ export class LoginComponent implements OnInit {
               this.sessionService.authenticated = false;
               this.loginAttemptRefused = true;
             }
-      });
+      })
+      .catch(error => console.log(error));
     }
   }
 

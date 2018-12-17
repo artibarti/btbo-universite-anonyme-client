@@ -31,6 +31,7 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { AboutPopupComponent } from './shared/components/about-popup/about-popup.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { ErrorPageComponent } from './shared/components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
     ToolbarComponent,
     FooterComponent,
     AboutPopupComponent,
+    ErrorPageComponent,
   ],
   imports: [
     WelcomeModule,

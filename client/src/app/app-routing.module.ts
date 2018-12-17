@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './shared/guards/auth.guard';
+import {ErrorPageComponent} from './shared/components/error-page/error-page.component';
 
 const routes: Routes = 
 [
@@ -41,6 +42,10 @@ const routes: Routes =
     path: 'settings',
     canLoad: [AuthGuard],
     loadChildren: './modules/settings-module/settings.module#SettingsModule',
+  },
+  {
+    path: 'error',
+    component: ErrorPageComponent,
   },
   {
     path: '**',

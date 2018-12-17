@@ -1,7 +1,7 @@
 <div class="container mt-5 mr-3 ml-3 mx-auto">
   <div class="row">
     <div class="card w-100">
-      <div class="card-header" style="background-color: #00BFFF">
+      <div class="card-header" style="background-color: #FAAC58">
         <div class="container-fluid">
           <div class="row">
             <div class="col text-center">
@@ -28,7 +28,7 @@
       <div class="card-body mt-3">
         <div class="container">
           <div class="col float-center">
-            <input type="text" class="form-control" [(ngModel)]="questionsFilter" placeholder="Find comment..." name="questionsFilter">
+            <input type="text" class="form-control" [(ngModel)]="commentFilter" placeholder="Find comment..." name="questionsFilter">
           </div>
           <hr style="background-color: darkorange; height: 2px; border: 0;">
           <div class="card w-100 p-3" *ngFor="let comment of comments | filter: commentFilter">

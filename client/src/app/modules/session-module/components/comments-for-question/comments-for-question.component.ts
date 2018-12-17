@@ -28,11 +28,13 @@ export class CommentsForQuestionComponent implements OnInit {
   }
 
   onPostClicked() {
-    this.questionService.addCommentForQuestion(this.questionID, this.myComment).then(
-      res => {
-        this.ngOnInit();
-      }
-    );
+    if (this.myComment !== '') {
+      this.questionService.addCommentForQuestion(this.questionID, this.myComment).then(
+        res => {
+          this.ngOnInit();
+        }
+      );
+    }
   }
 
 }

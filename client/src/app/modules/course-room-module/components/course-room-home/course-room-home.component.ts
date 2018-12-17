@@ -54,10 +54,12 @@ export class CourseRoomHomeComponent implements OnInit {
   }
 
   onPostClicked() {
-    this.courseRoomService.addCommentForCourseRoom(this.id, this.myComment).then(
-      res => {
-        this.ngOnInit();
-      }
-    );
+    if (this.myComment !== '') {
+      this.courseRoomService.addCommentForCourseRoom(this.id, this.myComment).then(
+        res => {
+          this.ngOnInit();
+        });
+    }
   }
+
 }

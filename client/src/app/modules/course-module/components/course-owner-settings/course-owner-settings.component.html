@@ -5,12 +5,12 @@
         <div class="card w-100">
           <div class="card-header">
             <span style="font-weight: bold;">
-              Manage sessions {{this.sharedObjects.inviteCode}}
+              Manage sessions
             </span>
           </div>
           <div class="card-body p-2">
-            <button [routerLink]="['/session/create', this.sharedObjects.course.id]" routerLinkActive="active" block="true" class="w-100 btn btn-success btn-sm mt-1 mb-1" type="button">New Session</button>
-            <button (click)="onKillActiveSession()" block="true" class="w-100 btn btn-danger btn-sm" type="button">Kill active session</button>                                 
+            <button *ngIf="this.sharedObjects.activeSession == null" [routerLink]="['/session/create', this.sharedObjects.course.id]" routerLinkActive="active" block="true" class="w-100 btn btn-success btn-sm mt-1 mb-1" type="button">New Session</button>
+            <button *ngIf="this.sharedObjects.activeSession != null" (click)="onKillActiveSession()" block="true" class="w-100 btn btn-danger btn-sm" type="button">Kill active session</button>
           </div>
         </div>
         <br>

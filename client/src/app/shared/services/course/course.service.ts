@@ -179,6 +179,8 @@ export class CourseService {
   getInviteCodeForCourse(id: string) {
 
     const url = this.sessionService.apiURL + '/courses/' + id + '/invitecodes';
-    return this.http.get(url, {headers: {'token' : this.sessionService.token}}).toPromise();
+
+    return this.http.get<string>(url,
+      {headers: {'token' : this.sessionService.token}}).toPromise();
   }
 }
