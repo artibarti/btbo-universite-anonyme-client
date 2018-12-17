@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5047fa80-4958-487d-93f9-d04ce7b34d9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/components/course-owner-settings/course-owner-settings.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/components/course-owner-settings/course-owner-settings.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/course.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/course.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-module/services/shared-objects.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-module/services/shared-objects.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/course-room-module/components/course-room-home/course-room-home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/session-module/components/active-session/active-session.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/session-module/components/active-session/active-session.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/session-module/components/comments-for-question/comments-for-question.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/session-module/components/comments-for-question/comments-for-question.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/welcome-module/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/welcome-module/components/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/services/course/course.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/services/course/course.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/services/session/session.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/services/session/session.service.ts" afterDir="false" />
-    </list>
+    <list default="true" id="5047fa80-4958-487d-93f9-d04ce7b34d9c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +14,7 @@
     <session id="-539602068">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.77" value="1" />
@@ -121,8 +107,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/services/shared-objects.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+            <state relative-caret-position="108">
+              <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
@@ -369,7 +355,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545041722261" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545041724430" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/shared/components" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -443,16 +429,15 @@
       <updated>1544725290066</updated>
       <workItem from="1544725299149" duration="1941000" />
       <workItem from="1544966732299" duration="2095000" />
-      <workItem from="1544969119091" duration="18987000" />
+      <workItem from="1544969119091" duration="19590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23023000" />
+    <option name="totallyTimeSpent" value="23626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.39106146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -917,8 +902,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/modules/course-module/services/shared-objects.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+        <state relative-caret-position="108">
+          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>

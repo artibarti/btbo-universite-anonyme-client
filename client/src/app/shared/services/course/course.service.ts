@@ -9,6 +9,7 @@ import { CourseRoom } from '../../models/courseRoom';
 import { Router } from '@angular/router';
 import { log } from 'util';
 import { InviteCode } from '../../models/inviteCode';
+import { InviteCodeSimple } from '../../models/inviteCodeSimple';
 
 @Injectable()
 export class CourseService {
@@ -180,7 +181,7 @@ export class CourseService {
 
     const url = this.sessionService.apiURL + '/courses/' + id + '/invitecodes';
 
-    return this.http.get<string>(url,
+    return this.http.get<InviteCodeSimple>(url,
       {headers: {'token' : this.sessionService.token}}).toPromise();
   }
 }

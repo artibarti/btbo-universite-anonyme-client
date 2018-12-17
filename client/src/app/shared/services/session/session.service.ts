@@ -9,10 +9,10 @@ import * as CryptoJS from 'crypto-js';
 })
 export class SessionService {
 
-  serverName = '//localhost';
+  serverName = '//84.1.185.175';
   public currentUser: User;
   authenticated = false;
-  portNumber = '8080';
+  portNumber = '8081';
   anonym = false;
   token = '';
   apiURL = this.serverName + ':' + this.portNumber;

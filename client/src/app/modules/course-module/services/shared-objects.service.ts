@@ -63,13 +63,11 @@ export class SharedObjects {
             }
         );
 
-        /*
         this.courseService.getInviteCodeForCourse(id).then(
           res => {
-              this.inviteCode = res;
+              this.inviteCode = res['code'];
           }
         );
-        */
     }
 
     constructor(private courseService: CourseService) {
